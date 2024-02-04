@@ -1,1 +1,1 @@
-Sitemap: https://ORGNAME.github.io/REPONAME/sitemap.xml
+Sitemap: https://laurenzbrahner.github.io/DST-DOKU/sitemap.xml

@@ -1,26 +1,30 @@
 # Inhaltsverzeichnis {.unnumbered}
 
-
-- [Einführung](#einführung)
-  - [Projektübersicht](#projektübersicht)
-  - [Motivation](#motivation)
-- [Datensatz und Datenbeschaffung](#datensatz-und-datenbeschaffung)
-  - [Quelle des Datensatzes](#quelle-des-datensatzes)
-  - [Datenstruktur](#datenstruktur)
-  - [Datenvorbereitung](#datenvorbereitung)
-- [Analyse und Visualisierung](#analyse-und-visualisierung)
-  - [Werkzeuge und Techniken](#werkzeuge-und-techniken)
-  - [Entwickelte Visualisierungen](#entwickelte-visualisierungen)
-  - [Analyseergebnisse](#analyseergebnisse)
-- [Erstellung des Interaktiven Dashboards](#erstellung-des-interaktiven-dashboards)
-  - [Dashboard-Design](#dashboard-design)
-  - [Nutzererfahrung](#nutzererfahrung)
-- [Herausforderungen und Lösungen](#herausforderungen-und-lösungen)
-  - [Begegnete Probleme](#begegnete-probleme)
-  - [Angewandte Lösungen](#angewandte-lösungen)
-- [Fazit und Reflexion](#fazit-und-reflexion)
-  - [Projektergebnisse](#projektergebnisse)
-  - [Reflexion](#reflexion)
-- [Anhang](#anhang)
-  - [Quellcode](#quellcode)
-  - [Danksagungen](#danksagungen)
+1. Einführung
+   - 1.1 Projektübersicht
+   - 1.2 Motivation
+2. Datensatz und Datenbeschaffung
+   - 2.1 Quelle des Datensatzes
+   - 2.2 Datenstruktur
+3. Datenvorbereitung
+   - 3.1 Genutzte Bibliotheken
+   - 3.2 Datensatz einlesen
+   - 3.3 Datentypkonvertierung
+       - 3.3.1 Ganzzahlkonvertierung
+       - 3.3.2 Kategorische Konvertierung
+   - 3.4 Umgang mit fehlenden Daten
+   - 3.5 Bereinigung des Datensatzes
+   - 3.6 Speichern des bereinigten Datensatzes
+3. Analyse und Visualisierung
+   - 3.1 Werkzeuge und Techniken
+   - 3.2 Entwickelte Visualisierungen
+   - 3.3 Analyseergebnisse
+4. Erstellung des Interaktiven Dashboards
+   - 4.1 Dashboard-Design
+   - 4.2 Nutzererfahrung
+5. Herausforderungen und Lösungen
+   - 5.1 Begegnete Probleme
+   - 5.2 Angewandte Lösungen
+6. Fazit und Reflexion
+   - 6.1 Projektergebnisse
+   - 6.2 Reflexion

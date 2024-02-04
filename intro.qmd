@@ -1,5 +1,11 @@
-# Introduction
+# Einführung
 
-This is a book created from markdown and executable code.
+## Projektübersicht
 
-See @knuth84 for additional discussion of literate programming.
+Das Ziel dieses Projekts ist es, wie im Vorwort schon erwähnt, durch die Analyse der meistgestreamtesten Songs des Jahres 2023 Einblicke in die aktuellen Trends der Musik zu bekommen und daraus möglicherweise eine Geheimformel für einen Hit abzuleiten. Außerdem sollen diese Informationen auch visuell ansprechend dargestellt werden, unter der Verwendung von Datenvisualisierungstools wie Altair.
+Diese Information eignet sich besonders für Label-Chefs oder Musiker.
+
+## Motivation
+
+Die Motivation für dieses Projekt ergab sich bei mir durch meine Begeisterung für Musik. Ich habe mir oft Fragen gestellt, welche Merkmale einen erfolgreichen Song ausmachen.
+Dieses Projekt zielt also darauf ab, die Verbindung zwischen Daten und musikalischer Ausdruckskraft zu erforschen.

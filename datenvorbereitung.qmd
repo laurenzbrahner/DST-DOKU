@@ -1,0 +1,28 @@
+# Datenvorbereitung
+
+Die Datenvorbereitung stellt sicher, dass der Datensatz für die Analyse optimiert ist. Im Folgenden werden die spezifischen Schritte beschrieben, die zur Vorbereitung des Datensatzes der meistgestreamten Songs 2023 durchgeführt wurden.
+<br/>
+Für die Datenvorbereitung wurde die python-Bibliothek `pandas` verwendet.
+
+## Datentypkonvertierung
+
+Nachdem der [Datensatz](https://www.kaggle.com/datasets/nelgiriyewithana/top-spotify-songs-2023) mit pandas als .csv Datei eingelesen worden ist, war es notwendig bestimmte Spalten in passendere Datentypen zu konvertieren.
+
+### Ganzzahl-Konvertierung
+
+Die Spalten `in_shazam_charts`, `streams`, und `in_deezer_playlists` wurden in Ganzzahlen umgewandelt, um numerische Analysen zu erleichtern.
+
+### Kategorische-Konvertierung
+
+Die Spalten `key` und `mode` wurden in kategorische Datentypen umgewandelt, um Analysen, die auf diesen musikalischen Eigenschaften basieren, zu vereinfachen.
+
+
+## Umgang mit fehlenden Daten
+
+Fehlende Daten wurden identifiziert und durch das Entfernen der betroffenen Zeilen aus dem Datensatz behandelt.
+
+<br/>
+
+
+
+**Diese sorgfältige Vorbereitung des Datensatzes schafft eine solide Grundlage für die weiterführende Analyse und hilft dabei, aussagekräftige Einsichten in die Trends und Muster der meistgestreamten Songs 2023 zu gewinnen.**

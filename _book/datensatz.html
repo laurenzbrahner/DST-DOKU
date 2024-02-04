@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Spotify-Analyse - References</title>
+<title>Spotify-Analyse - 2&nbsp; Datensatz und Datenbeschaffung</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -49,7 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="prev">
+<link href="./datenvorbereitung.html" rel="next">
+<link href="./intro.html" rel="prev">
 <link href=".//images/logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -84,7 +66,8 @@ div.csl-indent {
 }</script>
 
 
-<meta property="og:title" content="Spotify-Analyse - References">
+<meta property="og:title" content="Spotify-Analyse - 2&nbsp; Datensatz und Datenbeschaffung">
+<meta property="og:description" content="">
 <meta property="og:site-name" content="Spotify-Analyse">
 </head>
 
@@ -97,7 +80,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./datensatz.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Datensatz und Datenbeschaffung</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -146,13 +129,25 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  <a href="./datensatz.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Datensatz und Datenbeschaffung</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./datenvorbereitung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Datenvorbereitung</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -162,14 +157,21 @@ div.csl-indent {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#quelle-des-datensatzes" id="toc-quelle-des-datensatzes" class="nav-link active" data-scroll-target="#quelle-des-datensatzes"><span class="header-section-number">2.1</span> Quelle des Datensatzes</a></li>
+  <li><a href="#datenstruktur" id="toc-datenstruktur" class="nav-link" data-scroll-target="#datenstruktur"><span class="header-section-number">2.2</span> Datenstruktur</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/laurenzbrahner/DST-DOKU/edit/main/datensatz.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/laurenzbrahner/DST-DOKU/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">References</h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Datensatz und Datenbeschaffung</span></h1>
 </div>
 
 
@@ -184,11 +186,45 @@ div.csl-indent {
 
 </header>
 
-<div id="refs" role="list" style="display: none">
+<section id="quelle-des-datensatzes" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="quelle-des-datensatzes"><span class="header-section-number">2.1</span> Quelle des Datensatzes</h2>
+<p>Der verwendete Datensatz für die Analyse der meistgestreamten Spotify Songs 2023 wurde von Kaggle bezogen, einer Plattform, die eine breite Palette von Datensätzen für Datenwissenschaftsprojekte zur Verfügung stellt.</p>
+<ul>
+<li><a href="https://www.kaggle.com/datasets/nelgiriyewithana/top-spotify-songs-2023">Datensatz</a></li>
+</ul>
+</section>
+<section id="datenstruktur" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="datenstruktur"><span class="header-section-number">2.2</span> Datenstruktur</h2>
+<p>Der Datensatz umfasst insgesamt 943 Zeilen, wobei jede Zeile einen einzigartigen Song repräsentiert. Folgende Attribute sind für jeden Song erfasst:</p>
+<ul>
+<li><code>track_name</code>: Name des Songs</li>
+<li><code>artist(s)_name</code>: Name(n) des/der Künstler(s)</li>
+<li><code>artist_count</code>: Anzahl der an dem Song beteiligten Künstler</li>
+<li><code>released_year</code>: Jahr der Veröffentlichung des Songs</li>
+<li><code>released_month</code>: Monat der Veröffentlichung</li>
+<li><code>released_day</code>: Tag der Veröffentlichung im Monat</li>
+<li><code>in_spotify_playlists</code>: Anzahl der Spotify-Playlists, in denen der Song enthalten ist</li>
+<li><code>in_spotify_charts</code>: Vorhandensein und Rang des Songs in den Spotify-Charts</li>
+<li><code>streams</code>: Gesamtzahl der Streams auf Spotify</li>
+<li><code>in_apple_playlists</code>: Anzahl der Apple Music-Playlists, in denen der Song enthalten ist</li>
+<li><code>in_apple_charts</code>: Vorhandensein und Rang des Songs in den Apple Music-Charts</li>
+<li><code>in_deezer_playlists</code>: Anzahl der Deezer-Playlists, in denen der Song enthalten ist</li>
+<li><code>in_deezer_charts</code>: Vorhandensein und Rang des Songs in den Deezer-Charts</li>
+<li><code>in_shazam_charts</code>: Vorhandensein und Rang des Songs in den Shazam-Charts</li>
+<li><code>bpm</code>: Beats pro Minute, Maß für das Tempo des Songs</li>
+<li><code>key</code>: Tonart des Songs</li>
+<li><code>mode</code>: Modus des Songs (Dur oder Moll)</li>
+<li><code>danceability_%</code>: Prozentwert, der angibt, wie geeignet der Song zum Tanzen ist</li>
+<li><code>valence_%</code>: Positivität des musikalischen Inhalts des Songs</li>
+<li><code>energy_%</code>: Wahrgenommenes Energieniveau des Songs</li>
+<li><code>acousticness_%</code>: Anteil akustischer Klänge im Song</li>
+<li><code>instrumentalness_%</code>: Anteil instrumentaler Inhalte im Song</li>
+<li><code>liveness_%</code>: Vorhandensein von Elementen einer Live-Darbietung</li>
+<li><code>speechiness_%</code>: Anteil gesprochener Worte im Song</li>
+</ul>
 
-</div>
 
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -541,15 +577,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./summary.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span>
+      <a href="./intro.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Einführung</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./datenvorbereitung.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Datenvorbereitung</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/laurenzbrahner/DST-DOKU/edit/main/references.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/laurenzbrahner/DST-DOKU/issues/new" class="toc-action">Report an issue</a></p></div></div></div></div></footer></body></html>
+</body></html>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Spotify-Analyse - References</title>
+<title>Spotify-Analyse - 3&nbsp; Datenvorbereitung</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -49,7 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="prev">
+<link href="./datenanreicherung.html" rel="next">
+<link href="./datensatz.html" rel="prev">
 <link href=".//images/logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -84,7 +66,8 @@ div.csl-indent {
 }</script>
 
 
-<meta property="og:title" content="Spotify-Analyse - References">
+<meta property="og:title" content="Spotify-Analyse - 3&nbsp; Datenvorbereitung">
+<meta property="og:description" content="">
 <meta property="og:site-name" content="Spotify-Analyse">
 </head>
 
@@ -97,7 +80,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./datenvorbereitung.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Datenvorbereitung</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -146,13 +129,31 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  <a href="./datensatz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Datensatz und Datenbeschaffung</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./datenvorbereitung.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Datenvorbereitung</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./datenanreicherung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Datenanreicherung</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -162,14 +163,25 @@ div.csl-indent {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#datentypkonvertierung" id="toc-datentypkonvertierung" class="nav-link active" data-scroll-target="#datentypkonvertierung"><span class="header-section-number">3.1</span> Datentypkonvertierung</a>
+  <ul class="collapse">
+  <li><a href="#ganzzahl-konvertierung" id="toc-ganzzahl-konvertierung" class="nav-link" data-scroll-target="#ganzzahl-konvertierung"><span class="header-section-number">3.1.1</span> Ganzzahl-Konvertierung</a></li>
+  <li><a href="#kategorische-konvertierung" id="toc-kategorische-konvertierung" class="nav-link" data-scroll-target="#kategorische-konvertierung"><span class="header-section-number">3.1.2</span> Kategorische-Konvertierung</a></li>
+  </ul></li>
+  <li><a href="#umgang-mit-fehlenden-daten" id="toc-umgang-mit-fehlenden-daten" class="nav-link" data-scroll-target="#umgang-mit-fehlenden-daten"><span class="header-section-number">3.2</span> Umgang mit fehlenden Daten</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/laurenzbrahner/DST-DOKU/edit/main/datenvorbereitung.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/laurenzbrahner/DST-DOKU/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">References</h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Datenvorbereitung</span></h1>
 </div>
 
 
@@ -184,11 +196,27 @@ div.csl-indent {
 
 </header>
 
-<div id="refs" role="list" style="display: none">
+<p>Die Datenvorbereitung stellt sicher, dass der Datensatz für die Analyse optimiert ist. Im Folgenden werden die spezifischen Schritte beschrieben, die zur Vorbereitung des Datensatzes der meistgestreamten Songs 2023 durchgeführt wurden. <br> Für die Datenvorbereitung wurde die python-Bibliothek <code>pandas</code> verwendet.</p>
+<section id="datentypkonvertierung" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="datentypkonvertierung"><span class="header-section-number">3.1</span> Datentypkonvertierung</h2>
+<p>Nachdem der <a href="https://www.kaggle.com/datasets/nelgiriyewithana/top-spotify-songs-2023">Datensatz</a> mit pandas als .csv Datei eingelesen worden ist, war es notwendig bestimmte Spalten in passendere Datentypen zu konvertieren.</p>
+<section id="ganzzahl-konvertierung" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="ganzzahl-konvertierung"><span class="header-section-number">3.1.1</span> Ganzzahl-Konvertierung</h3>
+<p>Die Spalten <code>in_shazam_charts</code>, <code>streams</code>, und <code>in_deezer_playlists</code> wurden in Ganzzahlen umgewandelt, um numerische Analysen zu erleichtern.</p>
+</section>
+<section id="kategorische-konvertierung" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="kategorische-konvertierung"><span class="header-section-number">3.1.2</span> Kategorische-Konvertierung</h3>
+<p>Die Spalten <code>key</code> und <code>mode</code> wurden in kategorische Datentypen umgewandelt, um Analysen, die auf diesen musikalischen Eigenschaften basieren, zu vereinfachen.</p>
+</section>
+</section>
+<section id="umgang-mit-fehlenden-daten" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="umgang-mit-fehlenden-daten"><span class="header-section-number">3.2</span> Umgang mit fehlenden Daten</h2>
+<p>Fehlende Daten wurden identifiziert und durch das Entfernen der betroffenen Zeilen aus dem Datensatz behandelt.</p>
+<p><br></p>
+<p><strong>Diese sorgfältige Vorbereitung des Datensatzes schafft eine solide Grundlage für die weiterführende Analyse und hilft dabei, aussagekräftige Einsichten in die Trends und Muster der meistgestreamten Songs 2023 zu gewinnen.</strong></p>
 
-</div>
 
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -541,15 +569,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./summary.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span>
+      <a href="./datensatz.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Datensatz und Datenbeschaffung</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./datenanreicherung.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Datenanreicherung</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/laurenzbrahner/DST-DOKU/edit/main/references.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/laurenzbrahner/DST-DOKU/issues/new" class="toc-action">Report an issue</a></p></div></div></div></div></footer></body></html>
+</body></html>

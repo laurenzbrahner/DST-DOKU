@@ -1,0 +1,37 @@
+# Datensatz und Datenbeschaffung
+
+## Quelle des Datensatzes
+
+Der verwendete Datensatz für die Analyse der meistgestreamten Spotify Songs 2023 wurde von Kaggle bezogen, einer Plattform, die eine breite Palette von Datensätzen für Datenwissenschaftsprojekte zur Verfügung stellt.
+
+- [Datensatz](https://www.kaggle.com/datasets/nelgiriyewithana/top-spotify-songs-2023)
+
+
+## Datenstruktur
+
+Der Datensatz umfasst insgesamt 943 Zeilen, wobei jede Zeile einen einzigartigen Song repräsentiert. Folgende Attribute sind für jeden Song erfasst:
+
+- `track_name`: Name des Songs
+- `artist(s)_name`: Name(n) des/der Künstler(s)
+- `artist_count`: Anzahl der an dem Song beteiligten Künstler
+- `released_year`: Jahr der Veröffentlichung des Songs
+- `released_month`: Monat der Veröffentlichung
+- `released_day`: Tag der Veröffentlichung im Monat
+- `in_spotify_playlists`: Anzahl der Spotify-Playlists, in denen der Song enthalten ist
+- `in_spotify_charts`: Vorhandensein und Rang des Songs in den Spotify-Charts
+- `streams`: Gesamtzahl der Streams auf Spotify
+- `in_apple_playlists`: Anzahl der Apple Music-Playlists, in denen der Song enthalten ist
+- `in_apple_charts`: Vorhandensein und Rang des Songs in den Apple Music-Charts
+- `in_deezer_playlists`: Anzahl der Deezer-Playlists, in denen der Song enthalten ist
+- `in_deezer_charts`: Vorhandensein und Rang des Songs in den Deezer-Charts
+- `in_shazam_charts`: Vorhandensein und Rang des Songs in den Shazam-Charts
+- `bpm`: Beats pro Minute, Maß für das Tempo des Songs
+- `key`: Tonart des Songs
+- `mode`: Modus des Songs (Dur oder Moll)
+- `danceability_%`: Prozentwert, der angibt, wie geeignet der Song zum Tanzen ist
+- `valence_%`: Positivität des musikalischen Inhalts des Songs
+- `energy_%`: Wahrgenommenes Energieniveau des Songs
+- `acousticness_%`: Anteil akustischer Klänge im Song
+- `instrumentalness_%`: Anteil instrumentaler Inhalte im Song
+- `liveness_%`: Vorhandensein von Elementen einer Live-Darbietung
+- `speechiness_%`: Anteil gesprochener Worte im Song

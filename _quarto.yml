@@ -19,6 +19,10 @@ book:
     - index.qmd
     - toc.qmd
     - intro.qmd
+    - datensatz.qmd
+    - datenvorbereitung.qmd
+    - datenanreicherung.qmd
+    - datenexploration.qmd
     - summary.qmd
     - references.qmd
 

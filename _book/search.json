@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Template",
+    "title": "Spotify-Analyse",
     "section": "",
-    "text": "Preface\nThis is a Quarto book template.\nTo learn more about Quarto books visit https://quarto.org/docs/books. To change the style of the book take a look at the HTML Themes"
+    "text": "Vorwort\nDie Art und Weise wie wir Musik konsumieren hat sich in den letzten Jahren grundlegend geändert. Anstatt CDs und MP3-Player haben die meisten Menschen heute ein Abonnement bei einem Musikstreamingdienst. Dabei stellt sich die Frage, was ein Song braucht, um bei einem Streamingdienst Erfolg zu haben.\n\nDieses Projekt wurde mit der Absicht ins Leben gerufen, diese Frage zu beantworten. Dafür wurde ein Datensatz, der meist-gestreamtesten Songs im Jahre 2023, anhand verschiedener Merkmale analysiert, um eine Geheimformel für einen erfolgreichen Song zu finden. In der Folgenden Dokumentation werde ich den Weg beschreiben, von der Beschaffung und Vorberereitung der Daten über die Erstellung detaillierter Visualisierungen mit Altair bis hin zur Entwicklung eines interaktiven Dashboards mit Streamlit. Dabei werde ich nicht nur auf die technsichen Heruasforderungen und die Lösungen derer eingehen, sondern auch die Ergebnisse klar darstellen.\n\nFalls Sie meine Ergebnisse anhand von einer Präsentation oder einem interaktiven Dashboard haben wollen, finden Sie diese unter den folgenden Links:\n\nPräsentation\nDashboard"
   },
   {
     "objectID": "intro.html",
@@ -18,7 +18,7 @@
     "href": "summary.html",
     "title": "2  Summary",
     "section": "",
-    "text": "In summary, this book has no content whatsoever."
+    "text": "In summary, this book has no content whatsoever.\nLink zum Dashboard."
   },
   {
     "objectID": "references.html",
@@ -26,5 +26,117 @@
     "title": "References",
     "section": "",
     "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "toc.html",
+    "href": "toc.html",
+    "title": "Inhaltsverzeichnis",
+    "section": "",
+    "text": "Einführung\n\n1.1 Projektübersicht\n1.2 Motivation\n\nDatensatz und Datenbeschaffung\n\n2.1 Quelle des Datensatzes\n2.2 Datenstruktur\n\nDatenvorbereitung\n\n3.1 Genutzte Bibliotheken\n3.2 Datensatz einlesen\n3.3 Datentypkonvertierung\n\n3.3.1 Ganzzahlkonvertierung\n3.3.2 Kategorische Konvertierung\n\n3.4 Umgang mit fehlenden Daten\n3.5 Bereinigung des Datensatzes\n3.6 Speichern des bereinigten Datensatzes\n\nAnalyse und Visualisierung\n\n3.1 Werkzeuge und Techniken\n3.2 Entwickelte Visualisierungen\n3.3 Analyseergebnisse\n\nErstellung des Interaktiven Dashboards\n\n4.1 Dashboard-Design\n4.2 Nutzererfahrung\n\nHerausforderungen und Lösungen\n\n5.1 Begegnete Probleme\n5.2 Angewandte Lösungen\n\nFazit und Reflexion\n\n6.1 Projektergebnisse\n6.2 Reflexion"
+  },
+  {
+    "objectID": "intro.html#projektübersicht",
+    "href": "intro.html#projektübersicht",
+    "title": "1  Einführung",
+    "section": "1.1 Projektübersicht",
+    "text": "1.1 Projektübersicht\nDas Ziel dieses Projekts ist es, wie im Vorwort schon erwähnt, durch die Analyse der meistgestreamtesten Songs des Jahres 2023 Einblicke in die aktuellen Trends der Musik zu bekommen und daraus möglicherweise eine Geheimformel für einen Hit abzuleiten. Außerdem sollen diese Informationen auch visuell ansprechend dargestellt werden, unter der Verwendung von Datenvisualisierungstools wie Altair. Diese Information eignet sich besonders für Label-Chefs oder Musiker."
+  },
+  {
+    "objectID": "intro.html#motivation",
+    "href": "intro.html#motivation",
+    "title": "1  Einführung",
+    "section": "1.2 Motivation",
+    "text": "1.2 Motivation\nDie Motivation für dieses Projekt ergab sich bei mir durch meine Begeisterung für Musik. Ich habe mir oft Fragen gestellt, welche Merkmale einen erfolgreichen Song ausmachen. Dieses Projekt zielt also darauf ab, die Verbindung zwischen Daten und musikalischer Ausdruckskraft zu erforschen."
+  },
+  {
+    "objectID": "datensatz.html#quelle-des-datensatzes",
+    "href": "datensatz.html#quelle-des-datensatzes",
+    "title": "2  Datensatz und Datenbeschaffung",
+    "section": "2.1 Quelle des Datensatzes",
+    "text": "2.1 Quelle des Datensatzes\nDer verwendete Datensatz für die Analyse der meistgestreamten Spotify Songs 2023 wurde von Kaggle bezogen, einer Plattform, die eine breite Palette von Datensätzen für Datenwissenschaftsprojekte zur Verfügung stellt.\n\nDatensatz"
+  },
+  {
+    "objectID": "datensatz.html#datenstruktur",
+    "href": "datensatz.html#datenstruktur",
+    "title": "2  Datensatz und Datenbeschaffung",
+    "section": "2.2 Datenstruktur",
+    "text": "2.2 Datenstruktur\nDer Datensatz umfasst insgesamt 943 Zeilen, wobei jede Zeile einen einzigartigen Song repräsentiert. Folgende Attribute sind für jeden Song erfasst:\n\ntrack_name: Name des Songs\nartist(s)_name: Name(n) des/der Künstler(s)\nartist_count: Anzahl der an dem Song beteiligten Künstler\nreleased_year: Jahr der Veröffentlichung des Songs\nreleased_month: Monat der Veröffentlichung\nreleased_day: Tag der Veröffentlichung im Monat\nin_spotify_playlists: Anzahl der Spotify-Playlists, in denen der Song enthalten ist\nin_spotify_charts: Vorhandensein und Rang des Songs in den Spotify-Charts\nstreams: Gesamtzahl der Streams auf Spotify\nin_apple_playlists: Anzahl der Apple Music-Playlists, in denen der Song enthalten ist\nin_apple_charts: Vorhandensein und Rang des Songs in den Apple Music-Charts\nin_deezer_playlists: Anzahl der Deezer-Playlists, in denen der Song enthalten ist\nin_deezer_charts: Vorhandensein und Rang des Songs in den Deezer-Charts\nin_shazam_charts: Vorhandensein und Rang des Songs in den Shazam-Charts\nbpm: Beats pro Minute, Maß für das Tempo des Songs\nkey: Tonart des Songs\nmode: Modus des Songs (Dur oder Moll)\ndanceability_%: Prozentwert, der angibt, wie geeignet der Song zum Tanzen ist\nvalence_%: Positivität des musikalischen Inhalts des Songs\nenergy_%: Wahrgenommenes Energieniveau des Songs\nacousticness_%: Anteil akustischer Klänge im Song\ninstrumentalness_%: Anteil instrumentaler Inhalte im Song\nliveness_%: Vorhandensein von Elementen einer Live-Darbietung\nspeechiness_%: Anteil gesprochener Worte im Song"
+  },
+  {
+    "objectID": "datenvorbereitung.html#genutzte-python-bibliotheken",
+    "href": "datenvorbereitung.html#genutzte-python-bibliotheken",
+    "title": "3  Datenvorbereitung",
+    "section": "3.1 Genutzte Python-Bibliotheken",
+    "text": "3.1 Genutzte Python-Bibliotheken\nFür die Datenvorbereitung wurde die Bibliothek pandas verwendet."
+  },
+  {
+    "objectID": "datenvorbereitung.html",
+    "href": "datenvorbereitung.html",
+    "title": "3  Datenvorbereitung",
+    "section": "",
+    "text": "Die Datenvorbereitung stellt sicher, dass der Datensatz für die Analyse optimiert ist. Im Folgenden werden die spezifischen Schritte beschrieben, die zur Vorbereitung des Datensatzes der meistgestreamten Songs 2023 durchgeführt wurden.  Für die Datenvorbereitung wurde die python-Bibliothek pandas verwendet."
+  },
+  {
+    "objectID": "datenvorbereitung.html#datentypkonvertierung",
+    "href": "datenvorbereitung.html#datentypkonvertierung",
+    "title": "3  Datenvorbereitung",
+    "section": "3.1 Datentypkonvertierung",
+    "text": "3.1 Datentypkonvertierung\nNachdem der Datensatz mit pandas als .csv Datei eingelesen worden ist, war es notwendig bestimmte Spalten in passendere Datentypen zu konvertieren.\n\n3.1.1 Ganzzahl-Konvertierung\nDie Spalten in_shazam_charts, streams, und in_deezer_playlists wurden in Ganzzahlen umgewandelt, um numerische Analysen zu erleichtern.\n\n\n3.1.2 Kategorische-Konvertierung\nDie Spalten key und mode wurden in kategorische Datentypen umgewandelt, um Analysen, die auf diesen musikalischen Eigenschaften basieren, zu vereinfachen."
+  },
+  {
+    "objectID": "datenvorbereitung.html#umgang-mit-fehlenden-daten",
+    "href": "datenvorbereitung.html#umgang-mit-fehlenden-daten",
+    "title": "3  Datenvorbereitung",
+    "section": "3.2 Umgang mit fehlenden Daten",
+    "text": "3.2 Umgang mit fehlenden Daten\nFehlende Daten wurden identifiziert und durch das Entfernen der betroffenen Zeilen aus dem Datensatz behandelt.\n\nDiese sorgfältige Vorbereitung des Datensatzes schafft eine solide Grundlage für die weiterführende Analyse und hilft dabei, aussagekräftige Einsichten in die Trends und Muster der meistgestreamten Songs 2023 zu gewinnen."
+  },
+  {
+    "objectID": "datenanreicherung.html#liste-mit-künstlernamen",
+    "href": "datenanreicherung.html#liste-mit-künstlernamen",
+    "title": "4  Datenanreicherung",
+    "section": "4.1 Liste mit Künstlernamen",
+    "text": "4.1 Liste mit Künstlernamen\nAus dem DataFrame der vorbereiteten Daten wurde eine Liste der Künstlernamen extrahiert, die für die Abfragen nach Länderinformationen verwendet wurde."
+  },
+  {
+    "objectID": "datenanreicherung.html#funktion-zur-ermittlung-des-künstlerlandes",
+    "href": "datenanreicherung.html#funktion-zur-ermittlung-des-künstlerlandes",
+    "title": "4  Datenanreicherung",
+    "section": "4.2 Funktion zur Ermittlung des Künstlerlandes",
+    "text": "4.2 Funktion zur Ermittlung des Künstlerlandes\nEine Funktion wurde implementiert, um das Land eines Künstlers mit Hilfe der MusicBrainz API zu finden. Diese Funktion behandelt auch Fehler und Fälle, in denen kein Land gefunden wurde.\nDie Funktion find_artist_country dient dazu, das Land eines Künstlers zu ermitteln. Sie nutzt die MusicBrainz API, um die notwendigen Informationen abzurufen. Die Funktion geht dabei wie folgt vor:\n\nSetzen des User-Agent: Zuerst wird ein User-Agent für die MusicBrainz API gesetzt. Dies ist notwendig, um die Anfragen an die API zu authentifizieren.\nSuchanfrage an MusicBrainz: Die Funktion sucht nach dem übergebenen Künstlernamen. Es wird lediglich das erste Suchergebnis berücksichtigt (limit=1).\nRückgabe des Landes: Wenn ein Künstler gefunden wird, gibt die Funktion das Land des Künstlers zurück. Andernfalls wird \"Artist not found\" zurückgegeben.\nFehlerbehandlung: Im Falle eines Fehlers bei der Anfrage oder der Verarbeitung der Daten wird eine Fehlermeldung zurückgegeben.\n\n\n\"\"\"\ndef find_artist_country(artist_name):\n    mb.set_useragent(\"Artist_Country\", \"1.0\", contact=\"me@example.com\")\n    try:\n        result = mb.search_artists(artist=artist_name, limit=1)\n        if result['artist-list']:\n            artist = result['artist-list'][0]\n            country = artist['area']['name']\n            return country\n        else:\n            return \"Artist not found\"\n    except Exception as e:\n        return f\"Error: {e}\"\n\n\"\"\"\n\n'\\ndef find_artist_country(artist_name):\\n    mb.set_useragent(\"Artist_Country\", \"1.0\", contact=\"me@example.com\")\\n    try:\\n        result = mb.search_artists(artist=artist_name, limit=1)\\n        if result[\\'artist-list\\']:\\n            artist = result[\\'artist-list\\'][0]\\n            country = artist[\\'area\\'][\\'name\\']\\n            return country\\n        else:\\n            return \"Artist not found\"\\n    except Exception as e:\\n        return f\"Error: {e}\"\\n\\n'"
+  },
+  {
+    "objectID": "datenanreicherung.html#anreicherung-des-datensatzes-mit-den-künstlerländern",
+    "href": "datenanreicherung.html#anreicherung-des-datensatzes-mit-den-künstlerländern",
+    "title": "4  Datenanreicherung",
+    "section": "4.3 Anreicherung des Datensatzes mit den Künstlerländern",
+    "text": "4.3 Anreicherung des Datensatzes mit den Künstlerländern\nDer Datensatz wurde mit den Ländern der Künstler angereichert, indem die zuvor definierte Funktion verwendet wurde, um das Land für jeden Künstler abzufragen und dem DataFrame hinzuzufügen. Das ganze habe ich mit einer for-Schleife realisiert.\n\n\"\"\"\nartist_country_list = []\n\nfor artist in artist_list:\nartist_country_list.append(find_artist_country(artist))\n\ndf['artist_country'] = artist_country_list\n\n\"\"\"\n\n\"\\nartist_country_list = []\\n\\nfor artist in artist_list:\\nartist_country_list.append(find_artist_country(artist))\\n\\ndf['artist_country'] = artist_country_list\\n\\n\"\n\n\nDa die Datenbank leider nicht alle Künstler kannte, kam es in manchen spalten zu Errors, diese habe ich im Anschluss entfernt.\n \nDiese Datenanreicherung ermöglicht nun eine geografische Analyse der Künstlerstandorte und unterstützt die visuelle Darstellung der globalen Verteilung der Top-Künstler. Darauf basierend ist nun eine Darstellung anhand einer Map möglich."
+  },
+  {
+    "objectID": "datenexploration.html",
+    "href": "datenexploration.html",
+    "title": "5  Datenexploration",
+    "section": "",
+    "text": "6 Vorgehen\nDas Ziel dieser Analyse ist wie mehrfach schon erwähnt eine Art Geheimformel für ein erfolgreichen Song herauszufinden."
+  },
+  {
+    "objectID": "datenexploration.html#ergebnisse-der-exploration",
+    "href": "datenexploration.html#ergebnisse-der-exploration",
+    "title": "5  Datenexploration",
+    "section": "5.3 Ergebnisse der Exploration",
+    "text": "5.3 Ergebnisse der Exploration\nWie in den Histogrammen und in der Heatmap zu sehen ist, haben viele Top-Songs ähnliche Merkmalsausprägungen. Besonders stechen diese rechtschiefen Verteilungen aus:\n\nspeechiness\ninstrumentalness\n\nAber auch die eher Normalverteilten Merkmale sollte man beachten:\n\nenergy\ndanceability\n\nAuch bei der Tonart und des keys konnte ich auffälligkeiten feststellen, Die meisten Top-Songs haben die Tonart Major und den Key C#\nDer Releasezeitpunkt sollte auch ordentlich durchdacht werden. Im Janaur und Mai werden die meisten Songs relesed im August wurden fast 3 mal weniger Songs released.\nEine weitere Interessante Information ist, dass mit Abstand die meisten Top künstler aus den USA kommen\nMit diesen Erkenntnissen kann ich nun anprechende Visualisierungen gestalten, wie ich das gemacht habe erfahren Sie im nächsten Kapitel."
+  },
+  {
+    "objectID": "datenexploration.html#vorgehen",
+    "href": "datenexploration.html#vorgehen",
+    "title": "5  Datenexploration",
+    "section": "5.2 Vorgehen",
+    "text": "5.2 Vorgehen\nDas Ziel dieser Analyse ist wie mehrfach schon erwähnt eine Art Geheimformel für einen erfolgreichen Song herauszufinden.\n\nDafür habe ich zuerst die Verteilung musikalischen Merkmale der meistgestreamtesten Songs auf Spotify angeschaut. Dies habe ich mit der python-Bibliothek seaborn gemacht, da es hierbei noch nicht um eine ansprechende Visualisierung geht und ich diese Darstellung mit seaborn leichter finde als mit altair. In den folgenden Plots sind die Anzahl der Songs mit der jeweiligen Ausprägung des musikalischen Merkmals zu sehen. Als Maßstab habe ich hier die Anzahl der Songs genommen, da der Datensatz bereits die erfolgreichsten Songs im Jahre 2023 enthält.\n\n\n\nHistogramme anhand der musikalischen Merkmale\n\n\n\nUm trotzdem Auffälligkeiten zwischen der Anzahl der Streams und den musikalischen Merkmalen zu finden habe ich eine Hetmap erstellt. Diese enthält wie Sie unten sehen die einzelenen musikalischen merkmale und als label die Streams.\n\n\n\nHeatmap\n\n\n\nNatürlich habe ich mir auch noch die anderen Merkmale angschaut mithilfe der value_counts() builtin funktion von Pandas habe ich die Anzahl der Top-Songs nach der Tonart und des Keys angeschaut:\nTonart\n\n\n\nmode\nAnzahl der Top-Songs\n\n\n\n\nMajor\n445\n\n\nMinor\n351\n\n\n\nKey\n\n\n\nkey\nAnzahl der Top-Songs\n\n\n\n\nC#\n114\n\n\nG\n87\n\n\nG#\n85\n\n\nF\n81\n\n\nB\n76\n\n\nD\n74\n\n\nA\n71\n\n\nF#\n68\n\n\nE\n55\n\n\nA#\n55\n\n\nD#\n30\n\n\n\n\nDanach bin ich weg von den musikalischen Merkmalen und hin zu den zeitlichen und geografischen. Wann ist der beste Zeitpunkt ein Song zu releasen? Aus welchem land kommen die meisten Top-Künstler? Auch hier konnte ich mit der pandas builtin value_counts() wichtige erste Informationen sammeln:\nReleasezeipunkt\n\n\n\nreleased_month\nAnzahl der Top-Songs\n\n\n\n\n5\n112\n\n\n1\n112\n\n\n6\n75\n\n\n3\n69\n\n\n11\n66\n\n\n12\n63\n\n\n4\n62\n\n\n10\n58\n\n\n9\n48\n\n\n7\n47\n\n\n2\n45\n\n\n8\n39\n\n\n\nAnzahl der Künstler nach Künstlerland\n\n\n\nartist_country\nAnzahl der Künstler\n\n\n\n\nUnited States\n354\n\n\nPuerto Rico\n62\n\n\nUnited Kingdom\n57\n\n\nSouth Korea\n54\n\n\nCanada\n43\n\n\nColombia\n36\n\n\nEngland\n30\n\n\nMexico\n28\n\n\nBrazil\n16\n\n\nArgentina\n12"
+  },
+  {
+    "objectID": "datenexploration.html#verwendete-werkzeuge-und-bibliotheken",
+    "href": "datenexploration.html#verwendete-werkzeuge-und-bibliotheken",
+    "title": "5  Datenexploration",
+    "section": "5.1 Verwendete Werkzeuge und Bibliotheken",
+    "text": "5.1 Verwendete Werkzeuge und Bibliotheken"
   }
 ]
