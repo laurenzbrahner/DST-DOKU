@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Spotify-Analyse - References</title>
+<title>Spotify-Analyse - 4&nbsp; Datenanreicherung</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -49,7 +64,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="prev">
+<link href="./datenexploration.html" rel="next">
+<link href="./datenvorbereitung.html" rel="prev">
 <link href=".//images/logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -90,7 +106,8 @@ div.csl-indent {
 }</script>
 
 
-<meta property="og:title" content="Spotify-Analyse - References">
+<meta property="og:title" content="Spotify-Analyse - 4&nbsp; Datenanreicherung">
+<meta property="og:description" content="">
 <meta property="og:image" content="https://laurenzbrahner.github.io/DST-DOKU//images/logo.png">
 <meta property="og:site_name" content="Spotify-Analyse">
 <meta property="og:image:height" content="1185">
@@ -106,7 +123,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./datenanreicherung.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Datenanreicherung</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -163,7 +180,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./datenanreicherung.html" class="sidebar-item-text sidebar-link">
+  <a href="./datenanreicherung.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Datenanreicherung</span></span></a>
   </div>
 </li>
@@ -181,7 +198,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -191,14 +208,22 @@ div.csl-indent {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#liste-mit-künstlernamen" id="toc-liste-mit-künstlernamen" class="nav-link active" data-scroll-target="#liste-mit-künstlernamen"><span class="header-section-number">4.1</span> Liste mit Künstlernamen</a></li>
+  <li><a href="#funktion-zur-ermittlung-des-künstlerlandes" id="toc-funktion-zur-ermittlung-des-künstlerlandes" class="nav-link" data-scroll-target="#funktion-zur-ermittlung-des-künstlerlandes"><span class="header-section-number">4.2</span> Funktion zur Ermittlung des Künstlerlandes</a></li>
+  <li><a href="#anreicherung-des-datensatzes-mit-den-künstlerländern" id="toc-anreicherung-des-datensatzes-mit-den-künstlerländern" class="nav-link" data-scroll-target="#anreicherung-des-datensatzes-mit-den-künstlerländern"><span class="header-section-number">4.3</span> Anreicherung des Datensatzes mit den Künstlerländern</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/laurenzbrahner/DST-DOKU/edit/main/datenanreicherung.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/laurenzbrahner/DST-DOKU/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">References</h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Datenanreicherung</span></h1>
 </div>
 
 
@@ -215,11 +240,65 @@ div.csl-indent {
 </header>
 
 
-<div id="refs" role="list" style="display: none">
-
+<p>Um geografische Analysen durchzuführen und eine Map der Künstlerstandorte zu erstellen, wurde der Datensatz mit Informationen über die Länder der Künstler angereichert. Dieser Prozess nutzte die <code>musicbrainz</code> Bibliothek, um Zugriff auf die MusicBrainz-Datenbank zu erhalten. Mit dieser Datenbank konnnte ich anahnd des Künstlernamens das Herkunftsland der Künstler herausfinden.</p>
+<section id="liste-mit-künstlernamen" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="liste-mit-künstlernamen"><span class="header-section-number">4.1</span> Liste mit Künstlernamen</h2>
+<p>Aus dem DataFrame der vorbereiteten Daten wurde eine Liste der Künstlernamen extrahiert, die für die Abfragen nach Länderinformationen verwendet wurde.</p>
+</section>
+<section id="funktion-zur-ermittlung-des-künstlerlandes" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="funktion-zur-ermittlung-des-künstlerlandes"><span class="header-section-number">4.2</span> Funktion zur Ermittlung des Künstlerlandes</h2>
+<p>Eine Funktion wurde implementiert, um das Land eines Künstlers mit Hilfe der MusicBrainz API zu finden. Diese Funktion behandelt auch Fehler und Fälle, in denen kein Land gefunden wurde.</p>
+<p>Die Funktion <code>find_artist_country</code> dient dazu, das Land eines Künstlers zu ermitteln. Sie nutzt die MusicBrainz API, um die notwendigen Informationen abzurufen. Die Funktion geht dabei wie folgt vor:</p>
+<ol type="1">
+<li><p><strong>Setzen des User-Agent</strong>: Zuerst wird ein User-Agent für die MusicBrainz API gesetzt. Dies ist notwendig, um die Anfragen an die API zu authentifizieren.</p></li>
+<li><p><strong>Suchanfrage an MusicBrainz</strong>: Die Funktion sucht nach dem übergebenen Künstlernamen. Es wird lediglich das erste Suchergebnis berücksichtigt (<code>limit=1</code>).</p></li>
+<li><p><strong>Rückgabe des Landes</strong>: Wenn ein Künstler gefunden wird, gibt die Funktion das Land des Künstlers zurück. Andernfalls wird <code>"Artist not found"</code> zurückgegeben.</p></li>
+<li><p><strong>Fehlerbehandlung</strong>: Im Falle eines Fehlers bei der Anfrage oder der Verarbeitung der Daten wird eine Fehlermeldung zurückgegeben.</p></li>
+</ol>
+<div id="5abe6242" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">def find_artist_country(artist_name):</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">    mb.set_useragent("Artist_Country", "1.0", contact="me@example.com")</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">    try:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">        result = mb.search_artists(artist=artist_name, limit=1)</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">        if result['artist-list']:</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">            artist = result['artist-list'][0]</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">            country = artist['area']['name']</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">            return country</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">        else:</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">            return "Artist not found"</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">    except Exception as e:</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">        return f"Error: {e}"</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>'\ndef find_artist_country(artist_name):\n    mb.set_useragent("Artist_Country", "1.0", contact="me@example.com")\n    try:\n        result = mb.search_artists(artist=artist_name, limit=1)\n        if result[\'artist-list\']:\n            artist = result[\'artist-list\'][0]\n            country = artist[\'area\'][\'name\']\n            return country\n        else:\n            return "Artist not found"\n    except Exception as e:\n        return f"Error: {e}"\n\n'</code></pre>
 </div>
+</div>
+</section>
+<section id="anreicherung-des-datensatzes-mit-den-künstlerländern" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="anreicherung-des-datensatzes-mit-den-künstlerländern"><span class="header-section-number">4.3</span> Anreicherung des Datensatzes mit den Künstlerländern</h2>
+<p>Der Datensatz wurde mit den Ländern der Künstler angereichert, indem die zuvor definierte Funktion verwendet wurde, um das Land für jeden Künstler abzufragen und dem DataFrame hinzuzufügen. Das ganze habe ich mit einer for-Schleife realisiert.</p>
+<div id="b1663d9a" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">artist_country_list = []</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">for artist in artist_list:</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">artist_country_list.append(find_artist_country(artist))</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">df['artist_country'] = artist_country_list</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>"\nartist_country_list = []\n\nfor artist in artist_list:\nartist_country_list.append(find_artist_country(artist))\n\ndf['artist_country'] = artist_country_list\n\n"</code></pre>
+</div>
+</div>
+<p>Da die Datenbank leider nicht alle Künstler kannte, kam es in manchen spalten zu Errors, diese habe ich im Anschluss entfernt.</p>
+<p><br> <br></p>
+<p><strong>Diese Datenanreicherung ermöglicht nun eine geografische Analyse der Künstlerstandorte und unterstützt die visuelle Darstellung der globalen Verteilung der Top-Künstler. Darauf basierend ist nun eine Darstellung anhand einer Map möglich.</strong></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -755,11 +834,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./summary.html" class="pagination-link  aria-label=" &lt;span="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Summary</span></span>
+      <a href="./datenvorbereitung.html" class="pagination-link  aria-label=" &lt;span="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Datenvorbereitung</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./datenexploration.html" class="pagination-link" aria-label="<span class='chapter-number'>5</span>&nbsp; <span class='chapter-title'>Datenexploration</span>">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Datenexploration</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -767,4 +849,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/laurenzbrahner/DST-DOKU/edit/main/references.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/laurenzbrahner/DST-DOKU/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/laurenzbrahner/DST-DOKU/edit/main/datenanreicherung.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/laurenzbrahner/DST-DOKU/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
