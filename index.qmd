@@ -1,9 +1,9 @@
-# Preface {.unnumbered}
+# Vorwort {.unnumbered}
 
-This is a Quarto book template. 
 
-![](images/logo.png){width="30%"}
+Die Art und weise wie wir Musik konsumieren hat sich in den letzten Jahren Grundlegend geändert. Ansatt CD`s und MP3-Player, haben die meisten Menschen heute ein Abonnement bei einem Musikstreamingdienst. Dabei stellt sich die Frage was ein Song braucht um bei einem Streamingdienst Erfolg zu haben.
 
-mmoiinsen
- 
-To learn more about Quarto books visit <https://quarto.org/docs/books>. To change the style of the book take a look at the [HTML Themes](https://quarto.org/docs/output-formats/html-themes.html)
+Dieses Projekt wurde mit der Absicht ins Leben gerufen diese Frage zu beantworten. Dafür wurde ein Datensatz, der meist gestreamtesten Songs im Jahre 2023, anhand verschiedener Merkmale analysiert, um eine Geheimformel für einen erfolgreichen Song zu finden. Der Folgende Bericht dient jedoch ledoglich dazu den Erstellungsprozess des Projekts zu Dokumentieren. Falls Sie meine Ergebnisse Anhand von Einer Präsentation oder einem interaktiven Dashboard haben wollen, finden Sie diese unter den Folgenden Links:
+
+- [Präsentation](https://laurenzbrahner.github.io/quarto_prasi/)
+- [Dashboard](https://appapp-ka7buefabvnokhdfwhyptg.streamlit.app/)

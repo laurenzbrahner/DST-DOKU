@@ -6,7 +6,7 @@ execute:
 
 book:
   page-navigation: true
-  title: "Template"
+  title: "Spotify-Analyse"
   site-url: "https://laurenzbrahner.github.io/DST-DOKU/" # replace ORGNAME and REPONAME
   repo-url: https://github.com/laurenzbrahner/DST-DOKU # replace ORGNAME and REPONAME
   repo-actions: [edit, issue]
