@@ -17,6 +17,7 @@ book:
     type: overlay  
   chapters:
     - index.qmd
+    - toc.qmd
     - intro.qmd
     - summary.qmd
     - references.qmd
