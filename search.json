@@ -2,11 +2,11 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Template",
+    "title": "Spotify-Analyse",
     "section": "",
-    "text": "Preface\nThis is a Quarto book template.\n\nmmoiinsen\nTo learn more about Quarto books visit https://quarto.org/docs/books. To change the style of the book take a look at the HTML Themes",
+    "text": "Vorwort\nDie Art und weise wie wir Musik konsumieren hat sich in den letzten Jahren Grundlegend geändert. Ansatt CD`s und MP3-Player, haben die meisten Menschen heute ein Abonnement bei einem Musikstreamingdienst. Dabei stellt sich die Frage was ein Song braucht um bei einem Streamingdienst Erfolg zu haben.\nDieses Projekt wurde mit der Absicht ins Leben gerufen diese Frage zu beantworten. Dafür wurde ein Datensatz, der meist gestreamtesten Songs im Jahre 2023, anhand verschiedener Merkmale analysiert, um eine Geheimformel für einen erfolgreichen Song zu finden. Der Folgende Bericht dient jedoch ledoglich dazu den Erstellungsprozess des Projekts zu Dokumentieren. Falls Sie meine Ergebnisse Anhand von Einer Präsentation oder einem interaktiven Dashboard haben wollen, finden Sie diese unter den Folgenden Links:\n\nPräsentation\nDashboard",
     "crumbs": [
-      "Preface"
+      "Vorwort"
     ]
   },
   {
@@ -24,7 +24,7 @@
     "href": "summary.html",
     "title": "2  Summary",
     "section": "",
-    "text": "In summary, this book has no content whatsoever.",
+    "text": "In summary, this book has no content whatsoever.\nLink zum Dashboard.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
     ]
