@@ -92,6 +92,7 @@ Auch hier konnte ich mit der pandas builtin `value_counts()` wichtige erste Info
 Wie in den Histogrammen und in der Heatmap zu sehen ist, haben viele Top-Songs ähnliche Merkmalsausprägungen.
 Besonders stechen diese rechtschiefen Verteilungen aus:
 
+
 - speechiness
 - instrumentalness
 
