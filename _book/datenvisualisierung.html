@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Spotify-Analyse</title>
+<title>Spotify-Analyse - 6&nbsp; Datenvisualisierung</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,7 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./toc.html" rel="next">
+<link href="./summary.html" rel="next">
+<link href="./datenexploration.html" rel="prev">
 <link href=".//images/logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -65,9 +100,12 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Spotify-Analyse">
+<meta property="og:title" content="Spotify-Analyse - 6&nbsp; Datenvisualisierung">
 <meta property="og:description" content="">
+<meta property="og:image" content="https://laurenzbrahner.github.io/DST-DOKU/images/visualization_bar_plot_with_lines.png">
 <meta property="og:site-name" content="Spotify-Analyse">
+<meta property="og:image:height" content="753">
+<meta property="og:image:width" content="1102">
 </head>
 
 <body class="nav-sidebar floating">
@@ -79,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Vorwort</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./datenvisualisierung.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Datenvisualisierung</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -110,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Vorwort</span></a>
   </div>
 </li>
@@ -152,7 +190,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./datenvisualisierung.html" class="sidebar-item-text sidebar-link">
+  <a href="./datenvisualisierung.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Datenvisualisierung</span></span></a>
   </div>
 </li>
@@ -178,16 +216,25 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#vorwort" id="toc-vorwort" class="nav-link active" data-scroll-target="#vorwort">Vorwort</a></li>
+  <li><a href="#grundelegendes-design" id="toc-grundelegendes-design" class="nav-link active" data-scroll-target="#grundelegendes-design"><span class="header-section-number">6.1</span> Grundelegendes Design</a>
+  <ul class="collapse">
+  <li><a href="#allgemeine-eigenschaften" id="toc-allgemeine-eigenschaften" class="nav-link" data-scroll-target="#allgemeine-eigenschaften"><span class="header-section-number">6.1.1</span> Allgemeine Eigenschaften</a></li>
+  <li><a href="#titelkonfiguration" id="toc-titelkonfiguration" class="nav-link" data-scroll-target="#titelkonfiguration"><span class="header-section-number">6.1.2</span> Titelkonfiguration</a></li>
+  <li><a href="#achsenkonfiguration" id="toc-achsenkonfiguration" class="nav-link" data-scroll-target="#achsenkonfiguration"><span class="header-section-number">6.1.3</span> Achsenkonfiguration</a></li>
+  <li><a href="#legendenkonfiguration" id="toc-legendenkonfiguration" class="nav-link" data-scroll-target="#legendenkonfiguration"><span class="header-section-number">6.1.4</span> Legendenkonfiguration</a></li>
+  <li><a href="#ansichtskonfiguration" id="toc-ansichtskonfiguration" class="nav-link" data-scroll-target="#ansichtskonfiguration"><span class="header-section-number">6.1.5</span> Ansichtskonfiguration</a></li>
+  <li><a href="#spezifische-achsenkonfigurationen" id="toc-spezifische-achsenkonfigurationen" class="nav-link" data-scroll-target="#spezifische-achsenkonfigurationen"><span class="header-section-number">6.1.6</span> Spezifische Achsenkonfigurationen</a></li>
+  </ul></li>
+  <li><a href="#barplots" id="toc-barplots" class="nav-link" data-scroll-target="#barplots"><span class="header-section-number">6.2</span> Barplots</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/laurenzbrahner/DST-DOKU/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/laurenzbrahner/DST-DOKU/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/laurenzbrahner/DST-DOKU/edit/main/datenvisualisierung.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/laurenzbrahner/DST-DOKU/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Spotify-Analyse</h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Datenvisualisierung</span></h1>
 </div>
 
 
@@ -202,17 +249,131 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="vorwort" class="level1 unnumbered">
-<h1 class="unnumbered">Vorwort</h1>
-<p>Die Art und Weise wie wir Musik konsumieren hat sich in den letzten Jahren grundlegend geändert. Anstatt CDs und MP3-Player haben die meisten Menschen heute ein Abonnement bei einem Musikstreamingdienst. Dabei stellt sich die Frage, was ein Song braucht, um bei einem Streamingdienst Erfolg zu haben.</p>
-<p><br></p>
-<p>Dieses Projekt wurde mit der Absicht ins Leben gerufen, diese Frage zu beantworten. Dafür wurde ein Datensatz, der meist-gestreamtesten Songs im Jahre 2023, anhand verschiedener Merkmale analysiert, um eine Geheimformel für einen erfolgreichen Song zu finden. In der Folgenden Dokumentation werde ich den Weg beschreiben, von der Beschaffung und Vorberereitung der Daten über die Erstellung detaillierter Visualisierungen mit Altair bis hin zur Entwicklung eines interaktiven Dashboards mit Streamlit. Dabei werde ich nicht nur auf die technsichen Heruasforderungen und die Lösungen derer eingehen, sondern auch die Ergebnisse klar darstellen.</p>
-<p><br></p>
-<p>Falls Sie meine Ergebnisse anhand von einer Präsentation oder einem interaktiven Dashboard haben wollen, finden Sie diese unter den folgenden Links:</p>
+<p>Mit den gewonnen Erkenntnissen aus der Exploration, können nun Visualisierungen erstellt werden. Ziel ist es, aus den gewonnen Erkenntnissen der Exploration visuell ansprechende und aussagekräftige Visualisierungen mit Altair zu erstellen.</p>
+<section id="grundelegendes-design" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="grundelegendes-design"><span class="header-section-number">6.1</span> Grundelegendes Design</h2>
+<p>Um ein durchgehendes Design zu ermöglichen habe ich zuerst Konfigurationsparameter für Altair Plots erstellt. Diese sind so gut wie gleich in den verschiedenen Diagrammtypen:</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">.properties(</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">    title={'text': 'Beispiel', 'dy': -20},</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">    background='#F5F5F5',</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">    width=600,</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    height=400</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">).configure_title(</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    fontSize=25,</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">    anchor='start'</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">).configure_axis(</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">    labelFontSize=14,</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">    titleFontSize=20,</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">    titleColor='gray',</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">    labelColor='gray',</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">    titlePadding=12,</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">    grid=False</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">).configure_legend(</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">    titleFontSize=16,</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">    labelFontSize=14</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">).configure_view(</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co">    strokeWidth=0,</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co">).configure_axisX(</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co">    labelAngle=0,</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co">    titleAnchor='start'</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co">).configure_axisY(</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co">    titleAnchor='end'</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co">)</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>"\n.properties(\n    title={'text': 'Beispiel', 'dy': -20},\n    background='#F5F5F5',\n    width=600,\n    height=400\n).configure_title(\n    fontSize=25,\n    anchor='start'\n).configure_axis(\n    labelFontSize=14,\n    titleFontSize=20,\n    titleColor='gray',\n    labelColor='gray',\n    titlePadding=12,\n    grid=False\n).configure_legend(\n    titleFontSize=16,\n    labelFontSize=14\n).configure_view(\n    strokeWidth=0,\n).configure_axisX(\n    labelAngle=0,\n    titleAnchor='start'\n).configure_axisY(\n    titleAnchor='end'\n)\n\n"</code></pre>
+</div>
+</div>
+<section id="allgemeine-eigenschaften" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="allgemeine-eigenschaften"><span class="header-section-number">6.1.1</span> Allgemeine Eigenschaften</h3>
 <ul>
-<li><a href="https://laurenzbrahner.github.io/quarto_prasi/">Präsentation</a></li>
-<li><a href="https://appapp-ka7buefabvnokhdfwhyptg.streamlit.app/">Dashboard</a></li>
+<li><code>.properties()</code>: Allgemeine Eigenschaften des Diagramms.
+<ul>
+<li><code>title</code>: Legt den Titel des Diagramms fest.</li>
+<li><code>dy</code> definiert die vertikale Verschiebung</li>
+<li><code>background</code>: Hintergrundfarbe des Diagramms.</li>
+<li><code>width</code>: Bestimmt die Breite des Diagramms in Pixeln.</li>
+<li><code>height</code>: Bestimmt die Höhe des Diagramms in Pixeln.</li>
+</ul></li>
 </ul>
+</section>
+<section id="titelkonfiguration" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="titelkonfiguration"><span class="header-section-number">6.1.2</span> Titelkonfiguration</h3>
+<ul>
+<li><code>.configure_title()</code>: Anapssungen für den Diagrammtitel.
+<ul>
+<li><code>fontSize</code>: Die Schriftgröße des Titels in Pixeln.</li>
+<li><code>anchor</code>: Die Ausrichtung des Titels.</li>
+</ul></li>
+</ul>
+</section>
+<section id="achsenkonfiguration" class="level3" data-number="6.1.3">
+<h3 data-number="6.1.3" class="anchored" data-anchor-id="achsenkonfiguration"><span class="header-section-number">6.1.3</span> Achsenkonfiguration</h3>
+<ul>
+<li><code>.configure_axis()</code>: konfiguration für beide Achsen (X &amp; Y).
+<ul>
+<li><code>labelFontSize</code>: Schriftgröße der Achsenbeschriftungen.</li>
+<li><code>titleFontSize</code>: Schriftgröße des Achsentitels.</li>
+<li><code>titleColor</code> und <code>labelColor</code>: Die Farbe des Achsentitels und der Beschriftungen.</li>
+<li><code>titlePadding</code>: Der Abstand zwischen dem Achsentitel und den Achsenbeschriftungen.</li>
+<li><code>grid</code>: Steuert die Anzeige des Gitternetzes. <code>False</code> bedeutet, dass kein Gitternetz gezeigt wird.</li>
+</ul></li>
+</ul>
+</section>
+<section id="legendenkonfiguration" class="level3" data-number="6.1.4">
+<h3 data-number="6.1.4" class="anchored" data-anchor-id="legendenkonfiguration"><span class="header-section-number">6.1.4</span> Legendenkonfiguration</h3>
+<ul>
+<li><code>.configure_legend()</code>: Passt das Aussehen der Legende an.
+<ul>
+<li><code>titleFontSize</code>: Die Schriftgröße des Legendentitels.</li>
+<li><code>labelFontSize</code>: Die Schriftgröße der Legendenbeschriftungen.</li>
+</ul></li>
+</ul>
+</section>
+<section id="ansichtskonfiguration" class="level3" data-number="6.1.5">
+<h3 data-number="6.1.5" class="anchored" data-anchor-id="ansichtskonfiguration"><span class="header-section-number">6.1.5</span> Ansichtskonfiguration</h3>
+<ul>
+<li><code>.configure_view()</code>: Konfiguation der Ansicht.
+<ul>
+<li><code>strokeWidth</code>: Die Breite des Rahmens um das Diagramm. <code>0</code> bedeutet, dass kein Rahmen gezeigt wird.</li>
+</ul></li>
+</ul>
+</section>
+<section id="spezifische-achsenkonfigurationen" class="level3" data-number="6.1.6">
+<h3 data-number="6.1.6" class="anchored" data-anchor-id="spezifische-achsenkonfigurationen"><span class="header-section-number">6.1.6</span> Spezifische Achsenkonfigurationen</h3>
+<ul>
+<li><code>.configure_axisX()</code> und <code>.configure_axisY()</code>: Spezifische Konfigurationen für die X- und Y-Achse.
+<ul>
+<li><code>labelAngle</code>: Der Winkel der Achsenbeschriftungen auf der X-Achse. <code>0</code> bedeutet eine horizontale Ausrichtung.</li>
+<li><code>titleAnchor</code>: Die Ausrichtung des Achsentitels.</li>
+</ul></li>
+</ul>
+<p><br></p>
+<p><strong><em>Beachte:</em></strong> Die Hintergrundfarbe, Schriftgröße und die width und height können in späteren Darstellungen in der quarto-Präsentation oder in dem Dashboard variieren.</p>
+</section>
+</section>
+<section id="barplots" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="barplots"><span class="header-section-number">6.2</span> Barplots</h2>
+<p>Für die Erstellung von Barplots haben sich meiner Meinung nach die Anzahl der Songs nach Tonart und Keys geeignet. Da man mit einem Barplot perfekt unterschiede in verschiedenen Kategorieren aufzeigen kann.</p>
+<p><strong>Tonart:</strong></p>
+<p>Dafür habe ich zuerst ein Barplot mit den zwei verschiedenen Tonarten auf der X-Achse Erstellt. Um den Unterschied besser aufzuzeigen, habe ich die Skalierung auf der Y-Achse geändert und eine Linie auf der Höhe des Maximalwerts plaziert. Das ganze habe ich mit der <code>alt.layer()</code> Funktion erreicht, die die Linie und den Plot layert.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/visualization_bar_plot_with_lines.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Anzahl der Top-Songs nach Tonart</figcaption>
+</figure>
+</div>
+<p><strong>Keys:</strong></p>
+<p>Hierfür habe ich einen Barplot mit den verschiedenen Keys auf der X-Achse erstellt. Auch hier habe ich um den Unterschied besser aufzuzeigen, die Skalierung auf der Y-Achse geändert. Außerdem habe ich wieder eine Linie durch den Maximalwert gezogen und eine gestrichelte Linie durch den Minimalwert. Um dieses Linien und somit den Unterschied besser hervorzuheben, habe ich dem Barplot eine geringere opacity gegeben. Auch hier habe ich wieder mit <code>alt.layer()</code> gearbeitet.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/keys.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Anzahl der Top-Songs nach Key</figcaption>
+</figure>
+</div>
 
 
 </section>
@@ -568,10 +729,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./datenexploration.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Datenexploration</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./toc.html" class="pagination-link">
-        <span class="nav-page-text">Inhaltsverzeichnis</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./summary.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="next">
+<link href="./datenvisualisierung.html" rel="next">
 <link href="./datenanreicherung.html" rel="prev">
 <link href=".//images/logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -156,8 +156,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./datenvisualisierung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Datenvisualisierung</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -205,11 +211,12 @@ ul.task-list li input[type="checkbox"] {
 <p>In diesem Kapitel werden verschiedene Aspekte des angereicherten Datensatzes der meistgestreamten Songs 2023 untersucht. Ziel hierbei ist weniger die visuelle Darstellung sondern es geht eher darum herauszufinden, welche Merkmale Einfluss auf die Popularität eines Songs haben.</p>
 <section id="verwendete-werkzeuge-und-bibliotheken" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="verwendete-werkzeuge-und-bibliotheken"><span class="header-section-number">5.1</span> Verwendete Werkzeuge und Bibliotheken</h2>
+<p>Für die Datenexploration habe ich verschiedene Bibliotheken verwendet. Für Korrelationsmatrizen und Histogramme habe ich die Python Visualisierungsbibliothek <strong><em>Seaborn</em></strong> benutzt, da ich mit dieser schon Vorkenntnisse hatte und es in der Datenexploration nur darum geht, Zusammenhänge zu finden und nicht um eine ansprechende Visualisierung. Des Weiteren habe ich <strong><em>pandas</em></strong> benutzt, um Auffälligkeiten zu finden.</p>
+<p>Jedoch habe ich auch hier “Mockups“ von ersten, meines Erachtens wichtigen Erkenntnissen mit <strong><em>Altair</em></strong> erstellt. Darauf gehe ich aber erst im nächsten Kapitel ein.</p>
 </section>
 <section id="vorgehen" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="vorgehen"><span class="header-section-number">5.2</span> Vorgehen</h2>
 <p>Das Ziel dieser Analyse ist wie mehrfach schon erwähnt eine Art <strong>Geheimformel</strong> für einen erfolgreichen Song herauszufinden.</p>
-<p><br></p>
 <p>Dafür habe ich zuerst die Verteilung musikalischen Merkmale der meistgestreamtesten Songs auf Spotify angeschaut. Dies habe ich mit der python-Bibliothek seaborn gemacht, da es hierbei noch nicht um eine ansprechende Visualisierung geht und ich diese Darstellung mit seaborn leichter finde als mit altair. In den folgenden Plots sind die Anzahl der Songs mit der jeweiligen Ausprägung des musikalischen Merkmals zu sehen. Als Maßstab habe ich hier die Anzahl der Songs genommen, da der Datensatz bereits die erfolgreichsten Songs im Jahre 2023 enthält.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -418,17 +425,17 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="5.3" class="anchored" data-anchor-id="ergebnisse-der-exploration"><span class="header-section-number">5.3</span> Ergebnisse der Exploration</h2>
 <p>Wie in den Histogrammen und in der Heatmap zu sehen ist, haben viele Top-Songs ähnliche Merkmalsausprägungen. Besonders stechen diese rechtschiefen Verteilungen aus:</p>
 <ul>
-<li>speechiness</li>
-<li>instrumentalness</li>
+<li><strong>speechiness</strong></li>
+<li><strong>instrumentalness</strong></li>
 </ul>
 <p>Aber auch die eher Normalverteilten Merkmale sollte man beachten:</p>
 <ul>
-<li>energy</li>
-<li>danceability</li>
+<li><strong>energy</strong></li>
+<li><strong>danceability</strong></li>
 </ul>
 <p>Auch bei der Tonart und des keys konnte ich auffälligkeiten feststellen, Die meisten Top-Songs haben die Tonart <strong>Major</strong> und den Key <strong>C#</strong></p>
 <p>Der Releasezeitpunkt sollte auch ordentlich durchdacht werden. Im <strong>Janaur</strong> und <strong>Mai</strong> werden die meisten Songs relesed im <strong>August</strong> wurden fast 3 mal weniger Songs released.</p>
-<p>Eine weitere Interessante Information ist, dass mit Abstand die meisten Top künstler aus den <strong>USA</strong> kommen</p>
+<p>Eine weitere interessante Information ist, dass mit großem Abstand die meisten Top-künstler aus den <strong>USA</strong> kommen.</p>
 <p><strong><em>Mit diesen Erkenntnissen kann ich nun anprechende Visualisierungen gestalten, wie ich das gemacht habe erfahren Sie im nächsten Kapitel.</em></strong></p>
 
 
@@ -790,8 +797,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./datenvisualisierung.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Datenvisualisierung</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

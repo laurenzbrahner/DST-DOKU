@@ -3,11 +3,13 @@ In diesem Kapitel werden verschiedene Aspekte des angereicherten Datensatzes der
 
 ## Verwendete Werkzeuge und Bibliotheken
 
+Für die Datenexploration habe ich verschiedene Bibliotheken verwendet. Für Korrelationsmatrizen und Histogramme habe ich die Python Visualisierungsbibliothek ***Seaborn*** benutzt, da ich mit dieser schon Vorkenntnisse hatte und es in der Datenexploration nur darum geht, Zusammenhänge zu finden und nicht um eine ansprechende Visualisierung. Des Weiteren habe ich ***pandas*** benutzt, um Auffälligkeiten zu finden.
+
+Jedoch habe ich auch hier "Mockups“ von ersten, meines Erachtens wichtigen Erkenntnissen mit ***Altair*** erstellt. Darauf gehe ich aber erst im nächsten Kapitel ein. 
+
 ## Vorgehen
 
 Das Ziel dieser Analyse ist wie mehrfach schon erwähnt eine Art **Geheimformel** für einen erfolgreichen Song herauszufinden. 
-
-<br/>
 
 Dafür habe ich zuerst die Verteilung musikalischen Merkmale der meistgestreamtesten Songs auf Spotify angeschaut. Dies habe ich mit der python-Bibliothek seaborn gemacht, da es hierbei noch nicht um eine ansprechende Visualisierung geht und ich diese Darstellung mit seaborn leichter finde als mit altair. In den folgenden Plots sind die Anzahl der Songs mit der jeweiligen Ausprägung des musikalischen Merkmals zu sehen.
 Als Maßstab habe ich hier die Anzahl der Songs genommen, da der Datensatz bereits die erfolgreichsten Songs im Jahre 2023 enthält.
@@ -93,19 +95,19 @@ Wie in den Histogrammen und in der Heatmap zu sehen ist, haben viele Top-Songs �
 Besonders stechen diese rechtschiefen Verteilungen aus:
 
 
-- speechiness
-- instrumentalness
+- **speechiness**
+- **instrumentalness**
 
 Aber auch die eher Normalverteilten Merkmale sollte man beachten:
 
-- energy
-- danceability
+- **energy**
+- **danceability**
 
 Auch bei der Tonart und des keys konnte ich auffälligkeiten feststellen, Die meisten Top-Songs haben die Tonart **Major** und den Key **C#**
 
 Der Releasezeitpunkt sollte auch ordentlich durchdacht werden. Im **Janaur** und **Mai** werden die meisten Songs relesed im **August** wurden fast 3 mal weniger Songs released.
 
-Eine weitere Interessante Information ist, dass mit Abstand die meisten Top künstler aus den **USA** kommen
+Eine weitere interessante Information ist, dass mit großem Abstand die meisten Top-künstler aus den **USA** kommen.
 
 
 ***Mit diesen Erkenntnissen kann ich nun anprechende Visualisierungen gestalten, wie ich das gemacht habe erfahren Sie im nächsten Kapitel.***

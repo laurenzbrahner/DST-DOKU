@@ -23,6 +23,7 @@ book:
     - datenvorbereitung.qmd
     - datenanreicherung.qmd
     - datenexploration.qmd
+    - datenvisualisierung.qmd
     - summary.qmd
     - references.qmd
 

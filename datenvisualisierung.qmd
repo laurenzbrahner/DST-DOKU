@@ -1,0 +1,108 @@
+# Datenvisualisierung
+
+Mit den gewonnen Erkenntnissen aus der Exploration, können nun Visualisierungen erstellt werden. Ziel ist es, aus den gewonnen Erkenntnissen der Exploration visuell ansprechende und aussagekräftige Visualisierungen mit Altair zu erstellen.
+
+## Grundelegendes Design
+
+Um ein durchgehendes Design zu ermöglichen habe ich zuerst Konfigurationsparameter für Altair Plots erstellt. Diese sind so gut wie gleich in den verschiedenen Diagrammtypen:
+
+```{python} 
+
+"""
+.properties(
+    title={'text': 'Beispiel', 'dy': -20},
+    background='#F5F5F5',
+    width=600,
+    height=400
+).configure_title(
+    fontSize=25,
+    anchor='start'
+).configure_axis(
+    labelFontSize=14,
+    titleFontSize=20,
+    titleColor='gray',
+    labelColor='gray',
+    titlePadding=12,
+    grid=False
+).configure_legend(
+    titleFontSize=16,
+    labelFontSize=14
+).configure_view(
+    strokeWidth=0,
+).configure_axisX(
+    labelAngle=0,
+    titleAnchor='start'
+).configure_axisY(
+    titleAnchor='end'
+)
+
+"""
+```
+
+### Allgemeine Eigenschaften
+
+- `.properties()`: Allgemeine Eigenschaften des Diagramms.
+  - `title`: Legt den Titel des Diagramms fest. 
+  - `dy`  definiert die vertikale Verschiebung 
+  - `background`: Hintergrundfarbe des Diagramms.
+  - `width`: Bestimmt die Breite des Diagramms in Pixeln. 
+  - `height`: Bestimmt die Höhe des Diagramms in Pixeln.
+
+### Titelkonfiguration
+
+- `.configure_title()`: Anapssungen für den Diagrammtitel.
+  - `fontSize`: Die Schriftgröße des Titels in Pixeln.
+  - `anchor`: Die Ausrichtung des Titels.
+
+
+
+### Achsenkonfiguration
+
+- `.configure_axis()`: konfiguration für beide Achsen (X & Y).
+  - `labelFontSize`: Schriftgröße der Achsenbeschriftungen.
+  - `titleFontSize`: Schriftgröße des Achsentitels.
+  - `titleColor` und `labelColor`: Die Farbe des Achsentitels und der Beschriftungen.
+  - `titlePadding`: Der Abstand zwischen dem Achsentitel und den Achsenbeschriftungen. 
+  - `grid`: Steuert die Anzeige des Gitternetzes. `False` bedeutet, dass kein Gitternetz gezeigt wird.
+
+### Legendenkonfiguration
+
+- `.configure_legend()`: Passt das Aussehen der Legende an.
+  - `titleFontSize`: Die Schriftgröße des Legendentitels. 
+  - `labelFontSize`: Die Schriftgröße der Legendenbeschriftungen.
+
+### Ansichtskonfiguration
+
+- `.configure_view()`: Konfiguation der Ansicht.
+  - `strokeWidth`: Die Breite des Rahmens um das Diagramm. `0` bedeutet, dass kein Rahmen gezeigt wird.
+
+### Spezifische Achsenkonfigurationen
+
+- `.configure_axisX()` und `.configure_axisY()`: Spezifische Konfigurationen für die X- und Y-Achse.
+  - `labelAngle`: Der Winkel der Achsenbeschriftungen auf der X-Achse. `0`  bedeutet eine horizontale Ausrichtung.
+  - `titleAnchor`: Die Ausrichtung des Achsentitels.
+
+<br/>
+
+  ***Beachte:*** Die Hintergrundfarbe, Schriftgröße und die width und height können in späteren Darstellungen in der quarto-Präsentation oder in dem Dashboard variieren.
+
+
+## Barplots
+
+Für die Erstellung von Barplots haben sich meiner Meinung nach die Anzahl der Songs nach Tonart und Keys geeignet. Da man mit einem Barplot perfekt unterschiede in verschiedenen Kategorieren aufzeigen kann. 
+
+**Tonart:**
+
+Dafür habe ich zuerst ein Barplot mit den zwei verschiedenen Tonarten auf der X-Achse Erstellt. Um den Unterschied besser aufzuzeigen, habe ich die Skalierung auf der Y-Achse geändert und eine Linie auf der Höhe des Maximalwerts plaziert. Das ganze habe ich mit der `alt.layer()` Funktion erreicht, die die Linie und den Plot layert.
+
+![Anzahl der Top-Songs nach Tonart](images/visualization_bar_plot_with_lines.png)
+
+**Keys:**
+
+Hierfür habe ich einen Barplot mit den verschiedenen Keys auf der X-Achse erstellt. Auch hier habe ich um den Unterschied besser aufzuzeigen, die Skalierung auf der Y-Achse geändert. Außerdem habe ich wieder eine Linie durch den Maximalwert gezogen und eine gestrichelte Linie durch den Minimalwert. Um dieses Linien und somit den Unterschied besser hervorzuheben, habe ich dem Barplot eine geringere opacity gegeben. Auch hier habe ich wieder mit `alt.layer()` gearbeitet.
+
+![Anzahl der Top-Songs nach Key](images/keys.png)
+
+
+  
+ 
