@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Spotify-Analyse Dokumentation - 5&nbsp; Datenexploration</title>
+<title>Spotify-Analyse Dokumentation - 9&nbsp; Herausforderungen und Lösungen</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./datenvisualisierung.html" rel="next">
-<link href="./datenanreicherung.html" rel="prev">
+<link href="./summary.html" rel="next">
+<link href="./streamlit_dashboard.html" rel="prev">
 <link href=".//images/logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -66,12 +100,9 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Spotify-Analyse Dokumentation - 5&nbsp; Datenexploration">
+<meta property="og:title" content="Spotify-Analyse Dokumentation - 9&nbsp; Herausforderungen und Lösungen">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://laurenzbrahner.github.io/DST-DOKU/images/VerteilungsHistogramme.png">
 <meta property="og:site-name" content="Spotify-Analyse Dokumentation">
-<meta property="og:image:height" content="984">
-<meta property="og:image:width" content="1482">
 </head>
 
 <body class="nav-sidebar floating">
@@ -83,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./datenexploration.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Datenexploration</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./herausforderungen.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Herausforderungen und Lösungen</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -150,7 +181,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./datenexploration.html" class="sidebar-item-text sidebar-link active">
+  <a href="./datenexploration.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Datenexploration</span></span></a>
   </div>
 </li>
@@ -174,7 +205,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./herausforderungen.html" class="sidebar-item-text sidebar-link">
+  <a href="./herausforderungen.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Herausforderungen und Lösungen</span></span></a>
   </div>
 </li>
@@ -200,18 +231,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#verwendete-werkzeuge-und-bibliotheken" id="toc-verwendete-werkzeuge-und-bibliotheken" class="nav-link active" data-scroll-target="#verwendete-werkzeuge-und-bibliotheken"><span class="header-section-number">5.1</span> Verwendete Werkzeuge und Bibliotheken</a></li>
-  <li><a href="#vorgehen" id="toc-vorgehen" class="nav-link" data-scroll-target="#vorgehen"><span class="header-section-number">5.2</span> Vorgehen</a></li>
-  <li><a href="#ergebnisse-der-exploration" id="toc-ergebnisse-der-exploration" class="nav-link" data-scroll-target="#ergebnisse-der-exploration"><span class="header-section-number">5.3</span> Ergebnisse der Exploration</a></li>
+  <li><a href="#datensatz-und-geografische-daten" id="toc-datensatz-und-geografische-daten" class="nav-link active" data-scroll-target="#datensatz-und-geografische-daten"><span class="header-section-number">9.1</span> Datensatz und geografische Daten</a></li>
+  <li><a href="#quarto-präsentation" id="toc-quarto-präsentation" class="nav-link" data-scroll-target="#quarto-präsentation"><span class="header-section-number">9.2</span> Quarto Präsentation</a></li>
+  <li><a href="#streamlit-dashboard" id="toc-streamlit-dashboard" class="nav-link" data-scroll-target="#streamlit-dashboard"><span class="header-section-number">9.3</span> Streamlit Dashboard</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/laurenzbrahner/DST-DOKU/edit/main/datenexploration.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/laurenzbrahner/DST-DOKU/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/laurenzbrahner/DST-DOKU/edit/main/herausforderungen.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/laurenzbrahner/DST-DOKU/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Datenexploration</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Herausforderungen und Lösungen</span></h1>
 </div>
 
 
@@ -226,235 +257,51 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>In diesem Kapitel werden verschiedene Aspekte des angereicherten Datensatzes der meistgestreamten Songs 2023 untersucht. Ziel hierbei ist weniger die visuelle Darstellung sondern es geht eher darum herauszufinden, welche Merkmale Einfluss auf die Popularität eines Songs haben.</p>
-<section id="verwendete-werkzeuge-und-bibliotheken" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="verwendete-werkzeuge-und-bibliotheken"><span class="header-section-number">5.1</span> Verwendete Werkzeuge und Bibliotheken</h2>
-<p>Für die Datenexploration habe ich verschiedene Bibliotheken verwendet. Für Korrelationsmatrizen und Histogramme habe ich die Python Visualisierungsbibliothek <strong><em>Seaborn</em></strong> benutzt, da ich mit dieser schon Vorkenntnisse hatte und es in der Datenexploration nur darum geht, Zusammenhänge zu finden und nicht um eine ansprechende Visualisierung. Des Weiteren habe ich <strong><em>pandas</em></strong> benutzt, um Auffälligkeiten zu finden.</p>
-<p>Jedoch habe ich auch hier “Mockups“ von ersten, meines Erachtens wichtigen Erkenntnissen mit <strong><em>Altair</em></strong> erstellt. Darauf gehe ich aber erst im nächsten Kapitel ein.</p>
-</section>
-<section id="vorgehen" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="vorgehen"><span class="header-section-number">5.2</span> Vorgehen</h2>
-<p>Das Ziel dieser Analyse ist wie mehrfach schon erwähnt eine Art <strong>Geheimformel</strong> für einen erfolgreichen Song herauszufinden.</p>
-<p>Dafür habe ich zuerst die Verteilung musikalischen Merkmale der meistgestreamtesten Songs auf Spotify angeschaut. Dies habe ich mit der python-Bibliothek seaborn gemacht, da es hierbei noch nicht um eine ansprechende Visualisierung geht und ich diese Darstellung mit seaborn leichter finde als mit altair. In den folgenden Plots sind die Anzahl der Songs mit der jeweiligen Ausprägung des musikalischen Merkmals zu sehen. Als Maßstab habe ich hier die Anzahl der Songs genommen, da der Datensatz bereits die erfolgreichsten Songs im Jahre 2023 enthält.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/VerteilungsHistogramme.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Histogramme anhand der musikalischen Merkmale</figcaption>
-</figure>
+<p>In diesem Projekt bin ich auf einige Herausforderungen gestoßen, da manches doch etwas komplizierter als angenommen war. In diesem Kapitel werde ich diese Herausforderungen schildern und meine Lösungen dazu vorstellen.</p>
+<section id="datensatz-und-geografische-daten" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="datensatz-und-geografische-daten"><span class="header-section-number">9.1</span> Datensatz und geografische Daten</h2>
+<p>ich hatte im allgemeinen wenig Probleme mit den Daten. Die Spalten hatten meiner Meinung nach gut verstädnliche namen und der Rest der Data-Preparation war auch schnell erledigt. Jedoch ist mir im Laufe des Projekts aufgefallen, dass ich geografische Daten für die Erstellung einer Map brauche. So ist mir die Idee gekommen, das Künstler Herkunftsland hinzuzufügen. Mit der Hand hätte dies aber ewig gedauert, also musste eine andere Lösung her. Ich hab mich auf die Suche nach Musik-Apis begeben und bin fündig geworden. Anhand von Musicbrainz konnte ich wie beschrieben in Kapitel 4 das Herkunftsland des Künstlers mit wenig aufwand hinzufügen.</p>
+<p>Das hat auch wunderbar funktioniert, bis ich bei der Erstellung der Map war. Leider haben die Länderbezeichnungen der Musicbrainz Datenbank nicht mit denen der geopandas Bibliothek überinstimmt. Aber auch hierfür habe ich eine Lösung gefunden. Ich habe eine Funktion geschrieben, welche die Länderbezeichnungen vergleicht und Übereinstimmende oder fehlende Länder ausgibt.</p>
+<p>Hier ist die Funktion:</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">def compare_country_names(df, country_list):</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    df_countries = set(df['name'].unique())</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    country_list_set = set(country_list)</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">    # Finden der Übereinstimmungen und Nichtübereinstimmungen</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">    matches = df_countries.intersection(country_list_set)</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">    missing = df_countries.difference(country_list_set)</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">    return matches, missing</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>"\n\n\ndef compare_country_names(df, country_list):\n\n    df_countries = set(df['name'].unique())\n    country_list_set = set(country_list)\n\n    # Finden der Übereinstimmungen und Nichtübereinstimmungen\n    matches = df_countries.intersection(country_list_set)\n    missing = df_countries.difference(country_list_set)\n\n    return matches, missing\n\n\n\n"</code></pre>
 </div>
-<p><br></p>
-<p>Um trotzdem Auffälligkeiten zwischen der Anzahl der Streams und den musikalischen Merkmalen zu finden habe ich eine Hetmap erstellt. Diese enthält wie Sie unten sehen die einzelenen musikalischen merkmale und als label die Streams.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/heatmap.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Heatmap</figcaption>
-</figure>
 </div>
-<p><br></p>
-<p>Natürlich habe ich mir auch noch die anderen Merkmale angschaut mithilfe der <code>value_counts()</code> builtin funktion von Pandas habe ich die Anzahl der Top-Songs nach der Tonart und des Keys angeschaut:</p>
-<p><strong><em>Tonart</em></strong></p>
-<table class="table">
-<thead>
-<tr class="header">
-<th>mode</th>
-<th>Anzahl der Top-Songs</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Major</td>
-<td>445</td>
-</tr>
-<tr class="even">
-<td>Minor</td>
-<td>351</td>
-</tr>
-</tbody>
-</table>
-<p><strong><em>Key</em></strong></p>
-<table class="table">
-<thead>
-<tr class="header">
-<th>key</th>
-<th>Anzahl der Top-Songs</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>C#</td>
-<td>114</td>
-</tr>
-<tr class="even">
-<td>G</td>
-<td>87</td>
-</tr>
-<tr class="odd">
-<td>G#</td>
-<td>85</td>
-</tr>
-<tr class="even">
-<td>F</td>
-<td>81</td>
-</tr>
-<tr class="odd">
-<td>B</td>
-<td>76</td>
-</tr>
-<tr class="even">
-<td>D</td>
-<td>74</td>
-</tr>
-<tr class="odd">
-<td>A</td>
-<td>71</td>
-</tr>
-<tr class="even">
-<td>F#</td>
-<td>68</td>
-</tr>
-<tr class="odd">
-<td>E</td>
-<td>55</td>
-</tr>
-<tr class="even">
-<td>A#</td>
-<td>55</td>
-</tr>
-<tr class="odd">
-<td>D#</td>
-<td>30</td>
-</tr>
-</tbody>
-</table>
-<p><br></p>
-<p>Danach bin ich weg von den musikalischen Merkmalen und hin zu den zeitlichen und geografischen. <strong>Wann ist der beste Zeitpunkt ein Song zu releasen?</strong> <strong>Aus welchem land kommen die meisten Top-Künstler?</strong> Auch hier konnte ich mit der pandas builtin <code>value_counts()</code> wichtige erste Informationen sammeln:</p>
-<p><strong><em>Releasezeipunkt</em></strong></p>
-<table class="table">
-<thead>
-<tr class="header">
-<th>released_month</th>
-<th>Anzahl der Top-Songs</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>5</td>
-<td>112</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>112</td>
-</tr>
-<tr class="odd">
-<td>6</td>
-<td>75</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>69</td>
-</tr>
-<tr class="odd">
-<td>11</td>
-<td>66</td>
-</tr>
-<tr class="even">
-<td>12</td>
-<td>63</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>62</td>
-</tr>
-<tr class="even">
-<td>10</td>
-<td>58</td>
-</tr>
-<tr class="odd">
-<td>9</td>
-<td>48</td>
-</tr>
-<tr class="even">
-<td>7</td>
-<td>47</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>45</td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td>39</td>
-</tr>
-</tbody>
-</table>
-<p><strong><em>Anzahl der Künstler nach Künstlerland</em></strong></p>
-<table class="table">
-<thead>
-<tr class="header">
-<th>artist_country</th>
-<th>Anzahl der Künstler</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>United States</td>
-<td>354</td>
-</tr>
-<tr class="even">
-<td>Puerto Rico</td>
-<td>62</td>
-</tr>
-<tr class="odd">
-<td>United Kingdom</td>
-<td>57</td>
-</tr>
-<tr class="even">
-<td>South Korea</td>
-<td>54</td>
-</tr>
-<tr class="odd">
-<td>Canada</td>
-<td>43</td>
-</tr>
-<tr class="even">
-<td>Colombia</td>
-<td>36</td>
-</tr>
-<tr class="odd">
-<td>England</td>
-<td>30</td>
-</tr>
-<tr class="even">
-<td>Mexico</td>
-<td>28</td>
-</tr>
-<tr class="odd">
-<td>Brazil</td>
-<td>16</td>
-</tr>
-<tr class="even">
-<td>Argentina</td>
-<td>12</td>
-</tr>
-</tbody>
-</table>
+<p>Mithilfe dieser Funktion konnte ich meine Bezeichnungen mappen und somit eine Übereinstimmung erreichen.</p>
 </section>
-<section id="ergebnisse-der-exploration" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="ergebnisse-der-exploration"><span class="header-section-number">5.3</span> Ergebnisse der Exploration</h2>
-<p>Wie in den Histogrammen und in der Heatmap zu sehen ist, haben viele Top-Songs ähnliche Merkmalsausprägungen. Besonders stechen diese rechtschiefen Verteilungen aus:</p>
+<section id="quarto-präsentation" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="quarto-präsentation"><span class="header-section-number">9.2</span> Quarto Präsentation</h2>
+<p>Ansich kam ich sehr gut mit Quarto zurecht. Nur hatte ich ein wenig Probleme mit dem einbauen der Altair-Charts. Ich wollte nämlich einen dunklen Hintergrund und habe wie in Kapitel 7 schon erwähnt das Dark Theme benutzt. Nun war aber der weiße Hintergrund der Charts noch zu sehen und soweit ich weiß gibt es keine Funktion den Chart Transparent zu machen. Hierfür habe ich aber auch eine Lösung gefunden. Mit Hilfe eines Colorpickers konnte ich die Farbe des Hintergrunds herausfinden und in den <code>background</code> prop der Diagramme einsetzen. Diesen Colorpicker habe ich verwendet:</p>
 <ul>
-<li><strong>speechiness</strong></li>
-<li><strong>instrumentalness</strong></li>
+<li><a href="https://imagecolorpicker.com/">Colorpicker</a></li>
 </ul>
-<p>Aber auch die eher Normalverteilten Merkmale sollte man beachten:</p>
+<p>Leider hatte ich auch das Problem, dass die Diagramme in der html-page manchmal nicht angezeigt worden sind. Ich habe mitbekommen, dass dieses Problem auch andere in diesem Kurs hatten. Dafür habe ich keine richtige Lösung gefunden, außer die html Datei via GitHub-Pages zu deployen. So wurden die Diagramme eigentlich immer angzeigt.</p>
 <ul>
-<li><strong>energy</strong></li>
-<li><strong>danceability</strong></li>
+<li><a href="https://laurenzbrahner.github.io/quarto_prasi/">Deployte html Datei meiner Präsentation</a></li>
 </ul>
-<p>Auch bei der Tonart und des keys konnte ich auffälligkeiten feststellen, Die meisten Top-Songs haben die Tonart <strong>Major</strong> und den Key <strong>C#</strong></p>
-<p>Der Releasezeitpunkt sollte auch ordentlich durchdacht werden. Im <strong>Janaur</strong> und <strong>Mai</strong> werden die meisten Songs relesed im <strong>August</strong> wurden fast 3 mal weniger Songs released.</p>
-<p>Eine weitere interessante Information ist, dass mit großem Abstand die meisten Top-künstler aus den <strong>USA</strong> kommen.</p>
-<p><strong><em>Mit diesen Erkenntnissen kann ich nun anprechende Visualisierungen gestalten, wie ich das gemacht habe erfahren Sie im nächsten Kapitel.</em></strong></p>
+</section>
+<section id="streamlit-dashboard" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="streamlit-dashboard"><span class="header-section-number">9.3</span> Streamlit Dashboard</h2>
+<p>Mit Streamlit hatte ich wirklich kaum Probleme, da die Synatx sehr einfach gehalten ist. Jeoch musste ich auf der ersten Page in den Diagrammen: “Top-10 Songs nach Streams” und “Top-10 Künstler nach Streams” eine anpassung vornehmen, die Künstler und die Songnamen sind auf der X-Achse überlappt, dies konnte ich aber durch einfaches tauschen der Achsen lösen.</p>
+<p>Des weitern musste ich mich für die Erstellung der Diagrammdemo, welche die Anzahl der Veröffentlichen Songs pro Monat anzeigt, erstmal in den <code>session_state</code> in Streamlit einlesen. Dies war aber ein minder großed Problem.</p>
 
 
 </section>
@@ -810,13 +657,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./datenanreicherung.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Datenanreicherung</span></span>
+      <a href="./streamlit_dashboard.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Streamlit Dashboard</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./datenvisualisierung.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Datenvisualisierung</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./summary.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
