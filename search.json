@@ -280,6 +280,36 @@
     ]
   },
   {
+    "objectID": "herausforderungen.html",
+    "href": "herausforderungen.html",
+    "title": "9  Herausforderungen und Lösungen",
+    "section": "",
+    "text": "9.1 Datensatz und geografische Daten\nich hatte im allgemeinen wenig Probleme mit den Daten. Die Spalten hatten meiner Meinung nach gut verstädnliche namen und der Rest der Data-Preparation war auch schnell erledigt. Jedoch ist mir im Laufe des Projekts aufgefallen, dass ich geografische Daten für die Erstellung einer Map brauche. So ist mir die Idee gekommen, das Künstler Herkunftsland hinzuzufügen. Mit der Hand hätte dies aber ewig gedauert, also musste eine andere Lösung her. Ich hab mich auf die Suche nach Musik-Apis begeben und bin fündig geworden. Anhand von Musicbrainz konnte ich wie beschrieben in Kapitel 4 das Herkunftsland des Künstlers mit wenig aufwand hinzufügen.\nDas hat auch wunderbar funktioniert, bis ich bei der Erstellung der Map war. Leider haben die Länderbezeichnungen der Musicbrainz Datenbank nicht mit denen der geopandas Bibliothek überinstimmt. Aber auch hierfür habe ich eine Lösung gefunden. Ich habe eine Funktion geschrieben, welche die Länderbezeichnungen vergleicht und Übereinstimmende oder fehlende Länder ausgibt.\nHier ist die Funktion:\n\"\"\"\n\n\ndef compare_country_names(df, country_list):\n\n    df_countries = set(df['name'].unique())\n    country_list_set = set(country_list)\n\n    # Finden der Übereinstimmungen und Nichtübereinstimmungen\n    matches = df_countries.intersection(country_list_set)\n    missing = df_countries.difference(country_list_set)\n\n    return matches, missing\n\n\n\n\"\"\"\n\n\"\\n\\n\\ndef compare_country_names(df, country_list):\\n\\n    df_countries = set(df['name'].unique())\\n    country_list_set = set(country_list)\\n\\n    # Finden der Übereinstimmungen und Nichtübereinstimmungen\\n    matches = df_countries.intersection(country_list_set)\\n    missing = df_countries.difference(country_list_set)\\n\\n    return matches, missing\\n\\n\\n\\n\"\nMithilfe dieser Funktion konnte ich meine Bezeichnungen mappen und somit eine Übereinstimmung erreichen.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Herausforderungen und Lösungen</span>"
+    ]
+  },
+  {
+    "objectID": "herausforderungen.html#quarto-präsentation",
+    "href": "herausforderungen.html#quarto-präsentation",
+    "title": "9  Herausforderungen und Lösungen",
+    "section": "9.2 Quarto Präsentation",
+    "text": "9.2 Quarto Präsentation\nAnsich kam ich sehr gut mit Quarto zurecht. Nur hatte ich ein wenig Probleme mit dem einbauen der Altair-Charts. Ich wollte nämlich einen dunklen Hintergrund und habe wie in Kapitel 7 schon erwähnt das Dark Theme benutzt. Nun war aber der weiße Hintergrund der Charts noch zu sehen und soweit ich weiß gibt es keine Funktion den Chart Transparent zu machen. Hierfür habe ich aber auch eine Lösung gefunden. Mit Hilfe eines Colorpickers konnte ich die Farbe des Hintergrunds herausfinden und in den background prop der Diagramme einsetzen. Diesen Colorpicker habe ich verwendet:\n\nColorpicker\n\nLeider hatte ich auch das Problem, dass die Diagramme in der html-page manchmal nicht angezeigt worden sind. Ich habe mitbekommen, dass dieses Problem auch andere in diesem Kurs hatten. Dafür habe ich keine richtige Lösung gefunden, außer die html Datei via GitHub-Pages zu deployen. So wurden die Diagramme eigentlich immer angzeigt.\n\nDeployte html Datei meiner Präsentation",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Herausforderungen und Lösungen</span>"
+    ]
+  },
+  {
+    "objectID": "herausforderungen.html#streamlit-dashboard",
+    "href": "herausforderungen.html#streamlit-dashboard",
+    "title": "9  Herausforderungen und Lösungen",
+    "section": "9.3 Streamlit Dashboard",
+    "text": "9.3 Streamlit Dashboard\nMit Streamlit hatte ich wirklich kaum Probleme, da die Synatx sehr einfach gehalten ist. Jeoch musste ich auf der ersten Page in den Diagrammen: “Top-10 Songs nach Streams” und “Top-10 Künstler nach Streams” eine anpassung vornehmen, die Künstler und die Songnamen sind auf der X-Achse überlappt, dies konnte ich aber durch einfaches tauschen der Achsen lösen.\nDes weitern musste ich mich für die Erstellung der Diagrammdemo, welche die Anzahl der Veröffentlichen Songs pro Monat anzeigt, erstmal in den session_state in Streamlit einlesen. Dies war aber ein minder großed Problem.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Herausforderungen und Lösungen</span>"
+    ]
+  },
+  {
     "objectID": "summary.html",
     "href": "summary.html",
     "title": "10  Summary",
