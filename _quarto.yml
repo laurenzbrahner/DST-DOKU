@@ -26,6 +26,7 @@ book:
     - datenvisualisierung.qmd
     - quarto_prasi.qmd
     - streamlit_dashboard.qmd
+    - herausforderungen.qmd
     - summary.qmd
     - references.qmd
 

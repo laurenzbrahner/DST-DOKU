@@ -68,4 +68,5 @@ Um eine Konsistenete Farbauswahl für die (Achsen-)Titel zu haben, die zu dem du
 ## Vorgehen
 
 Nachdem das Design stand, habe ich meine Erstellten Visualisierungen, in die jeweiligen Slides eingebaut. 
-In meinem Vorgehen habe ich zunächst die Base Charts ohne layering  präsentiert und dabei die einzelnen Merkmale und Bestandteile des Diagramms erläutert. iM Anschluss dann mit Layering um auf die Ergebnisse besser einzugehen.
+In meinem Vorgehen habe ich zunächst die Base Charts ohne layering  präsentiert und dabei die einzelnen Merkmale und Bestandteile des Diagramms erläutert. im Anschluss dann mit Layering um auf die Ergebnisse besser einzugehen.
+Um Text neben den Diagrammen einzubauen habe ich die slides in Columns aufgeteilt. Um den Text nacheinander Anzeigen zu lassen, wurde mit `fragment` gearbeitet.
