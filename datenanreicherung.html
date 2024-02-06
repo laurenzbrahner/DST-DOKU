@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Spotify-Analyse - 4&nbsp; Datenanreicherung</title>
+<title>Spotify-Analyse Dokumentation - 4&nbsp; Datenanreicherung</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -106,10 +106,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<meta property="og:title" content="Spotify-Analyse - 4&nbsp; Datenanreicherung">
+<meta property="og:title" content="Spotify-Analyse Dokumentation - 4&nbsp; Datenanreicherung">
 <meta property="og:description" content="">
 <meta property="og:image" content="https://laurenzbrahner.github.io/DST-DOKU//images/logo.png">
-<meta property="og:site_name" content="Spotify-Analyse">
+<meta property="og:site_name" content="Spotify-Analyse Dokumentation">
 <meta property="og:image:height" content="1185">
 <meta property="og:image:width" content="1196">
 </head>
@@ -138,7 +138,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Spotify-Analyse</a> 
+      <a href="./">Spotify-Analyse Dokumentation</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/laurenzbrahner/DST-DOKU" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -198,8 +198,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./quarto_prasi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Quarto Präsentation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./streamlit_dashboard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Streamlit Dashboard</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -261,7 +273,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>Rückgabe des Landes</strong>: Wenn ein Künstler gefunden wird, gibt die Funktion das Land des Künstlers zurück. Andernfalls wird <code>"Artist not found"</code> zurückgegeben.</p></li>
 <li><p><strong>Fehlerbehandlung</strong>: Im Falle eines Fehlers bei der Anfrage oder der Verarbeitung der Daten wird eine Fehlermeldung zurückgegeben.</p></li>
 </ol>
-<div id="4cff6937" class="cell" data-execution_count="1">
+<div id="71a96af2" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">def find_artist_country(artist_name):</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">    mb.set_useragent("Artist_Country", "1.0", contact="me@example.com")</span></span>
@@ -285,7 +297,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="anreicherung-des-datensatzes-mit-den-künstlerländern" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="anreicherung-des-datensatzes-mit-den-künstlerländern"><span class="header-section-number">4.3</span> Anreicherung des Datensatzes mit den Künstlerländern</h2>
 <p>Der Datensatz wurde mit den Ländern der Künstler angereichert, indem die zuvor definierte Funktion verwendet wurde, um das Land für jeden Künstler abzufragen und dem DataFrame hinzuzufügen. Das ganze habe ich mit einer for-Schleife realisiert.</p>
-<div id="2b261710" class="cell" data-execution_count="2">
+<div id="2281f40c" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">artist_country_list = []</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>

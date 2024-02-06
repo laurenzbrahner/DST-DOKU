@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Spotify-Analyse - 6&nbsp; Datenvisualisierung</title>
+<title>Spotify-Analyse Dokumentation - 6&nbsp; Datenvisualisierung</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="next">
+<link href="./quarto_prasi.html" rel="next">
 <link href="./datenexploration.html" rel="prev">
 <link href=".//images/logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -106,10 +106,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<meta property="og:title" content="Spotify-Analyse - 6&nbsp; Datenvisualisierung">
+<meta property="og:title" content="Spotify-Analyse Dokumentation - 6&nbsp; Datenvisualisierung">
 <meta property="og:description" content="">
 <meta property="og:image" content="https://laurenzbrahner.github.io/DST-DOKU//images/logo.png">
-<meta property="og:site_name" content="Spotify-Analyse">
+<meta property="og:site_name" content="Spotify-Analyse Dokumentation">
 <meta property="og:image:height" content="1185">
 <meta property="og:image:width" content="1196">
 </head>
@@ -138,7 +138,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Spotify-Analyse</a> 
+      <a href="./">Spotify-Analyse Dokumentation</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/laurenzbrahner/DST-DOKU" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -198,8 +198,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./quarto_prasi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Quarto Präsentation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./streamlit_dashboard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Streamlit Dashboard</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -228,6 +240,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#spezifische-achsenkonfigurationen" id="toc-spezifische-achsenkonfigurationen" class="nav-link" data-scroll-target="#spezifische-achsenkonfigurationen"><span class="header-section-number">6.1.6</span> Spezifische Achsenkonfigurationen</a></li>
   </ul></li>
   <li><a href="#barplots" id="toc-barplots" class="nav-link" data-scroll-target="#barplots"><span class="header-section-number">6.2</span> Barplots</a></li>
+  <li><a href="#line-chart" id="toc-line-chart" class="nav-link" data-scroll-target="#line-chart"><span class="header-section-number">6.3</span> Line-Chart</a></li>
+  <li><a href="#scatter-plot" id="toc-scatter-plot" class="nav-link" data-scroll-target="#scatter-plot"><span class="header-section-number">6.4</span> Scatter-Plot</a></li>
+  <li><a href="#distribution-plot" id="toc-distribution-plot" class="nav-link" data-scroll-target="#distribution-plot"><span class="header-section-number">6.5</span> Distribution-Plot</a></li>
+  <li><a href="#map" id="toc-map" class="nav-link" data-scroll-target="#map"><span class="header-section-number">6.6</span> Map</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/laurenzbrahner/DST-DOKU/edit/main/datenvisualisierung.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/laurenzbrahner/DST-DOKU/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -257,7 +273,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="grundelegendes-design" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="grundelegendes-design"><span class="header-section-number">6.1</span> Grundelegendes Design</h2>
 <p>Um ein durchgehendes Design zu ermöglichen habe ich zuerst Konfigurationsparameter für Altair Plots erstellt. Diese sind so gut wie gleich in den verschiedenen Diagrammtypen:</p>
-<div id="9899b862" class="cell" data-execution_count="1">
+<div id="96a7a59f" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">.properties(</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">    title={'text': 'Beispiel', 'dy': -20},</span></span>
@@ -375,9 +391,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/keys.png" class="img-fluid figure-img"></p>
-<figcaption>Anzahl der Top-Songs nach Key</figcaption>
+<figcaption>Anzahl der Ø Streams nach Key</figcaption>
 </figure>
 </div>
+</section>
+<section id="line-chart" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="line-chart"><span class="header-section-number">6.3</span> Line-Chart</h2>
+<p>Ein Linendiagramms ist ideal um die Anzajl der Song-veröffentlichungen pro Monat darzustellen, daes die zeitliche Entwicklung und Trends klar hervorhebt. es ermöglicht ein einfaches Erkennen von Mustern, wie z.B. saisonale Schwankungen oder Trends.</p>
+<p>Für die Erstellung dieses Diagramms, habe ich zuerst die release-Monate, die in dem Datensatz von 1-12 angegeben waren, auf die Monatsabkürzungen gemapped. Diese stellten bei mir dann die X-Achse dar, auf der Y-Achse war die Anzahl der veröffentlichten Songs in diesem Monat. Um die Unterschiede hervorzuheben, habe ich die Extremwerte mit Puknten und senkrechten gestrichelten Linien versehen. Dafür habe ich verschieden Plots erstellt und diese Dann mit <code>alt.layer()</code> zusammengefügt</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/monthly_realeses.png" class="img-fluid figure-img"></p>
+<figcaption>Anzahl der Veröffentlichungen nach Monat</figcaption>
+</figure>
+</div>
+</section>
+<section id="scatter-plot" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="scatter-plot"><span class="header-section-number">6.4</span> Scatter-Plot</h2>
+<p>Ich habe mich für ein Streudiagramm entschieden, um die Beziehung zwischen Speechiness und der Anzahl der Streams darzustellen, weil es mir ermöglicht, Muster und Korrelationen zwischen diesen Beiden Variablen zu erkennen. Dieser Plot veranschaulicht besonders gut, wie die Menge der gesprochenen Worte in einem Song (Speechiness) mit der Anzahl der erfolgreichen Songs mit diesem Speechiness-Wert zusammenhängt.</p>
+<p>Um diesen Scatter-Plot zu erstellen, habe ich zunächst die Daten nach der Speechiness Gruppiert und die Anzahl der Songs für jeden Speechniess-Wert gezählt. Danach habe ich Songs welche über 40% Speechiness haben aussortiert, um den Fokus auf den relevanten Bereich zu belassen. Anschließend habe ich diese gefilterten Daten benutzt um ein Lineares Regressionsmodell zu trainieren (sklearn). Diese Vorhersage habe ich dann in einem DataFrame gespeichert.</p>
+<p>Daraufhin habe ich mit Altair die Regressionslinie und den Scatter-Plot erstellt und diese wieder mit <code>alt.layer()</code> zusammengefügt. Um die regressionsLinie Hervorzuheben, habe ich die opacity des Scatter-Plots angepasst.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/scatter_plot.png" class="img-fluid figure-img"></p>
+<figcaption>Beziehung zwischen Anzahl der Songs und der Speechiness</figcaption>
+</figure>
+</div>
+</section>
+<section id="distribution-plot" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="distribution-plot"><span class="header-section-number">6.5</span> Distribution-Plot</h2>
+<p>Ich habe mich dazu entschieden Die Anzahl der Songs pro Energy-Kategorie in einem Verteilungsdiagramm darzustellen, weil es mir ermöglicht, die Verteilung und die zentrale Tendenz der Daten auf einen Blick zu erfassen. So kann ich erkennen, in welchen Energiebereichen die meisten Songs veröffentlicht werden, und eventuelle Ausreißer oder Trends sofort identifizieren.</p>
+<p>Dafür habe ich zuerst die Energy-Werte Gruppiert und von 0-100 in 10 Kategorien aufgeteilt, mit der durchschnittlichen Anzahl der Songs pro Kategorie. Daraufhin habe ich nun 2 Charts erstellt ein Histogramm, was das Ergebnis in ‘Balkenform’ angibt un ein LinienDiagramm mit dem Prop <code>interpolate='monotone'</code> für eine glatte Linie.</p>
+<p>Diese Beiden Plots habe ich wieder mit der <code>alt.layer()</code> funktion Zusammengefügt und dem Histogramm etwas weniger opacity gegeben um die Linie etwas hervorzuheben.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/distribution.png" class="img-fluid figure-img"></p>
+<figcaption>Ø Anzahl der Songs nach Energy</figcaption>
+</figure>
+</div>
+</section>
+<section id="map" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="map"><span class="header-section-number">6.6</span> Map</h2>
+<p>Für die Map habe ich die <strong>Geopandas</strong> Bibliothek verwendet, die sich sehr gut für die Verarbeitung von geografischen Daten eignet. Jedoch musste ich zuerst die von mir angereicherten Herkunftsländer in dem Datensatz mappen, da sie in der verwendeten Bibliothek zum Teil anders hießen. Danach habe ich die Anzahl der Künstler pro Land gezählt und in einem DataFrame gespeichert. Dann habe ich die Geopandas Daten und meinen DataFrame zusammegeführt, wobei ich die Anzahl der Künstler pro Land als zusätzlich Information hinzugefügt habe.</p>
+<p>Mit Altair habe ich dann eine Map erstelt, und die Länder entsprechend ihrer Künstler-Anzahl eingefärbt. Da es einen Starken außreiser mit den USA gab, habe ich eine Logarithmische Skala verwendet um die Unterschiede Sichtbarer zu machen.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/map.png" class="img-fluid figure-img"></p>
+<figcaption>Anzahl Top-Künstler nach Herkunftsland</figcaption>
+</figure>
+</div>
+<p><br></p>
+<p><strong>Nun hatte ich die grundlegenden Charts erstellt und ich konnte mit der Erstellung der Präsentation und des Dashboards anfangen.</strong></p>
 
 
 </section>
@@ -921,8 +985,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link" aria-label="<span class='chapter-number'>7</span>&nbsp; <span class='chapter-title'>Summary</span>">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./quarto_prasi.html" class="pagination-link" aria-label="<span class='chapter-number'>7</span>&nbsp; <span class='chapter-title'>Quarto Präsentation</span>">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Quarto Präsentation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

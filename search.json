@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Spotify-Analyse",
+    "title": "Spotify-Analyse Dokumentation",
     "section": "",
     "text": "Vorwort\nDie Art und Weise wie wir Musik konsumieren hat sich in den letzten Jahren grundlegend geändert. Anstatt CDs und MP3-Player haben die meisten Menschen heute ein Abonnement bei einem Musikstreamingdienst. Dabei stellt sich die Frage, was ein Song braucht, um bei einem Streamingdienst Erfolg zu haben.\n\nDieses Projekt wurde mit der Absicht ins Leben gerufen, diese Frage zu beantworten. Dafür wurde ein Datensatz, der meist-gestreamtesten Songs im Jahre 2023, anhand verschiedener Merkmale analysiert, um eine Geheimformel für einen erfolgreichen Song zu finden. In der Folgenden Dokumentation werde ich den Weg beschreiben, von der Beschaffung und Vorberereitung der Daten über die Erstellung detaillierter Visualisierungen mit Altair bis hin zur Entwicklung eines interaktiven Dashboards mit Streamlit. Dabei werde ich nicht nur auf die technsichen Heruasforderungen und die Lösungen derer eingehen, sondern auch die Ergebnisse klar darstellen.\n\nFalls Sie meine Ergebnisse anhand von einer Präsentation oder einem interaktiven Dashboard haben wollen, finden Sie diese unter den folgenden Links:\n\nPräsentation\nDashboard",
     "crumbs": [
@@ -184,19 +184,89 @@
     "href": "datenvisualisierung.html#barplots",
     "title": "6  Datenvisualisierung",
     "section": "6.2 Barplots",
-    "text": "6.2 Barplots\nFür die Erstellung von Barplots haben sich meiner Meinung nach die Anzahl der Songs nach Tonart und Keys geeignet. Da man mit einem Barplot perfekt unterschiede in verschiedenen Kategorieren aufzeigen kann.\nTonart:\nDafür habe ich zuerst ein Barplot mit den zwei verschiedenen Tonarten auf der X-Achse Erstellt. Um den Unterschied besser aufzuzeigen, habe ich die Skalierung auf der Y-Achse geändert und eine Linie auf der Höhe des Maximalwerts plaziert. Das ganze habe ich mit der alt.layer() Funktion erreicht, die die Linie und den Plot layert.\n\n\n\nAnzahl der Top-Songs nach Tonart\n\n\nKeys:\nHierfür habe ich einen Barplot mit den verschiedenen Keys auf der X-Achse erstellt. Auch hier habe ich um den Unterschied besser aufzuzeigen, die Skalierung auf der Y-Achse geändert. Außerdem habe ich wieder eine Linie durch den Maximalwert gezogen und eine gestrichelte Linie durch den Minimalwert. Um dieses Linien und somit den Unterschied besser hervorzuheben, habe ich dem Barplot eine geringere opacity gegeben. Auch hier habe ich wieder mit alt.layer() gearbeitet.\n\n\n\nAnzahl der Top-Songs nach Key",
+    "text": "6.2 Barplots\nFür die Erstellung von Barplots haben sich meiner Meinung nach die Anzahl der Songs nach Tonart und Keys geeignet. Da man mit einem Barplot perfekt unterschiede in verschiedenen Kategorieren aufzeigen kann.\nTonart:\nDafür habe ich zuerst ein Barplot mit den zwei verschiedenen Tonarten auf der X-Achse Erstellt. Um den Unterschied besser aufzuzeigen, habe ich die Skalierung auf der Y-Achse geändert und eine Linie auf der Höhe des Maximalwerts plaziert. Das ganze habe ich mit der alt.layer() Funktion erreicht, die die Linie und den Plot layert.\n\n\n\nAnzahl der Top-Songs nach Tonart\n\n\nKeys:\nHierfür habe ich einen Barplot mit den verschiedenen Keys auf der X-Achse erstellt. Auch hier habe ich um den Unterschied besser aufzuzeigen, die Skalierung auf der Y-Achse geändert. Außerdem habe ich wieder eine Linie durch den Maximalwert gezogen und eine gestrichelte Linie durch den Minimalwert. Um dieses Linien und somit den Unterschied besser hervorzuheben, habe ich dem Barplot eine geringere opacity gegeben. Auch hier habe ich wieder mit alt.layer() gearbeitet.\n\n\n\nAnzahl der Ø Streams nach Key",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Datenvisualisierung</span>"
     ]
   },
   {
+    "objectID": "datenvisualisierung.html#line-chart",
+    "href": "datenvisualisierung.html#line-chart",
+    "title": "6  Datenvisualisierung",
+    "section": "6.3 Line-Chart",
+    "text": "6.3 Line-Chart\nEin Linendiagramms ist ideal um die Anzajl der Song-veröffentlichungen pro Monat darzustellen, daes die zeitliche Entwicklung und Trends klar hervorhebt. es ermöglicht ein einfaches Erkennen von Mustern, wie z.B. saisonale Schwankungen oder Trends.\nFür die Erstellung dieses Diagramms, habe ich zuerst die release-Monate, die in dem Datensatz von 1-12 angegeben waren, auf die Monatsabkürzungen gemapped. Diese stellten bei mir dann die X-Achse dar, auf der Y-Achse war die Anzahl der veröffentlichten Songs in diesem Monat. Um die Unterschiede hervorzuheben, habe ich die Extremwerte mit Puknten und senkrechten gestrichelten Linien versehen. Dafür habe ich verschieden Plots erstellt und diese Dann mit alt.layer() zusammengefügt\n\n\n\nAnzahl der Veröffentlichungen nach Monat",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Datenvisualisierung</span>"
+    ]
+  },
+  {
+    "objectID": "datenvisualisierung.html#scatter-plot",
+    "href": "datenvisualisierung.html#scatter-plot",
+    "title": "6  Datenvisualisierung",
+    "section": "6.4 Scatter-Plot",
+    "text": "6.4 Scatter-Plot\nIch habe mich für ein Streudiagramm entschieden, um die Beziehung zwischen Speechiness und der Anzahl der Streams darzustellen, weil es mir ermöglicht, Muster und Korrelationen zwischen diesen Beiden Variablen zu erkennen. Dieser Plot veranschaulicht besonders gut, wie die Menge der gesprochenen Worte in einem Song (Speechiness) mit der Anzahl der erfolgreichen Songs mit diesem Speechiness-Wert zusammenhängt.\nUm diesen Scatter-Plot zu erstellen, habe ich zunächst die Daten nach der Speechiness Gruppiert und die Anzahl der Songs für jeden Speechniess-Wert gezählt. Danach habe ich Songs welche über 40% Speechiness haben aussortiert, um den Fokus auf den relevanten Bereich zu belassen. Anschließend habe ich diese gefilterten Daten benutzt um ein Lineares Regressionsmodell zu trainieren (sklearn). Diese Vorhersage habe ich dann in einem DataFrame gespeichert.\nDaraufhin habe ich mit Altair die Regressionslinie und den Scatter-Plot erstellt und diese wieder mit alt.layer() zusammengefügt. Um die regressionsLinie Hervorzuheben, habe ich die opacity des Scatter-Plots angepasst.\n\n\n\nBeziehung zwischen Anzahl der Songs und der Speechiness",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Datenvisualisierung</span>"
+    ]
+  },
+  {
+    "objectID": "datenvisualisierung.html#distribution-plot",
+    "href": "datenvisualisierung.html#distribution-plot",
+    "title": "6  Datenvisualisierung",
+    "section": "6.5 Distribution-Plot",
+    "text": "6.5 Distribution-Plot\nIch habe mich dazu entschieden Die Anzahl der Songs pro Energy-Kategorie in einem Verteilungsdiagramm darzustellen, weil es mir ermöglicht, die Verteilung und die zentrale Tendenz der Daten auf einen Blick zu erfassen. So kann ich erkennen, in welchen Energiebereichen die meisten Songs veröffentlicht werden, und eventuelle Ausreißer oder Trends sofort identifizieren.\nDafür habe ich zuerst die Energy-Werte Gruppiert und von 0-100 in 10 Kategorien aufgeteilt, mit der durchschnittlichen Anzahl der Songs pro Kategorie. Daraufhin habe ich nun 2 Charts erstellt ein Histogramm, was das Ergebnis in ‘Balkenform’ angibt un ein LinienDiagramm mit dem Prop interpolate='monotone' für eine glatte Linie.\nDiese Beiden Plots habe ich wieder mit der alt.layer() funktion Zusammengefügt und dem Histogramm etwas weniger opacity gegeben um die Linie etwas hervorzuheben.\n\n\n\nØ Anzahl der Songs nach Energy",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Datenvisualisierung</span>"
+    ]
+  },
+  {
+    "objectID": "datenvisualisierung.html#map",
+    "href": "datenvisualisierung.html#map",
+    "title": "6  Datenvisualisierung",
+    "section": "6.6 Map",
+    "text": "6.6 Map\nFür die Map habe ich die Geopandas Bibliothek verwendet, die sich sehr gut für die Verarbeitung von geografischen Daten eignet. Jedoch musste ich zuerst die von mir angereicherten Herkunftsländer in dem Datensatz mappen, da sie in der verwendeten Bibliothek zum Teil anders hießen. Danach habe ich die Anzahl der Künstler pro Land gezählt und in einem DataFrame gespeichert. Dann habe ich die Geopandas Daten und meinen DataFrame zusammegeführt, wobei ich die Anzahl der Künstler pro Land als zusätzlich Information hinzugefügt habe.\nMit Altair habe ich dann eine Map erstelt, und die Länder entsprechend ihrer Künstler-Anzahl eingefärbt. Da es einen Starken außreiser mit den USA gab, habe ich eine Logarithmische Skala verwendet um die Unterschiede Sichtbarer zu machen.\n\n\n\nAnzahl Top-Künstler nach Herkunftsland\n\n\n\nNun hatte ich die grundlegenden Charts erstellt und ich konnte mit der Erstellung der Präsentation und des Dashboards anfangen.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Datenvisualisierung</span>"
+    ]
+  },
+  {
+    "objectID": "quarto_prasi.html",
+    "href": "quarto_prasi.html",
+    "title": "7  Quarto Präsentation",
+    "section": "",
+    "text": "7.1 Desgin\nIch habe mich für ein Dunkles Design entschieden, dies habe ich mit dem frei verfügaberen theme “dark” erreichen können. Außerdem habe ich eine custom scss datei erstellt, in der ich die größen und das alignment der Überschriften und des Footers bestimmt habe:\nscss:\n\"\"\"\n\n/*-- scss:defaults --*/\n// Hier können Sie Standardwerte für Variablen definieren.\n\n/*-- scss:rules --*/\n// Hier schreiben Sie Ihre Haupt-Style-Regeln.\n.reveal {\n    h3 {\n        font-size: 70px;\n    }\n\n    h4 {\n        font-size: 40px;\n    }\n\n    h2 {\n        font-size: 100px;\n    }\n\n    h1 {\n        text-align: center;\n        font-size: 200px;\n    }\n\n\n\n    // Weitere Style-Regeln...\n}\n\n\n.footer {\n    text-align: left;\n}\n\n\n\n\"\"\"\n\n'\\n\\n/*-- scss:defaults --*/\\n// Hier können Sie Standardwerte für Variablen definieren.\\n\\n/*-- scss:rules --*/\\n// Hier schreiben Sie Ihre Haupt-Style-Regeln.\\n.reveal {\\n    h3 {\\n        font-size: 70px;\\n    }\\n\\n    h4 {\\n        font-size: 40px;\\n    }\\n\\n    h2 {\\n        font-size: 100px;\\n    }\\n\\n    h1 {\\n        text-align: center;\\n        font-size: 200px;\\n    }\\n\\n\\n\\n    // Weitere Style-Regeln...\\n}\\n\\n\\n.footer {\\n    text-align: left;\\n}\\n\\n\\n\\n'\nAußerdem habe ich die Breite für slides benutzerdefiniert angepasse, da ich wollte, dass die Diagramme immernoch angemessen angezeigt werden, wenn die slide in Columns aufgeteilt wird:\nUm eine Konsistenete Farbauswahl für die (Achsen-)Titel zu haben, die zu dem dunklen Hintergrund passt, habe ich Farben definiert:",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Quarto Präsentation</span>"
+    ]
+  },
+  {
+    "objectID": "quarto_prasi.html#desgin",
+    "href": "quarto_prasi.html#desgin",
+    "title": "7  Quarto Präsentation",
+    "section": "",
+    "text": "Breite: 2000\nHöhe: 960\n\n\n\nTitelfarbe: rgba(230, 230, 230, 0.7)\nY-Achse-Titel&Label: rgba(230, 230, 230, 0.5)\nX-Achse-Titel&Label: rgba(224, 224, 224, 0.3)",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Quarto Präsentation</span>"
+    ]
+  },
+  {
+    "objectID": "quarto_prasi.html#vorgehen",
+    "href": "quarto_prasi.html#vorgehen",
+    "title": "7  Quarto Präsentation",
+    "section": "7.2 Vorgehen",
+    "text": "7.2 Vorgehen\nNachdem das Design stand, habe ich meine Erstellten Visualisierungen, in die jeweiligen Slides eingebaut. In meinem Vorgehen habe ich zunächst die Base Charts ohne layering präsentiert und dabei die einzelnen Merkmale und Bestandteile des Diagramms erläutert. iM Anschluss dann mit Layering um auf die Ergebnisse besser einzugehen.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Quarto Präsentation</span>"
+    ]
+  },
+  {
     "objectID": "summary.html",
     "href": "summary.html",
-    "title": "7  Summary",
+    "title": "9  Summary",
     "section": "",
     "text": "In summary, this book has no content whatsoever.\nLink zum Dashboard.",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summary</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Summary</span>"
     ]
   }
 ]
