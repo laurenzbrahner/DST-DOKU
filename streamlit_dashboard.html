@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="next">
+<link href="./herausforderungen.html" rel="next">
 <link href="./quarto_prasi.html" rel="prev">
 <link href=".//images/logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -73,6 +73,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Spotify-Analyse Dokumentation - 8&nbsp; Streamlit Dashboard">
+<meta property="og:description" content="">
 <meta property="og:image" content="https://laurenzbrahner.github.io/DST-DOKU//images/logo.png">
 <meta property="og:site_name" content="Spotify-Analyse Dokumentation">
 <meta property="og:image:height" content="1185">
@@ -175,8 +176,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./herausforderungen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">herausforderungen.html</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -191,7 +198,13 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#design-aufbau-und-beschreibung-der-funktionalität" id="toc-design-aufbau-und-beschreibung-der-funktionalität" class="nav-link active" data-scroll-target="#design-aufbau-und-beschreibung-der-funktionalität"><span class="header-section-number">8.1</span> Design, Aufbau und beschreibung der Funktionalität</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/laurenzbrahner/DST-DOKU/edit/main/streamlit_dashboard.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/laurenzbrahner/DST-DOKU/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -215,8 +228,26 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Um die Ergebnisse nocheinmal detaillierter zu zeigen, und interaktivität zu ermöglichen, habe ich ein Dashboard erstellt. Dafür wurde das Streamlit Framework verwendet. Dieses ermöglicht eine schnelle und ziemlich intuitive Erstellung eines Dashboards</p>
+<section id="design-aufbau-und-beschreibung-der-funktionalität" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="design-aufbau-und-beschreibung-der-funktionalität"><span class="header-section-number">8.1</span> Design, Aufbau und beschreibung der Funktionalität</h2>
+<p>An dem Design musste ich nicht viel ändern, da ein Streamlit Dashboard von Haus aus meiner Meinung nach ziemlich gut aussieht. Ich habe in den meisten Fällen nur das ‘layout’ auf ‘wide’ gesetzt, um mehrere Visualisierungen nebeneinander darstellen zu können. Außerdem habe ich, wenn ich Charts in einem kurzen Text erklärt habe, diesen Text mit derselben Farbe des Diagrammtitels versehen.</p>
+<p>Für den Aufbau des Dashboards habe ich eine Multipage-App gewählt, das geht in Streamlit ziemlich einfach, die verschiedenen Dateinamen müssen einfach mit der Nummer der Page Anfangen.</p>
+<p>Ich habe zuerst eine Info-Page erstellt, in dem der User einen Überblick über mein Projekt und meine verwendeten Daten bekommt.</p>
+<p>Dann habe ich als kleinen Einstieg zwei Balkendiagramme der Top-10 Songs und der Top-10 Künstler dargestellt. Um eine Interaktivität zu gewähren habe ich dem User eine Auswahl gegeben, hier kann er seine Lieblingskünstler auswählen und es wird automatisch ein Pie-Chart erstellt, mit der Anzahl der Streams der jeweiligen Künstler. Das habe ich mit einem Filtermechanismus umgesetzt, der den DataFrame nach den ausgewählten Künstlern filtert und dann als Pie-Chart anzeigt. Dazu habe ich dann noch eine If-Abfrage erstellt, um zu checken, ob der User mehr als 12 ausgewählt hat, ist dies der Fall, dann wird eine Fehlermeldung angezeigt.</p>
+<p>In der nächsten Page geht es um den Einfluss der Tonart und des Keys auf den Erfolg des Songs. Hier sind die beiden Diagramme, einmal nach Tonart und nach Key zu sehen. In der Sidebar kann der User nach Tonart und nach Key filtern. Die Diagramme werden dabei automatisch angepasst. Das heißt, wenn der User als Filtermöglichkeit für die Tonart ‘Major’ wählt, dann wird in dem Tonartdiagramm auch nur Major angezeigt und das Keys Diagramm passt sich auch dahingehend an, dass dann nur die Ø Streams nach Key für die Jeweilige Tonart, in diesem Beispiel für ‘Major’ angezeigt. Das Ganze ist auch umgekehrt möglich. Unten werden dem User dann abhängig von seiner Auswahl die Top-5 Songs nach Streams angezeigt. Das Ganze wurde auch hier wieder mit einem Filtermechanismus erschaffen.</p>
+<p>Die nächste Page behandelt den Einfluss des Veröffentlichungsmonats. Hier habe ich nur einen kleinen Text und 2 Buttons implementiert. Wenn der User den Button ‚Diagrammdemo starten‘ klickt, wird eine schrittweise Demonstration eingeleitet. Wenn der User auf ‘mehr Details anzeigen’ klickt, dann werden ihm die Extrempunkte markiert und ein kleiner Text erscheint. Das ganze habe ich mit einer for-schleife erreicht, nach jeder Iteration wird dem Dataframe ein Monat hinzugefügt, um das Ganze langsamer und somit anschaulicher zu gestalten habe ich die <strong>Time</strong> Bibliothek von Python benutzt: ‘time.sleep(0.25)’, damit wird eine viertel Sekunde gewartet, bis der nächste Monat zum DataFrame hinzugefügt wird.</p>
+<p>In der nächsten Page wird der Einfluss von den Audio-Merkmalen auf die Songpopularität betrachtet. Hier werden vier verschiedene Scatter-Plots mit Regressionslinie gezeigt. Die betrachteten Merkmale sind hier Speechiness, Liveness, Instrumentalness und Accousticness. Hier kann der User wieder in der Sidebar zwischen der Anzeige von Regressionslinie und Scatter-Plot, nur der Regressionslinie und nur dem Scatter-Plot wählen. Außerdem kann er auch die Y-Achse anpassen, ob sie nach den Streams oder der Anzahl der Songs misst. Um diese Funktion zu ermöglichen, habe ich zwei Funktionen erstellt, eine erstellt dabei den Plot anhand der Anzahl der Songs, die Andere anhand der Anzahl der Streams. Beide haben die zwei Parameter ‘merkmal’ und ‘anzeige’. Um die Charts nun konditionell anzeigen zu können, habe ich If-Statements genutzt.</p>
+<p>Die nächste Page beschreibt, wie tanzbar und wie energetisch ein Song sein sollte. Diese ist etwas simpler gehalten. Hier kann der User in der Sidebar zwischen zwei Merkmalen wählen, der <strong>Energy</strong> und der <strong>Danceability</strong>. So wird der Distribution-Plot mit dem ausgewählten Merkmal angezeigt. Für die Umsetzung wurde wieder mit einem einfachen If-Statements gearbeitet.</p>
+<p>Die letzte inhaltlich relevante Page handelt sich um die Herkunft der Top-Künstler. Diese ist auch relativ simpel aufgebaut. Es ist die Map mit der Anzahl der Künstler nach Ländern zu sehen und in der Sidebar kann der User Länder auswählen. Wenn der User eine Auswahl trifft, dann werden nur diese Länder in der Map angezeigt und unten wird zusätzlich noch ein Barplot mit den ausgewählten Ländern nach Top-Künstler erstellt. Um diese Funktionalität zu erreichen, wurde der Dataframe anhand von den Eingaben in der Sidebar gefiltert.</p>
+<p>Als Letztes habe ich noch eine Kontaktpage erstellt, hier kann der User meine Kontaktdaten finden.</p>
+<p>Falls sie sich das Dashboard nochmal anschauen wollen, finden sie hier den Link:</p>
+<ul>
+<li><a href="https://appapp-ka7buefabvnokhdfwhyptg.streamlit.app/">Dashboard</a></li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -757,8 +788,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link" aria-label="<span class='chapter-number'>9</span>&nbsp; <span class='chapter-title'>Summary</span>">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./herausforderungen.html" class="pagination-link" aria-label="<span class='chapter-number'>9</span>&nbsp; <span class='chapter-title'>herausforderungen.html</span>">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">herausforderungen.html</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -767,4 +798,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/laurenzbrahner/DST-DOKU/edit/main/streamlit_dashboard.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/laurenzbrahner/DST-DOKU/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/laurenzbrahner/DST-DOKU/edit/main/streamlit_dashboard.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/laurenzbrahner/DST-DOKU/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
