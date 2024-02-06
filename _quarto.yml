@@ -6,7 +6,7 @@ execute:
 
 book:
   page-navigation: true
-  title: "Spotify-Analyse"
+  title: "Spotify-Analyse Dokumentation"
   site-url: "https://laurenzbrahner.github.io/DST-DOKU/" # replace ORGNAME and REPONAME
   repo-url: https://github.com/laurenzbrahner/DST-DOKU # replace ORGNAME and REPONAME
   repo-actions: [edit, issue]
@@ -24,6 +24,8 @@ book:
     - datenanreicherung.qmd
     - datenexploration.qmd
     - datenvisualisierung.qmd
+    - quarto_prasi.qmd
+    - streamlit_dashboard.qmd
     - summary.qmd
     - references.qmd
 
@@ -38,3 +40,5 @@ format:
     code-overflow: wrap
 
 bibliography: references.bib
+
+

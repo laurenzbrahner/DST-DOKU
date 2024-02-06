@@ -1,0 +1,71 @@
+# Quarto Präsentation
+
+Mit der Fertigstellung der Visualiserungen war es nun an der Zeit, diese meiner Zielgruppe angemessen zu präsentieren, war es nun an der Zeit eine Präsentation zu erstellen. Diese Habe ich mit quarto - revealjs erstellt.
+
+## Desgin
+
+Ich habe mich für ein Dunkles Design entschieden, dies habe ich mit dem frei verfügaberen theme "dark" erreichen können. 
+Außerdem habe ich eine custom scss datei erstellt, in der ich die größen und das alignment der Überschriften und des Footers bestimmt habe:
+
+***scss:***
+
+```{python}
+"""
+
+/*-- scss:defaults --*/
+// Hier können Sie Standardwerte für Variablen definieren.
+
+/*-- scss:rules --*/
+// Hier schreiben Sie Ihre Haupt-Style-Regeln.
+.reveal {
+    h3 {
+        font-size: 70px;
+    }
+
+    h4 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 100px;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 200px;
+    }
+
+
+
+    // Weitere Style-Regeln...
+}
+
+
+.footer {
+    text-align: left;
+}
+
+
+
+"""
+
+
+```
+
+Außerdem habe ich die Breite für slides benutzerdefiniert angepasse, da ich wollte, dass die Diagramme immernoch angemessen angezeigt werden, wenn die slide in Columns aufgeteilt wird: 
+ 
+- Breite: **2000**
+- Höhe: **960** 
+
+
+Um eine Konsistenete Farbauswahl für die (Achsen-)Titel zu haben, die zu dem dunklen Hintergrund passt, habe ich Farben definiert:
+
+- Titelfarbe: **rgba(230, 230, 230, 0.7)**
+- Y-Achse-Titel&Label: **rgba(230, 230, 230, 0.5)**
+- X-Achse-Titel&Label: **rgba(224, 224, 224, 0.3)**  
+
+
+## Vorgehen
+
+Nachdem das Design stand, habe ich meine Erstellten Visualisierungen, in die jeweiligen Slides eingebaut. 
+In meinem Vorgehen habe ich zunächst die Base Charts ohne layering  präsentiert und dabei die einzelnen Merkmale und Bestandteile des Diagramms erläutert. iM Anschluss dann mit Layering um auf die Ergebnisse besser einzugehen.
