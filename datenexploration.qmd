@@ -1,5 +1,5 @@
 # Datenexploration
-In diesem Kapitel werden verschiedene Aspekte des angereicherten Datensatzes der meistgestreamten Songs 2023 untersucht. Ziel hierbei ist weniger die visuelle Darstellung sondern es geht eher darum herauszufinden, welche Merkmale Einfluss auf die Popularität eines Songs haben.
+In diesem Kapitel werden verschiedene Aspekte des angereicherten Datensatzes der meistgestreamten Songs 2023 untersucht. Ziel hierbei ist weniger die visuelle Darstellung, sondern es geht eher darum herauszufinden, welche Merkmale Einfluss auf die Popularität eines Songs haben.
 
 ## Verwendete Werkzeuge und Bibliotheken
 
@@ -92,8 +92,7 @@ Auch hier konnte ich mit der pandas builtin `value_counts()` wichtige erste Info
 ## Ergebnisse der Exploration
 
 Wie in den Histogrammen und in der Heatmap zu sehen ist, haben viele Top-Songs ähnliche Merkmalsausprägungen.
-Besonders stechen diese rechtschiefen Verteilungen aus:
-
+Besonders stechen diese rechtsschiefen Verteilungen aus:
 
 - **speechiness**
 - **instrumentalness**
@@ -103,11 +102,10 @@ Aber auch die eher Normalverteilten Merkmale sollte man beachten:
 - **energy**
 - **danceability**
 
-Auch bei der Tonart und des keys konnte ich auffälligkeiten feststellen, Die meisten Top-Songs haben die Tonart **Major** und den Key **C#**
+Auch bei der Tonart und des Keys konnte ich Auffälligkeiten feststellen, die meisten Top-Songs haben die Tonart **Major** und den Key **C#**
 
-Der Releasezeitpunkt sollte auch ordentlich durchdacht werden. Im **Janaur** und **Mai** werden die meisten Songs relesed im **August** wurden fast 3 mal weniger Songs released.
+Der Releasezeitpunkt sollte auch ordentlich durchdacht werden. Im **Janaur** und **Mai** werden die meisten Songs relesed im **August** wurden fast 3-mal weniger Songs released.
 
 Eine weitere interessante Information ist, dass mit großem Abstand die meisten Top-künstler aus den **USA** kommen.
 
-
-***Mit diesen Erkenntnissen kann ich nun anprechende Visualisierungen gestalten, wie ich das gemacht habe erfahren Sie im nächsten Kapitel.***
+***Mit diesen Erkenntnissen kann ich nun anbrechende Visualisierungen gestalten, wie ich das gemacht habe erfahren Sie im nächsten Kapitel.***

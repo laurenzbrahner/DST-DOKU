@@ -256,10 +256,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>Mit der Fertigstellung der Visualiserungen war es nun an der Zeit, diese meiner Zielgruppe angemessen zu präsentieren, war es nun an der Zeit eine Präsentation zu erstellen. Diese Habe ich mit quarto - revealjs erstellt.</p>
+<p>Mit der Fertigstellung der Visualisierungen war es nun an der Zeit, diese meiner Zielgruppe angemessen zu präsentieren, war es nun an der Zeit eine Präsentation zu erstellen. Diese habe ich mit quarto – revealjs erstellt.</p>
 <section id="desgin" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="desgin"><span class="header-section-number">7.1</span> Desgin</h2>
-<p>Ich habe mich für ein Dunkles Design entschieden, dies habe ich mit dem frei verfügaberen theme “dark” erreichen können. Außerdem habe ich eine custom scss datei erstellt, in der ich die größen und das alignment der Überschriften und des Footers bestimmt habe:</p>
+<p>Ich habe mich für ein dunkles Design entschieden, dies habe ich mit dem frei verfügbaren Theme “dark” erreichen können. Außerdem habe ich eine custom scss Datei erstellt, in der ich die Größen und das Alignment der Überschriften und des Footers bestimmt habe:</p>
 <p><strong><em>scss:</em></strong></p>
 <div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
@@ -304,12 +304,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>'\n\n/*-- scss:defaults --*/\n// Hier können Sie Standardwerte für Variablen definieren.\n\n/*-- scss:rules --*/\n// Hier schreiben Sie Ihre Haupt-Style-Regeln.\n.reveal {\n    h3 {\n        font-size: 70px;\n    }\n\n    h4 {\n        font-size: 40px;\n    }\n\n    h2 {\n        font-size: 100px;\n    }\n\n    h1 {\n        text-align: center;\n        font-size: 200px;\n    }\n\n\n\n    // Weitere Style-Regeln...\n}\n\n\n.footer {\n    text-align: left;\n}\n\n\n\n'</code></pre>
 </div>
 </div>
-<p>Außerdem habe ich die Breite für slides benutzerdefiniert angepasse, da ich wollte, dass die Diagramme immernoch angemessen angezeigt werden, wenn die slide in Columns aufgeteilt wird:</p>
+<p>Außerdem habe ich die Breite für Slides benutzerdefiniert angepasst, da ich wollte, dass die Diagramme immer noch angemessen angezeigt werden, wenn die Slide in Columns aufgeteilt wird:</p>
 <ul>
 <li>Breite: <strong>2000</strong></li>
 <li>Höhe: <strong>960</strong></li>
 </ul>
-<p>Um eine Konsistenete Farbauswahl für die (Achsen-)Titel zu haben, die zu dem dunklen Hintergrund passt, habe ich Farben definiert:</p>
+<p>Um eine konsistente Farbauswahl für die (Achsen-)Titel zu haben, die zu dem dunklen Hintergrund passt, habe ich Farben definiert:</p>
 <ul>
 <li>Titelfarbe: <strong>rgba(230, 230, 230, 0.7)</strong></li>
 <li>Y-Achse-Titel&amp;Label: <strong>rgba(230, 230, 230, 0.5)</strong></li>
@@ -318,7 +318,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="vorgehen" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="vorgehen"><span class="header-section-number">7.2</span> Vorgehen</h2>
-<p>Nachdem das Design stand, habe ich meine Erstellten Visualisierungen, in die jeweiligen Slides eingebaut. In meinem Vorgehen habe ich zunächst die Base Charts ohne layering präsentiert und dabei die einzelnen Merkmale und Bestandteile des Diagramms erläutert. im Anschluss dann mit Layering um auf die Ergebnisse besser einzugehen. Um Text neben den Diagrammen einzubauen habe ich die slides in Columns aufgeteilt. Um den Text nacheinander Anzeigen zu lassen, wurde mit <code>fragment</code> gearbeitet.</p>
+<p>Nachdem das Design stand, habe ich meine erstellten Visualisierungen, in die jeweiligen Slides eingebaut. In meinem Vorgehen habe ich zunächst die Base Charts ohne layering präsentiert und dabei die einzelnen Merkmale und Bestandteile des Diagramms erläutert. Im Anschluss dann mit Layering, um auf die Ergebnisse besser einzugehen. Um Text neben den Diagrammen einzubauen, habe ich die Slides in Columns aufgeteilt. Um den Text nacheinander anzeigen zu lassen, wurde mit ‘fragment’ gearbeitet.</p>
 
 
 </section>

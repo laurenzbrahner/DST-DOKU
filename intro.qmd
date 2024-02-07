@@ -8,4 +8,4 @@ Diese Information eignet sich besonders für Label-Chefs oder Musiker.
 ## Motivation
 
 Die Motivation für dieses Projekt ergab sich bei mir durch meine Begeisterung für Musik. Ich habe mir oft Fragen gestellt, welche Merkmale einen erfolgreichen Song ausmachen.
-Dieses Projekt zielt also darauf ab, die Verbindung zwischen Daten und musikalischer Ausdruckskraft zu erforschen.
+Dieses Projekt zielt also darauf ab, die Verbindung zwischen Daten und musikalischen Erfolg zu erforschen.
