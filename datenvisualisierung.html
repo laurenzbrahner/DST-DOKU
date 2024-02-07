@@ -236,7 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#grundelegendes-design" id="toc-grundelegendes-design" class="nav-link active" data-scroll-target="#grundelegendes-design"><span class="header-section-number">6.1</span> Grundelegendes Design</a>
+  <li><a href="#grundlegendes-design" id="toc-grundlegendes-design" class="nav-link active" data-scroll-target="#grundlegendes-design"><span class="header-section-number">6.1</span> Grundlegendes Design</a>
   <ul class="collapse">
   <li><a href="#allgemeine-eigenschaften" id="toc-allgemeine-eigenschaften" class="nav-link" data-scroll-target="#allgemeine-eigenschaften"><span class="header-section-number">6.1.1</span> Allgemeine Eigenschaften</a></li>
   <li><a href="#titelkonfiguration" id="toc-titelkonfiguration" class="nav-link" data-scroll-target="#titelkonfiguration"><span class="header-section-number">6.1.2</span> Titelkonfiguration</a></li>
@@ -275,11 +275,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Mit den gewonnen Erkenntnissen aus der Exploration, können nun Visualisierungen erstellt werden. Ziel ist es, aus den gewonnen Erkenntnissen der Exploration visuell ansprechende und aussagekräftige Visualisierungen mit Altair zu erstellen.</p>
-<section id="grundelegendes-design" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="grundelegendes-design"><span class="header-section-number">6.1</span> Grundelegendes Design</h2>
-<p>Um ein durchgehendes Design zu ermöglichen habe ich zuerst Konfigurationsparameter für Altair Plots erstellt. Diese sind so gut wie gleich in den verschiedenen Diagrammtypen:</p>
-<div id="a34ee6fe" class="cell" data-execution_count="1">
+<p>Mit den gewonnenen Erkenntnissen aus der Exploration können nun Visualisierungen erstellt werden. Ziel ist es, aus den gewonnen Erkenntnissen der Exploration visuell ansprechende und aussagekräftige Visualisierungen mit Altair zu erstellen.</p>
+<section id="grundlegendes-design" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="grundlegendes-design"><span class="header-section-number">6.1</span> Grundlegendes Design</h2>
+<p>Um ein durchgehendes Design zu ermöglichen, habe ich zuerst Konfigurationsparameter für Altair Plots erstellt. Diese sind so gut wie gleich in den verschiedenen Diagrammtypen:</p>
+<div id="4b2f6f95" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">.properties(</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">    title={'text': 'Beispiel', 'dy': -20},</span></span>
@@ -383,9 +383,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="barplots" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="barplots"><span class="header-section-number">6.2</span> Barplots</h2>
-<p>Für die Erstellung von Barplots haben sich meiner Meinung nach die Anzahl der Songs nach Tonart und Keys geeignet. Da man mit einem Barplot perfekt unterschiede in verschiedenen Kategorieren aufzeigen kann.</p>
+<p>Für die Erstellung von Barplots haben sich meiner Meinung nach die Anzahl der Songs nach Tonart und Keys geeignet. Da man mit einem Barplot perfekt Unterschiede in verschiedenen Kategorien aufzeigen kann.</p>
 <p><strong>Tonart:</strong></p>
-<p>Dafür habe ich zuerst ein Barplot mit den zwei verschiedenen Tonarten auf der X-Achse Erstellt. Um den Unterschied besser aufzuzeigen, habe ich die Skalierung auf der Y-Achse geändert und eine Linie auf der Höhe des Maximalwerts plaziert. Das ganze habe ich mit der <code>alt.layer()</code> Funktion erreicht, die die Linie und den Plot layert.</p>
+<p>Dafür habe ich zuerst ein Barplot mit den zwei verschiedenen Tonarten auf der X-Achse erstellt. Um den Unterschied besser aufzuzeigen, habe ich die Skalierung auf der Y-Achse geändert und eine Linie auf der Höhe des Maximalwerts platziert. Das ganze habe ich mit der ‘alt.layer()’ Funktion erreicht, die die Linie und den Plot layert.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/visualization_bar_plot_with_lines.png" class="img-fluid figure-img"></p>
@@ -393,7 +393,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <p><strong>Keys:</strong></p>
-<p>Hierfür habe ich einen Barplot mit den verschiedenen Keys auf der X-Achse erstellt. Auch hier habe ich um den Unterschied besser aufzuzeigen, die Skalierung auf der Y-Achse geändert. Außerdem habe ich wieder eine Linie durch den Maximalwert gezogen und eine gestrichelte Linie durch den Minimalwert. Um dieses Linien und somit den Unterschied besser hervorzuheben, habe ich dem Barplot eine geringere opacity gegeben. Auch hier habe ich wieder mit <code>alt.layer()</code> gearbeitet.</p>
+<p>Hierfür habe ich einen Barplot mit den verschiedenen Keys auf der X-Achse erstellt. Auch hier habe ich, um den Unterschied besser aufzuzeigen, die Skalierung auf der Y-Achse geändert. Außerdem habe ich wieder eine Linie durch den Maximalwert gezogen und eine gestrichelte Linie durch den Minimalwert. Um diese Linien und somit den Unterschied besser hervorzuheben, habe ich dem Barplot eine geringere opacity gegeben. Auch hier habe ich wieder mit ‘alt.layer()’ gearbeitet.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/keys.png" class="img-fluid figure-img"></p>
@@ -403,8 +403,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="line-chart" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="line-chart"><span class="header-section-number">6.3</span> Line-Chart</h2>
-<p>Ein Linendiagramms ist ideal um die Anzajl der Song-veröffentlichungen pro Monat darzustellen, daes die zeitliche Entwicklung und Trends klar hervorhebt. es ermöglicht ein einfaches Erkennen von Mustern, wie z.B. saisonale Schwankungen oder Trends.</p>
-<p>Für die Erstellung dieses Diagramms, habe ich zuerst die release-Monate, die in dem Datensatz von 1-12 angegeben waren, auf die Monatsabkürzungen gemapped. Diese stellten bei mir dann die X-Achse dar, auf der Y-Achse war die Anzahl der veröffentlichten Songs in diesem Monat. Um die Unterschiede hervorzuheben, habe ich die Extremwerte mit Puknten und senkrechten gestrichelten Linien versehen. Dafür habe ich verschieden Plots erstellt und diese Dann mit <code>alt.layer()</code> zusammengefügt</p>
+<p>Ein Liniendiagramm ist ideal um die Anzahl der Song-Veröffentlichungen pro Monat darzustellen, da es die zeitliche Entwicklung und Trends klar hervorhebt. Es ermöglicht ein einfaches Erkennen von Mustern, wie z.B. saisonale Schwankungen oder Trends.</p>
+<p>Für die Erstellung dieses Diagramms, habe ich zuerst die Release-Monate, die in dem Datensatz von 1 bis 12 angegeben waren, auf die Monatsabkürzungen gemapped. Diese stellten bei mir dann die X-Achse dar, auf der Y-Achse war die Anzahl der veröffentlichten Songs in diesem Monat. Um die Unterschiede hervorzuheben, habe ich die Extremwerte mit Punkten und senkrechten gestrichelten Linien versehen. Dafür habe ich verschieden Plots erstellt und diese dann mit ‘alt.layer()’ zusammengefügt.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/monthly_realeses.png" class="img-fluid figure-img"></p>
@@ -414,9 +414,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="scatter-plot" class="level2" data-number="6.4">
 <h2 data-number="6.4" class="anchored" data-anchor-id="scatter-plot"><span class="header-section-number">6.4</span> Scatter-Plot</h2>
-<p>Ich habe mich für ein Streudiagramm entschieden, um die Beziehung zwischen Speechiness und der Anzahl der Streams darzustellen, weil es mir ermöglicht, Muster und Korrelationen zwischen diesen Beiden Variablen zu erkennen. Dieser Plot veranschaulicht besonders gut, wie die Menge der gesprochenen Worte in einem Song (Speechiness) mit der Anzahl der erfolgreichen Songs mit diesem Speechiness-Wert zusammenhängt.</p>
-<p>Um diesen Scatter-Plot zu erstellen, habe ich zunächst die Daten nach der Speechiness Gruppiert und die Anzahl der Songs für jeden Speechniess-Wert gezählt. Danach habe ich Songs welche über 40% Speechiness haben aussortiert, um den Fokus auf den relevanten Bereich zu belassen. Anschließend habe ich diese gefilterten Daten benutzt um ein Lineares Regressionsmodell zu trainieren (sklearn). Diese Vorhersage habe ich dann in einem DataFrame gespeichert.</p>
-<p>Daraufhin habe ich mit Altair die Regressionslinie und den Scatter-Plot erstellt und diese wieder mit <code>alt.layer()</code> zusammengefügt. Um die regressionsLinie Hervorzuheben, habe ich die opacity des Scatter-Plots angepasst.</p>
+<p>Ich habe mich für ein Streudiagramm entschieden, um die Beziehung zwischen Speechiness und der Anzahl der Streams darzustellen, weil es mir ermöglicht, Muster und Korrelationen zwischen diesen beiden Variablen zu erkennen. Dieser Plot veranschaulicht besonders gut, wie die Menge der gesprochenen Worte in einem Song (Speechiness), mit der Anzahl der erfolgreichen Songs, mit diesem Speechiness-Wert zusammenhängt.</p>
+<p>Um diesen Scatter-Plot zu erstellen, habe ich zunächst die Daten nach der Speechiness gruppiert und die Anzahl der Songs für jeden Speechniess-Wert gezählt. Danach habe ich Songs, welche über 40 % Speechiness haben aussortiert, um den Fokus auf den relevanten Bereich zu belassen. Anschließend habe ich diese gefilterten Daten benutzt, um ein lineares Regressionsmodell zu trainieren (sklearn). Diese Vorhersage habe ich dann in einem DataFrame gespeichert.</p>
+<p>Daraufhin habe ich mit Altair die Regressionslinie und den Scatter-Plot erstellt und diese wieder mit ‘alt.layer()’ zusammengefügt. Um die Regressionslinie hervorzuheben, habe ich die opacity des Scatter-Plots angepasst.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/scatter_plot.png" class="img-fluid figure-img"></p>
@@ -426,9 +426,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="distribution-plot" class="level2" data-number="6.5">
 <h2 data-number="6.5" class="anchored" data-anchor-id="distribution-plot"><span class="header-section-number">6.5</span> Distribution-Plot</h2>
-<p>Ich habe mich dazu entschieden Die Anzahl der Songs pro Energy-Kategorie in einem Verteilungsdiagramm darzustellen, weil es mir ermöglicht, die Verteilung und die zentrale Tendenz der Daten auf einen Blick zu erfassen. So kann ich erkennen, in welchen Energiebereichen die meisten Songs veröffentlicht werden, und eventuelle Ausreißer oder Trends sofort identifizieren.</p>
-<p>Dafür habe ich zuerst die Energy-Werte Gruppiert und von 0-100 in 10 Kategorien aufgeteilt, mit der durchschnittlichen Anzahl der Songs pro Kategorie. Daraufhin habe ich nun 2 Charts erstellt ein Histogramm, was das Ergebnis in ‘Balkenform’ angibt un ein LinienDiagramm mit dem Prop <code>interpolate='monotone'</code> für eine glatte Linie.</p>
-<p>Diese Beiden Plots habe ich wieder mit der <code>alt.layer()</code> funktion Zusammengefügt und dem Histogramm etwas weniger opacity gegeben um die Linie etwas hervorzuheben.</p>
+<p>Ich habe mich dazu entschieden, die Anzahl der Songs pro Energie-Kategorie in einem Verteilungsdiagramm darzustellen, weil es mir ermöglicht, die Verteilung und die zentrale Tendenz der Daten auf einen Blick zu erfassen. So kann ich erkennen, in welchen Energiebereichen die meisten Songs veröffentlicht werden, und eventuelle Ausreißer oder Trends sofort identifizieren.</p>
+<p>Dafür habe ich zuerst die Energy-Werte gruppiert und von 0 bis 100 in 10 Kategorien aufgeteilt, mit der durchschnittlichen Anzahl der Songs pro Kategorie. Daraufhin habe ich nun 2 Charts erstellt, ein Histogramm, was das Ergebnis in ‘Balkenform’ angibt und ein Liniendiagramm mit dem Prop ‘interpolate=’monotone’’ für eine glatte Linie.</p>
+<p>Diese beiden Plots habe ich wieder mit der ‘alt.layer()’ Funktion zusammengefügt und dem Histogramm etwas weniger opacity gegeben, um die Linie etwas hervorzuheben.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/distribution.png" class="img-fluid figure-img"></p>
@@ -438,8 +438,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="map" class="level2" data-number="6.6">
 <h2 data-number="6.6" class="anchored" data-anchor-id="map"><span class="header-section-number">6.6</span> Map</h2>
-<p>Für die Map habe ich die <strong>Geopandas</strong> Bibliothek verwendet, die sich sehr gut für die Verarbeitung von geografischen Daten eignet. Jedoch musste ich zuerst die von mir angereicherten Herkunftsländer in dem Datensatz mappen, da sie in der verwendeten Bibliothek zum Teil anders hießen. Danach habe ich die Anzahl der Künstler pro Land gezählt und in einem DataFrame gespeichert. Dann habe ich die Geopandas Daten und meinen DataFrame zusammegeführt, wobei ich die Anzahl der Künstler pro Land als zusätzlich Information hinzugefügt habe.</p>
-<p>Mit Altair habe ich dann eine Map erstelt, und die Länder entsprechend ihrer Künstler-Anzahl eingefärbt. Da es einen Starken außreiser mit den USA gab, habe ich eine Logarithmische Skala verwendet um die Unterschiede Sichtbarer zu machen.</p>
+<p>Für die Map habe ich die <strong>Geopandas</strong> Bibliothek verwendet, die sich sehr gut für die Verarbeitung von geografischen Daten eignet. Jedoch musste ich zuerst die von mir angereicherten Herkunftsländer in dem Datensatz mappen, da sie in der verwendeten Bibliothek zum Teil anders hießen. Danach habe ich die Anzahl der Künstler pro Land gezählt und in einem DataFrame gespeichert. Dann habe ich die Geopandas Daten und meinen DataFrame zusammengeführt, wobei ich die Anzahl der Künstler pro Land als zusätzlich Information hinzugefügt habe.</p>
+<p>Mit Altair habe ich dann eine Map erstelt, und die Länder entsprechend ihrer Künstler-Anzahl eingefärbt. Da es einen starken Ausreißer mit den USA gab, habe ich eine logarithmische Skala verwendet, um die Unterschiede sichtbarer zu machen.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/map.png" class="img-fluid figure-img"></p>
