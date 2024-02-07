@@ -279,7 +279,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="grundlegendes-design" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="grundlegendes-design"><span class="header-section-number">6.1</span> Grundlegendes Design</h2>
 <p>Um ein durchgehendes Design zu ermöglichen, habe ich zuerst Konfigurationsparameter für Altair Plots erstellt. Diese sind so gut wie gleich in den verschiedenen Diagrammtypen:</p>
-<div id="4b2f6f95" class="cell" data-execution_count="1">
+<div id="1ef62778" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">.properties(</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">    title={'text': 'Beispiel', 'dy': -20},</span></span>
@@ -329,7 +329,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="titelkonfiguration" class="level3" data-number="6.1.2">
 <h3 data-number="6.1.2" class="anchored" data-anchor-id="titelkonfiguration"><span class="header-section-number">6.1.2</span> Titelkonfiguration</h3>
 <ul>
-<li><code>.configure_title()</code>: Anapssungen für den Diagrammtitel.
+<li><code>.configure_title()</code>: Anpassungen für den Diagrammtitel.
 <ul>
 <li><code>fontSize</code>: Die Schriftgröße des Titels in Pixeln.</li>
 <li><code>anchor</code>: Die Ausrichtung des Titels.</li>
@@ -339,13 +339,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="achsenkonfiguration" class="level3" data-number="6.1.3">
 <h3 data-number="6.1.3" class="anchored" data-anchor-id="achsenkonfiguration"><span class="header-section-number">6.1.3</span> Achsenkonfiguration</h3>
 <ul>
-<li><code>.configure_axis()</code>: konfiguration für beide Achsen (X &amp; Y).
+<li><code>.configure_axis()</code>: onfiguration für beide Achsen (X &amp; Y).
 <ul>
 <li><code>labelFontSize</code>: Schriftgröße der Achsenbeschriftungen.</li>
 <li><code>titleFontSize</code>: Schriftgröße des Achsentitels.</li>
 <li><code>titleColor</code> und <code>labelColor</code>: Die Farbe des Achsentitels und der Beschriftungen.</li>
 <li><code>titlePadding</code>: Der Abstand zwischen dem Achsentitel und den Achsenbeschriftungen.</li>
-<li><code>grid</code>: Steuert die Anzeige des Gitternetzes. <code>False</code> bedeutet, dass kein Gitternetz gezeigt wird.</li>
+<li><code>grid</code>: Steuert die Anzeige des Netztes</li>
 </ul></li>
 </ul>
 </section>
@@ -364,7 +364,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><code>.configure_view()</code>: Konfiguation der Ansicht.
 <ul>
-<li><code>strokeWidth</code>: Die Breite des Rahmens um das Diagramm. <code>0</code> bedeutet, dass kein Rahmen gezeigt wird.</li>
+<li><code>strokeWidth</code>: Die Breite des Rahmens um das Diagramm.</li>
 </ul></li>
 </ul>
 </section>
@@ -383,9 +383,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="barplots" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="barplots"><span class="header-section-number">6.2</span> Barplots</h2>
-<p>Für die Erstellung von Barplots haben sich meiner Meinung nach die Anzahl der Songs nach Tonart und Keys geeignet. Da man mit einem Barplot perfekt Unterschiede in verschiedenen Kategorien aufzeigen kann.</p>
+<p>Für die Erstellung von Barplots sind meiner Meinung nach die Anzahl der Songs nach Tonart und Keys geeignet, da man mit einem Barplot perfekt Unterschiede in verschiedenen Kategorien aufzeigen kann.</p>
 <p><strong>Tonart:</strong></p>
-<p>Dafür habe ich zuerst ein Barplot mit den zwei verschiedenen Tonarten auf der X-Achse erstellt. Um den Unterschied besser aufzuzeigen, habe ich die Skalierung auf der Y-Achse geändert und eine Linie auf der Höhe des Maximalwerts platziert. Das ganze habe ich mit der ‘alt.layer()’ Funktion erreicht, die die Linie und den Plot layert.</p>
+<p>Dafür habe ich zuerst einen Barplot mit den zwei verschiedenen Tonarten auf der X-Achse erstellt. Um den Unterschied besser aufzuzeigen, habe ich die Skalierung auf der Y-Achse geändert und eine Linie auf der Höhe des Maximalwerts platziert. Das ganze habe ich mit der ‘alt.layer()’ Funktion erreicht, die die Linie und den Plot layert.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/visualization_bar_plot_with_lines.png" class="img-fluid figure-img"></p>
