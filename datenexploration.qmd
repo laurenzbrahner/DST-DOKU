@@ -3,28 +3,28 @@ In diesem Kapitel werden verschiedene Aspekte des angereicherten Datensatzes der
 
 ## Verwendete Werkzeuge und Bibliotheken
 
-Für die Datenexploration habe ich verschiedene Bibliotheken verwendet. Für Korrelationsmatrizen und Histogramme habe ich die Python Visualisierungsbibliothek ***Seaborn*** benutzt, da ich mit dieser schon Vorkenntnisse hatte und es in der Datenexploration nur darum geht, Zusammenhänge zu finden und nicht um eine ansprechende Visualisierung. Des Weiteren habe ich ***pandas*** benutzt, um Auffälligkeiten zu finden.
+Für die Datenexploration habe ich verschiedene Bibliotheken verwendet. Für Korrelationsmatrizen und Histogramme habe ich die Python Visualisierungsbibliothek ***Seaborn*** benutzt, weil ich hier schon Vorkenntnisse besaß und es in der Datenexploration nur darum geht, Zusammenhänge zu finden und nicht um eine ansprechende Visualisierung. Des Weiteren habe ich ***pandas*** benutzt, um Auffälligkeiten zu finden.
 
 Jedoch habe ich auch hier "Mockups“ von ersten, meines Erachtens wichtigen Erkenntnissen mit ***Altair*** erstellt. Darauf gehe ich aber erst im nächsten Kapitel ein. 
 
 ## Vorgehen
 
-Das Ziel dieser Analyse ist wie mehrfach schon erwähnt eine Art **Geheimformel** für einen erfolgreichen Song herauszufinden. 
+Das Ziel dieser Analyse ist, wie mehrfach schon erwähnt, eine Art **Geheimformel** für einen erfolgreichen Song herauszufinden. 
 
-Dafür habe ich zuerst die Verteilung musikalischen Merkmale der meistgestreamtesten Songs auf Spotify angeschaut. Dies habe ich mit der python-Bibliothek seaborn gemacht, da es hierbei noch nicht um eine ansprechende Visualisierung geht und ich diese Darstellung mit seaborn leichter finde als mit altair. In den folgenden Plots sind die Anzahl der Songs mit der jeweiligen Ausprägung des musikalischen Merkmals zu sehen.
+Dafür habe ich zuerst die Verteilung musikalischen Merkmale der meistgestreamtesten Songs auf Spotify angeschaut. Dies habe ich mit der python-Bibliothek seaborn gemacht, da es hierbei noch nicht um eine ansprechende Visualisierung geht und ich diese Darstellung mit seaborn leichter finde, als mit altair. In den folgenden Plots sind die Anzahl der Songs mit der jeweiligen Ausprägung des musikalischen Merkmals zu sehen.
 Als Maßstab habe ich hier die Anzahl der Songs genommen, da der Datensatz bereits die erfolgreichsten Songs im Jahre 2023 enthält.
 
 ![Histogramme anhand der musikalischen Merkmale](images/VerteilungsHistogramme.png)
 
 <br/>
 
-Um trotzdem Auffälligkeiten zwischen der Anzahl der Streams und den musikalischen Merkmalen zu finden habe ich eine Hetmap erstellt. Diese enthält wie Sie unten sehen die einzelenen musikalischen merkmale und als label die Streams.
+Um trotzdem Auffälligkeiten zwischen der Anzahl der Streams und den musikalischen Merkmalen zu finden, habe ich eine Heatmap erstellt. Diese enthält, wie Sie unten sehen, die einzelenen musikalischen Merkmale und als Label die Streams.
 
 ![Heatmap](images/heatmap.png)
 
 <br/>
 
-Natürlich habe ich mir auch noch die anderen Merkmale angschaut mithilfe der `value_counts()` builtin funktion von Pandas habe ich die Anzahl der Top-Songs nach der Tonart und des Keys angeschaut:
+Natürlich habe ich mir auch noch die anderen Merkmale angschaut, mithilfe der `value_counts()` builtin function von Pandas habe ich die Anzahl der Top-Songs nach der Tonart und des Keys angeschaut:
 
 ***Tonart***
 
@@ -51,10 +51,10 @@ Natürlich habe ich mir auch noch die anderen Merkmale angschaut mithilfe der `v
 
 <br/>
 
-Danach bin ich weg von den musikalischen Merkmalen und hin zu den zeitlichen und geografischen. **Wann ist der beste Zeitpunkt ein Song zu releasen?** **Aus welchem land kommen die meisten Top-Künstler?**
+Danach bin ich weg von den musikalischen Merkmalen und hin zu den zeitlichen und geografischen. **Wann ist der beste Zeitpunkt, einen Song zu releasen?** **Aus welchem Land kommen die meisten Top-Künstler?**
 Auch hier konnte ich mit der pandas builtin `value_counts()` wichtige erste Informationen sammeln:
 
-***Releasezeipunkt***
+***Releasezeitpunkt***
 
 
 | released_month | Anzahl der Top-Songs |
@@ -73,7 +73,7 @@ Auch hier konnte ich mit der pandas builtin `value_counts()` wichtige erste Info
 | 8              | 39     |
 
 
-***Anzahl der Künstler nach Künstlerland***
+***Anzahl der Künstler nach Herkunftsland***
 
 | artist_country  | Anzahl der Künstler |
 |-----------------|---------------------|
@@ -92,20 +92,20 @@ Auch hier konnte ich mit der pandas builtin `value_counts()` wichtige erste Info
 ## Ergebnisse der Exploration
 
 Wie in den Histogrammen und in der Heatmap zu sehen ist, haben viele Top-Songs ähnliche Merkmalsausprägungen.
-Besonders stechen diese rechtsschiefen Verteilungen aus:
+Besonders stechen diese rechtsschiefen Verteilungen ins Auge:
 
 - **speechiness**
 - **instrumentalness**
 
-Aber auch die eher Normalverteilten Merkmale sollte man beachten:
+Aber auch die eher normalverteilten Merkmale sollte man beachten:
 
 - **energy**
 - **danceability**
 
-Auch bei der Tonart und des Keys konnte ich Auffälligkeiten feststellen, die meisten Top-Songs haben die Tonart **Major** und den Key **C#**
+Auch bei der Tonart und des Keys konnte ich Auffälligkeiten feststellen. Die meisten Top-Songs haben die Tonart **Major** und den Key **C#**
 
-Der Releasezeitpunkt sollte auch ordentlich durchdacht werden. Im **Janaur** und **Mai** werden die meisten Songs relesed im **August** wurden fast 3-mal weniger Songs released.
+Der Releasezeitpunkt sollte auch ordentlich durchdacht werden. Im **Janaur** und **Mai** werden die meisten Songs released, im **August** wurden fast 3-mal weniger Songs released.
 
-Eine weitere interessante Information ist, dass mit großem Abstand die meisten Top-künstler aus den **USA** kommen.
+Eine weitere interessante Information ist, dass mit großem Abstand die meisten Top-Künstler aus den **USA** kommen.
 
-***Mit diesen Erkenntnissen kann ich nun anbrechende Visualisierungen gestalten, wie ich das gemacht habe erfahren Sie im nächsten Kapitel.***
+***Mit diesen Erkenntnissen kann ich nun ansprechende Visualisierungen gestalten. Wie ich das gemacht habe erfahren Sie im nächsten Kapitel.***

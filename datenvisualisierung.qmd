@@ -49,7 +49,7 @@ Um ein durchgehendes Design zu ermöglichen, habe ich zuerst Konfigurationsparam
 
 ### Titelkonfiguration
 
-- `.configure_title()`: Anapssungen für den Diagrammtitel.
+- `.configure_title()`: Anpassungen für den Diagrammtitel.
   - `fontSize`: Die Schriftgröße des Titels in Pixeln.
   - `anchor`: Die Ausrichtung des Titels.
 
@@ -57,12 +57,12 @@ Um ein durchgehendes Design zu ermöglichen, habe ich zuerst Konfigurationsparam
 
 ### Achsenkonfiguration
 
-- `.configure_axis()`: konfiguration für beide Achsen (X & Y).
+- `.configure_axis()`: onfiguration für beide Achsen (X & Y).
   - `labelFontSize`: Schriftgröße der Achsenbeschriftungen.
   - `titleFontSize`: Schriftgröße des Achsentitels.
   - `titleColor` und `labelColor`: Die Farbe des Achsentitels und der Beschriftungen.
   - `titlePadding`: Der Abstand zwischen dem Achsentitel und den Achsenbeschriftungen. 
-  - `grid`: Steuert die Anzeige des Gitternetzes. `False` bedeutet, dass kein Gitternetz gezeigt wird.
+  - `grid`: Steuert die Anzeige des Netztes
 
 ### Legendenkonfiguration
 
@@ -73,7 +73,7 @@ Um ein durchgehendes Design zu ermöglichen, habe ich zuerst Konfigurationsparam
 ### Ansichtskonfiguration
 
 - `.configure_view()`: Konfiguation der Ansicht.
-  - `strokeWidth`: Die Breite des Rahmens um das Diagramm. `0` bedeutet, dass kein Rahmen gezeigt wird.
+  - `strokeWidth`: Die Breite des Rahmens um das Diagramm.
 
 ### Spezifische Achsenkonfigurationen
 
@@ -88,11 +88,11 @@ Um ein durchgehendes Design zu ermöglichen, habe ich zuerst Konfigurationsparam
 
 ## Barplots
 
-Für die Erstellung von Barplots haben sich meiner Meinung nach die Anzahl der Songs nach Tonart und Keys geeignet. Da man mit einem Barplot perfekt Unterschiede in verschiedenen Kategorien aufzeigen kann.
+Für die Erstellung von Barplots sind meiner Meinung nach die Anzahl der Songs nach Tonart und Keys geeignet, da man mit einem Barplot perfekt Unterschiede in verschiedenen Kategorien aufzeigen kann.
 
 **Tonart:**
 
-Dafür habe ich zuerst ein Barplot mit den zwei verschiedenen Tonarten auf der X-Achse erstellt. Um den Unterschied besser aufzuzeigen, habe ich die Skalierung auf der Y-Achse geändert und eine Linie auf der Höhe des Maximalwerts platziert. Das ganze habe ich mit der 'alt.layer()' Funktion erreicht, die die Linie und den Plot layert.
+Dafür habe ich zuerst einen Barplot mit den zwei verschiedenen Tonarten auf der X-Achse erstellt. Um den Unterschied besser aufzuzeigen, habe ich die Skalierung auf der Y-Achse geändert und eine Linie auf der Höhe des Maximalwerts platziert. Das ganze habe ich mit der 'alt.layer()' Funktion erreicht, die die Linie und den Plot layert.
 
 ![Anzahl der Top-Songs nach Tonart](images/visualization_bar_plot_with_lines.png)
 

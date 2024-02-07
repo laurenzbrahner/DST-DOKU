@@ -1,11 +1,11 @@
 # Datenanreicherung
 
-Um geografische Analysen durchzuführen und eine Map der Künstlerstandorte zu erstellen, wurde der Datensatz mit Informationen über die Länder der Künstler angereichert. Dieser Prozess nutzte die `musicbrainz` Bibliothek, um Zugriff auf die MusicBrainz-Datenbank zu erhalten. Mit dieser Datenbank konnnte ich anahnd des Künstlernamens das Herkunftsland der Künstler herausfinden.
+Um geografische Analysen durchzuführen und eine Map der Künstlerstandorte zu erstellen, wurde der Datensatz mit Informationen über die Länder der Künstler angereichert. Dieser Prozess nutzte die `musicbrainz` Bibliothek, um Zugriff auf die MusicBrainz-Datenbank zu erhalten. Mit dieser Datenbank konnte ich anhand des Künstlernamens das Herkunftsland der Künstler herausfinden.
 
 
 
 ## Funktion zur Ermittlung des Künstlerlandes
-Zuerst habe ich aus dem DataFrame der vorbereiteten Daten eine Liste der Künstlernamen extrahiert, die für die Abfragen nach Länderinformationen verwendet wurde. Dannach habe ich eine Funktion implementiert, um das Land eines Künstlers mit Hilfe der [MusicBrainz API](https://musicbrainz.org/) zu finden. Diese Funktion behandelt auch Fehler und Fälle, in denen kein Land gefunden wurde.
+Zuerst habe ich aus dem DataFrame der vorbereiteten Daten eine Liste der Künstlernamen extrahiert, die für die Abfragen nach Länderinformationen verwendet wurde. Anschließend habe ich eine Funktion implementiert, um das Land eines Künstlers mit Hilfe der [MusicBrainz API](https://musicbrainz.org/) zu finden. Diese Funktion behandelt auch Fehler und Fälle, in denen kein Land gefunden wurde.
 
 
 Die Funktion `find_artist_country` dient dazu, das Land eines Künstlers zu ermitteln. Sie nutzt die [MusicBrainz API](https://musicbrainz.org/), um die notwendigen Informationen abzurufen. Die Funktion geht dabei wie folgt vor:
@@ -54,7 +54,7 @@ df['artist_country'] = artist_country_list
 
 ```
 
-Da die Datenbank leider nicht alle Künstler kannte, kam es in manchen spalten zu Errors, diese habe ich im Anschluss entfernt.
+Da die Datenbank leider nicht alle Künstler kannte, kam es in manchen Spalten zu Errors. Diese habe ich im Anschluss entfernt.
 
 
 <br/>
