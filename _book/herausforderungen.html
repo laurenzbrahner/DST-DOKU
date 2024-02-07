@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="next">
+<link href="./fazit.html" rel="next">
 <link href="./streamlit_dashboard.html" rel="prev">
 <link href=".//images/logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -211,8 +211,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  <a href="./fazit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Fazit und Reflexion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -232,8 +232,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#datensatz-und-geografische-daten" id="toc-datensatz-und-geografische-daten" class="nav-link active" data-scroll-target="#datensatz-und-geografische-daten"><span class="header-section-number">9.1</span> Datensatz und geografische Daten</a></li>
-  <li><a href="#quarto-präsentation" id="toc-quarto-präsentation" class="nav-link" data-scroll-target="#quarto-präsentation"><span class="header-section-number">9.2</span> Quarto Präsentation</a></li>
-  <li><a href="#streamlit-dashboard" id="toc-streamlit-dashboard" class="nav-link" data-scroll-target="#streamlit-dashboard"><span class="header-section-number">9.3</span> Streamlit Dashboard</a></li>
+  <li><a href="#visualisierungen" id="toc-visualisierungen" class="nav-link" data-scroll-target="#visualisierungen"><span class="header-section-number">9.2</span> Visualisierungen</a></li>
+  <li><a href="#quarto-präsentation" id="toc-quarto-präsentation" class="nav-link" data-scroll-target="#quarto-präsentation"><span class="header-section-number">9.3</span> Quarto Präsentation</a></li>
+  <li><a href="#streamlit-dashboard" id="toc-streamlit-dashboard" class="nav-link" data-scroll-target="#streamlit-dashboard"><span class="header-section-number">9.4</span> Streamlit Dashboard</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/laurenzbrahner/DST-DOKU/edit/main/herausforderungen.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/laurenzbrahner/DST-DOKU/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -260,8 +261,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In diesem Projekt bin ich auf einige Herausforderungen gestoßen, da manches doch etwas komplizierter als angenommen war. In diesem Kapitel werde ich diese Herausforderungen schildern und meine Lösungen dazu vorstellen.</p>
 <section id="datensatz-und-geografische-daten" class="level2" data-number="9.1">
 <h2 data-number="9.1" class="anchored" data-anchor-id="datensatz-und-geografische-daten"><span class="header-section-number">9.1</span> Datensatz und geografische Daten</h2>
-<p>ich hatte im allgemeinen wenig Probleme mit den Daten. Die Spalten hatten meiner Meinung nach gut verstädnliche namen und der Rest der Data-Preparation war auch schnell erledigt. Jedoch ist mir im Laufe des Projekts aufgefallen, dass ich geografische Daten für die Erstellung einer Map brauche. So ist mir die Idee gekommen, das Künstler Herkunftsland hinzuzufügen. Mit der Hand hätte dies aber ewig gedauert, also musste eine andere Lösung her. Ich hab mich auf die Suche nach Musik-Apis begeben und bin fündig geworden. Anhand von Musicbrainz konnte ich wie beschrieben in Kapitel 4 das Herkunftsland des Künstlers mit wenig aufwand hinzufügen.</p>
-<p>Das hat auch wunderbar funktioniert, bis ich bei der Erstellung der Map war. Leider haben die Länderbezeichnungen der Musicbrainz Datenbank nicht mit denen der geopandas Bibliothek überinstimmt. Aber auch hierfür habe ich eine Lösung gefunden. Ich habe eine Funktion geschrieben, welche die Länderbezeichnungen vergleicht und Übereinstimmende oder fehlende Länder ausgibt.</p>
+<p>Ich hatte im allgemeinen wenig Probleme mit den Daten. Die Spalten hatten meiner Meinung nach gut verständliche Namen und der Rest der Data-Preparation war auch schnell erledigt. Jedoch ist mir im Laufe des Projekts aufgefallen, dass ich geografische Daten für die Erstellung einer Map brauche. So ist mir die Idee gekommen, das Herkunftsland des Künstlers hinzuzufügen. Manuell hätte dies aber ewig gedauert, also musste eine andere Lösung her. Ich hab mich auf die Suche nach Musik-Apis begeben und bin fündig geworden. Anhand von Musicbrainz konnte ich wie beschrieben in Kapitel 4 das Herkunftsland des Künstlers mit wenig Aufwand hinzufügen.</p>
+<p>Das hat auch wunderbar funktioniert, bis ich bei der Erstellung der Map war. Leider haben die Länderbezeichnungen der Musicbrainz Datenbank nicht, mit denen der geopandas Bibliothek übereinstimmt. Aber auch hierfür habe ich eine Lösung gefunden. Ich habe eine Funktion geschrieben, welche die Länderbezeichnungen vergleicht und übereinstimmende oder fehlende Länder ausgibt.</p>
 <p>Hier ist die Funktion:</p>
 <div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
@@ -281,27 +282,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>"\n\n\ndef compare_country_names(df, country_list):\n\n    df_countries = set(df['name'].unique())\n    country_list_set = set(country_list)\n\n    # Finden der Übereinstimmungen und Nichtübereinstimmungen\n    matches = df_countries.intersection(country_list_set)\n    missing = df_countries.difference(country_list_set)\n\n    return matches, missing\n\n\n\n"</code></pre>
 </div>
 </div>
 <p>Mithilfe dieser Funktion konnte ich meine Bezeichnungen mappen und somit eine Übereinstimmung erreichen.</p>
 </section>
-<section id="quarto-präsentation" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="quarto-präsentation"><span class="header-section-number">9.2</span> Quarto Präsentation</h2>
-<p>Ansich kam ich sehr gut mit Quarto zurecht. Nur hatte ich ein wenig Probleme mit dem einbauen der Altair-Charts. Ich wollte nämlich einen dunklen Hintergrund und habe wie in Kapitel 7 schon erwähnt das Dark Theme benutzt. Nun war aber der weiße Hintergrund der Charts noch zu sehen und soweit ich weiß gibt es keine Funktion den Chart Transparent zu machen. Hierfür habe ich aber auch eine Lösung gefunden. Mit Hilfe eines Colorpickers konnte ich die Farbe des Hintergrunds herausfinden und in den <code>background</code> prop der Diagramme einsetzen. Diesen Colorpicker habe ich verwendet:</p>
+<section id="visualisierungen" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="visualisierungen"><span class="header-section-number">9.2</span> Visualisierungen</h2>
+<p>Durch die einfache und verständliche Syntax von Altair hatte ich kaum Probleme beim Erstellen der Visualisierungen. Lediglich bei der Erstellung der Map, war es in meinem Fall etwas schwer, eine aussagekräftige Skalierung zu haben. Die Map stellt die Anzahl der Top-Künstler aus dem jeweiligen Land dar, das Problem hierbei war, dass die USA als Ausreißer fast 300 Künstler mehr als das Zweitplatzierte Land, England hatte. Somit war es schwierig, eine Skala zu finden, die den Unterschied trotzdem ersichtlich macht. Ich habe es zuerst mit konditionellem Anzeigen versucht (‘alt.Condition’) dies hat aber leider nicht funktioniert. Nach längerer Suche bin ich auf logarithmische Skalierung gekommen. Dies war auch sehr einfach in altair umzusetzen, ich musste einfach ‘type=’log’’ in das Scale Prop von altair hinzufügen und schon waren die Unterschiede besser zu erkennen und das Problem war gelöst.</p>
+</section>
+<section id="quarto-präsentation" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="quarto-präsentation"><span class="header-section-number">9.3</span> Quarto Präsentation</h2>
+<p>An sich kam ich sehr gut mit Quarto zurecht. Nur hatte ich ein wenig Probleme mit dem Einbauen der Altair-Charts. Ich wollte nämlich einen dunklen Hintergrund und habe, wie in Kapitel 7 schon erwähnt, das Dark Theme benutzt. Nun war aber der weiße Hintergrund der Charts noch zu sehen und soweit ich weiß, gibt es keine Funktion den Chart Transparent zu machen. Hierfür habe ich aber auch eine Lösung gefunden. Mithilfe eines Colorpickers konnte ich die Farbe des Hintergrunds herausfinden und in den ‘background’ prop der Diagramme einsetzen. Diesen Colorpicker habe ich verwendet:</p>
 <ul>
 <li><a href="https://imagecolorpicker.com/">Colorpicker</a></li>
 </ul>
-<p>Leider hatte ich auch das Problem, dass die Diagramme in der html-page manchmal nicht angezeigt worden sind. Ich habe mitbekommen, dass dieses Problem auch andere in diesem Kurs hatten. Dafür habe ich keine richtige Lösung gefunden, außer die html Datei via GitHub-Pages zu deployen. So wurden die Diagramme eigentlich immer angzeigt.</p>
+<p>Leider hatte ich auch das Problem, dass die Diagramme in der HTML-Page manchmal nicht angezeigt worden sind. Ich habe mitbekommen, dass dieses Problem auch andere in diesem Kurs hatten. Dafür habe ich keine richtige Lösung gefunden, außer die HTML Datei via GitHub-Pages zu deployen. So wurden die Diagramme eigentlich immer angezeigt.</p>
 <ul>
 <li><a href="https://laurenzbrahner.github.io/quarto_prasi/">Deployte html Datei meiner Präsentation</a></li>
 </ul>
+<p>Des Weiteren wurden bei mir manchmal verschiedene Aspekte aus gelayerten Charts nicht angezeigt. Zum Beispiel eine Linie durch den Maximalwert. Ich habe lange gebraucht um das Problem zu lösen, da sie in den Jupyter Notebooks immer angezeigt worden ist. Das Problem war, dass selbst die Linie, welche nur statisch mit einer Steigung von 0 durch beispielsweise y=60 geht, ein Dataframe als Input braucht, um bei quarto angezeigt zu werden.</p>
 </section>
-<section id="streamlit-dashboard" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="streamlit-dashboard"><span class="header-section-number">9.3</span> Streamlit Dashboard</h2>
-<p>Mit Streamlit hatte ich wirklich kaum Probleme, da die Synatx sehr einfach gehalten ist. Jeoch musste ich auf der ersten Page in den Diagrammen: “Top-10 Songs nach Streams” und “Top-10 Künstler nach Streams” eine anpassung vornehmen, die Künstler und die Songnamen sind auf der X-Achse überlappt, dies konnte ich aber durch einfaches tauschen der Achsen lösen.</p>
-<p>Des weitern musste ich mich für die Erstellung der Diagrammdemo, welche die Anzahl der Veröffentlichen Songs pro Monat anzeigt, erstmal in den <code>session_state</code> in Streamlit einlesen. Dies war aber ein minder großed Problem.</p>
+<section id="streamlit-dashboard" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="streamlit-dashboard"><span class="header-section-number">9.4</span> Streamlit Dashboard</h2>
+<p>Mit Streamlit hatte ich wirklich kaum Probleme, da die Syntax sehr einfach gehalten ist. Jedoch musste ich auf der ersten Page in den Diagrammen: “Top-10 Songs nach Streams” und “Top-10 Künstler nach Streams“ eine Anpassung vornehmen, die Künstler und die Songnamen sind auf der X-Achse überlappt, dies konnte ich aber durch einfaches Tauschen der Achsen lösen.</p>
+<p>Des Weitern musste ich mich für die Erstellung der Diagrammdemo, welche die Anzahl der veröffentlichten Songs pro Monat anzeigt, erstmal in den ‘session_state’ in Streamlit einlesen. Dies war aber ein minder großes Problem.</p>
 
 
 </section>
@@ -662,8 +668,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./fazit.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Fazit und Reflexion</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

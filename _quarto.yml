@@ -27,7 +27,7 @@ book:
     - quarto_prasi.qmd
     - streamlit_dashboard.qmd
     - herausforderungen.qmd
-    - summary.qmd
+    - fazit.qmd
     - references.qmd
 
 format:

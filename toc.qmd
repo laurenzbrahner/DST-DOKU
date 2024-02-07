@@ -7,24 +7,40 @@
    - 2.1 Quelle des Datensatzes
    - 2.2 Datenstruktur
 3. Datenvorbereitung
-   - 3.1 Genutzte Bibliotheken
-   - 3.2 Datensatz einlesen
-   - 3.3 Datentypkonvertierung
-       - 3.3.1 Ganzzahlkonvertierung
-       - 3.3.2 Kategorische Konvertierung
-   - 3.4 Umgang mit fehlenden Daten
-   - 3.5 Bereinigung des Datensatzes
-   - 3.6 Speichern des bereinigten Datensatzes
-3. Analyse und Visualisierung
-   - 3.1 Werkzeuge und Techniken
-   - 3.2 Entwickelte Visualisierungen
-   - 3.3 Analyseergebnisse
-4. Erstellung des Interaktiven Dashboards
-   - 4.1 Dashboard-Design
-   - 4.2 Nutzererfahrung
-5. Herausforderungen und Lösungen
-   - 5.1 Begegnete Probleme
-   - 5.2 Angewandte Lösungen
-6. Fazit und Reflexion
-   - 6.1 Projektergebnisse
-   - 6.2 Reflexion
+   - 3.1 Datentypkonvertierung
+       - 3.1.1 Ganzzahlkonvertierung
+       - 3.1.2 Kategorische Konvertierung
+   - 3.2 Umgang mit fehlenden Daten
+4. Datenanreicherung
+   - 4.1 Funktion zur Ermittlung des Künstlerlandes
+   - 4.2 Anreicherung des Datensatzes mit den Künstlerländern
+5. Datenexploration
+   - 5.1 Verwendete Werkzeuge und Bibliotheken
+   - 5.2 Vorgehen
+   - 5.3 Ergebnisse der Exploration
+6. Datenvisualisierung
+   - 6.1 Grundlegendes Design
+      - 6.1.1 Allgemeine Eigenschaften
+      - 6.1.2 Titelkonfiguration
+      - 6.1.3 Achsenkonfiguration
+      - 6.1.4 LegendenKonfiguration
+      - 6.1.5 Ansichtskonfiguration
+      - 6.1.6 Spezifische Achsenkonfigurationen
+   - 6.2 Barplots
+   - 6.3 Line-Chart
+   - 6.4 Scatter-Plot
+   - 6.5 Distribution-Plot
+   - 6.6 Map
+7. Quarto Präsentation
+   - 7.1 Design
+   - 7.2 Vorgehen
+8. Streamlit Dashboard
+   - 8.1 Design, Aufbau und Beschreibung der Funktionalität
+9. Herausforderungen und Lösungen
+   - 9.1 Datensatz und geografische Daten
+   - 9.2 Visualisierungen
+   - 9.3 Quarto Präsentation
+   - 9.4 Streamlit Dashboard
+10. Fazit und Reflexion
+      - 10.1 Projektergebnisse
+      - 10.2 Reflexion

@@ -4,9 +4,9 @@ In diesem Projekt bin ich auf einige Herausforderungen gestoßen, da manches doc
 
 ## Datensatz und geografische Daten
 
-ich hatte im allgemeinen wenig Probleme mit den Daten. Die Spalten hatten meiner Meinung nach gut verstädnliche namen und der Rest der Data-Preparation war auch schnell erledigt. Jedoch ist mir im Laufe des Projekts aufgefallen, dass ich geografische Daten für die Erstellung einer Map brauche. So ist mir die Idee gekommen, das Künstler Herkunftsland hinzuzufügen. Mit der Hand hätte dies aber ewig gedauert, also musste eine andere Lösung her. Ich hab mich auf die Suche nach Musik-Apis begeben und bin fündig geworden. Anhand von Musicbrainz konnte ich wie beschrieben in Kapitel 4 das Herkunftsland des Künstlers mit wenig aufwand hinzufügen. 
+Ich hatte im allgemeinen wenig Probleme mit den Daten. Die Spalten hatten meiner Meinung nach gut verständliche Namen und der Rest der Data-Preparation war auch schnell erledigt. Jedoch ist mir im Laufe des Projekts aufgefallen, dass ich geografische Daten für die Erstellung einer Map brauche. So ist mir die Idee gekommen, das Herkunftsland des Künstlers hinzuzufügen. Manuell hätte dies aber ewig gedauert, also musste eine andere Lösung her. Ich hab mich auf die Suche nach Musik-Apis begeben und bin fündig geworden. Anhand von Musicbrainz konnte ich wie beschrieben in Kapitel 4 das Herkunftsland des Künstlers mit wenig Aufwand hinzufügen.
 
-Das hat auch wunderbar funktioniert, bis ich bei der Erstellung der Map war. Leider haben die Länderbezeichnungen der Musicbrainz Datenbank nicht mit denen der geopandas Bibliothek überinstimmt. Aber auch hierfür habe ich eine Lösung gefunden. Ich habe eine Funktion geschrieben, welche die Länderbezeichnungen vergleicht und Übereinstimmende oder fehlende Länder ausgibt. 
+Das hat auch wunderbar funktioniert, bis ich bei der Erstellung der Map war. Leider haben die Länderbezeichnungen der Musicbrainz Datenbank nicht, mit denen der geopandas Bibliothek übereinstimmt. Aber auch hierfür habe ich eine Lösung gefunden. Ich habe eine Funktion geschrieben, welche die Länderbezeichnungen vergleicht und übereinstimmende oder fehlende Länder ausgibt.
 
 Hier ist die Funktion:
 
@@ -32,20 +32,25 @@ def compare_country_names(df, country_list):
 
 Mithilfe dieser Funktion konnte ich meine Bezeichnungen mappen und somit eine Übereinstimmung erreichen.
 
+## Visualisierungen
+
+Durch die einfache und verständliche Syntax von Altair hatte ich kaum Probleme beim Erstellen der Visualisierungen. Lediglich bei der Erstellung der Map, war es in meinem Fall etwas schwer, eine aussagekräftige Skalierung zu haben. Die Map stellt die Anzahl der Top-Künstler aus dem jeweiligen Land dar, das Problem hierbei war, dass die USA als Ausreißer fast 300 Künstler mehr als das Zweitplatzierte Land, England hatte. Somit war es schwierig, eine Skala zu finden, die den Unterschied trotzdem ersichtlich macht. Ich habe es zuerst mit konditionellem Anzeigen versucht ('alt.Condition') dies hat aber leider nicht funktioniert. Nach längerer Suche bin ich auf logarithmische Skalierung gekommen. Dies war auch sehr einfach in altair umzusetzen, ich musste einfach 'type='log'' in das Scale Prop von altair hinzufügen und schon waren die Unterschiede besser zu erkennen und das Problem war gelöst.
+
 ## Quarto Präsentation
 
-Ansich kam ich sehr gut mit Quarto zurecht. Nur hatte ich ein wenig Probleme mit dem einbauen der Altair-Charts. Ich wollte nämlich einen dunklen Hintergrund und habe wie in Kapitel 7 schon erwähnt das Dark Theme benutzt. Nun war aber der weiße Hintergrund der Charts noch zu sehen und soweit ich weiß gibt es keine Funktion den Chart Transparent zu machen. Hierfür habe ich aber auch eine Lösung gefunden. Mit Hilfe eines Colorpickers konnte ich die Farbe des Hintergrunds herausfinden und in den `background` prop der Diagramme einsetzen.
+An sich kam ich sehr gut mit Quarto zurecht. Nur hatte ich ein wenig Probleme mit dem Einbauen der Altair-Charts. Ich wollte nämlich einen dunklen Hintergrund und habe, wie in Kapitel 7 schon erwähnt, das Dark Theme benutzt. Nun war aber der weiße Hintergrund der Charts noch zu sehen und soweit ich weiß, gibt es keine Funktion den Chart Transparent zu machen. Hierfür habe ich aber auch eine Lösung gefunden. Mithilfe eines Colorpickers konnte ich die Farbe des Hintergrunds herausfinden und in den 'background' prop der Diagramme einsetzen.
 Diesen Colorpicker habe ich verwendet:
 
 - [Colorpicker](https://imagecolorpicker.com/)
 
-Leider hatte ich auch das Problem, dass die Diagramme in der html-page manchmal nicht angezeigt worden sind. Ich habe mitbekommen, dass dieses Problem auch andere in diesem Kurs hatten. Dafür habe ich keine richtige Lösung gefunden, außer die html Datei via GitHub-Pages zu deployen. So wurden die Diagramme eigentlich immer angzeigt.
+Leider hatte ich auch das Problem, dass die Diagramme in der HTML-Page manchmal nicht angezeigt worden sind. Ich habe mitbekommen, dass dieses Problem auch andere in diesem Kurs hatten. Dafür habe ich keine richtige Lösung gefunden, außer die HTML Datei via GitHub-Pages zu deployen. So wurden die Diagramme eigentlich immer angezeigt.
 
 - [Deployte html Datei meiner Präsentation](https://laurenzbrahner.github.io/quarto_prasi/)
 
+Des Weiteren wurden bei mir manchmal verschiedene Aspekte aus gelayerten Charts nicht angezeigt. Zum Beispiel eine Linie durch den Maximalwert. Ich habe lange gebraucht um das Problem zu lösen, da sie in den Jupyter Notebooks immer angezeigt worden ist. Das Problem war, dass selbst die Linie, welche nur statisch mit einer Steigung von 0 durch beispielsweise y=60 geht, ein Dataframe als Input braucht, um bei quarto angezeigt zu werden.
 
 ## Streamlit Dashboard
 
-Mit Streamlit hatte ich wirklich kaum Probleme, da die Synatx sehr einfach gehalten ist. Jeoch musste ich auf der ersten Page in den Diagrammen: "Top-10 Songs nach Streams" und "Top-10 Künstler nach Streams" eine anpassung vornehmen, die Künstler und die Songnamen sind auf der X-Achse überlappt, dies konnte ich aber durch einfaches tauschen der Achsen lösen.
+Mit Streamlit hatte ich wirklich kaum Probleme, da die Syntax sehr einfach gehalten ist. Jedoch musste ich auf der ersten Page in den Diagrammen: "Top-10 Songs nach Streams" und "Top-10 Künstler nach Streams“ eine Anpassung vornehmen, die Künstler und die Songnamen sind auf der X-Achse überlappt, dies konnte ich aber durch einfaches Tauschen der Achsen lösen.
 
-Des weitern musste ich mich für die Erstellung der Diagrammdemo, welche die Anzahl der Veröffentlichen Songs pro Monat anzeigt, erstmal in den `session_state` in Streamlit einlesen. Dies war aber ein minder großed Problem.
+Des Weitern musste ich mich für die Erstellung der Diagrammdemo, welche die Anzahl der veröffentlichten Songs pro Monat anzeigt, erstmal in den 'session_state' in Streamlit einlesen. Dies war aber ein minder großes Problem.
