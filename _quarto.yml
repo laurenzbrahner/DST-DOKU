@@ -28,7 +28,6 @@ book:
     - streamlit_dashboard.qmd
     - herausforderungen.qmd
     - fazit.qmd
-    - references.qmd
 
 format:
   html:

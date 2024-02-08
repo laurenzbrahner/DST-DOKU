@@ -14,7 +14,7 @@ Die Funktion `find_artist_country` dient dazu, das Land eines Künstlers zu ermi
 
 2. **Suchanfrage an MusicBrainz**: Die Funktion sucht nach dem übergebenen Künstlernamen.
 
-3. **Rückgabe des Landes**: Wenn ein Künstler gefunden wird, gibt die Funktion das Land des Künstlers zurück. Andernfalls wird `"Artist not found"` zurückgegeben.
+3. **Rückgabe des Landes**: Wenn ein Künstler gefunden wird, gibt die Funktion das Land des Künstlers zurück.
 
 4. **Fehlerbehandlung**: Im Falle eines Fehlers bei der Anfrage oder der Verarbeitung der Daten wird eine Fehlermeldung zurückgegeben.
 

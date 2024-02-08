@@ -200,7 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./streamlit_dashboard.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Streamlit Dashboard</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Streamlit Dashboard und Report</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -213,12 +213,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="./fazit.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Fazit und Reflexion</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
   </div>
 </li>
     </ul>
@@ -264,7 +258,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li><p><strong>Setzen des User-Agent</strong>: Zuerst wird ein User-Agent für die MusicBrainz API gesetzt. Dies ist notwendig, um die Anfragen an die API zu authentifizieren (Account ist notwendig).</p></li>
 <li><p><strong>Suchanfrage an MusicBrainz</strong>: Die Funktion sucht nach dem übergebenen Künstlernamen.</p></li>
-<li><p><strong>Rückgabe des Landes</strong>: Wenn ein Künstler gefunden wird, gibt die Funktion das Land des Künstlers zurück. Andernfalls wird <code>"Artist not found"</code> zurückgegeben.</p></li>
+<li><p><strong>Rückgabe des Landes</strong>: Wenn ein Künstler gefunden wird, gibt die Funktion das Land des Künstlers zurück.</p></li>
 <li><p><strong>Fehlerbehandlung</strong>: Im Falle eines Fehlers bei der Anfrage oder der Verarbeitung der Daten wird eine Fehlermeldung zurückgegeben.</p></li>
 </ol>
 <div class="cell" data-execution_count="1">
@@ -283,7 +277,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">        return f"Error: {e}"</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>'\ndef find_artist_country(artist_name):\n    mb.set_useragent("Artist_Country", "1.0", contact="me@example.com")\n    try:\n        result = mb.search_artists(artist=artist_name, limit=1)\n        if result[\'artist-list\']:\n            artist = result[\'artist-list\'][0]\n            country = artist[\'area\'][\'name\']\n            return country\n        else:\n            return "Artist not found"\n    except Exception as e:\n        return f"Error: {e}"\n\n'</code></pre>
 </div>
 </div>
@@ -301,7 +295,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">df['artist_country'] = artist_country_list</span></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>"\nartist_country_list = []\n\nfor artist in artist_list:\nartist_country_list.append(find_artist_country(artist))\n\ndf['artist_country'] = artist_country_list\n\n"</code></pre>
 </div>
 </div>

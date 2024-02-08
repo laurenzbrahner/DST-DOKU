@@ -1,5 +1,5 @@
 # Datenexploration
-In diesem Kapitel werden verschiedene Aspekte des angereicherten Datensatzes der meistgestreamten Songs 2023 untersucht. Ziel hierbei ist weniger die visuelle Darstellung, sondern es geht eher darum herauszufinden, welche Merkmale Einfluss auf die Popularität eines Songs haben.
+In diesem Kapitel werden verschiedene Aspekte des angereicherten Datensatzes der meistgestreamten Songs 2023 untersucht. Ziel hierbei ist weniger die visuelle Darstellung, sondern es geht eher darum herauszufinden, welche Merkmale Einfluss auf die Popularität eines Songs haben. Da dieser Datensatz schon die Erfolgreichsten Songs des Jahres beinhaltet, ist die Anzahl der Songs mit dem jeweiligen Merkmal ein Maß für die Popularität. Ein weiteres Maß ist die Anzahl der Streams des jeweiligen Songs, da es trotzdem große Unterschiede in der Anzahl der Streams gibt.
 
 ## Verwendete Werkzeuge und Bibliotheken
 
