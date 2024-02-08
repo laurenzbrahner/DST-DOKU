@@ -71,6 +71,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <meta property="og:title" content="Spotify-Analyse Dokumentation - 10&nbsp; Fazit und Reflexion">
 <meta property="og:description" content="">
@@ -171,7 +200,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./streamlit_dashboard.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Streamlit Dashboard</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Streamlit Dashboard und Report</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -236,6 +265,14 @@ ul.task-list li input[type="checkbox"] {
 <p>Eine Weitere wichtige Rolle ist der <strong>Releasemonat</strong> des Songs. Die meisten Top-Songs wurden im <strong>Januar</strong> oder im <strong>Mai</strong> released. Im August wurden fast viermal so wenig Songs released, wie in den beiden Top-Monaten.</p>
 <p>Eine weitere Auffälligkeit ist, dass die meisten Top-Songs einen sehr <strong>geringen Sprechanteil</strong> haben. Also sollte sich der Musiker lieber auf Gesang und Melodie konzentrieren und weniger auf Sprechgesang bzw. Rap.</p>
 <p>Zudem sollte der Song ein hohes Energieniveau haben und in Englisch oder in Spanisch sein.</p>
+<p><strong>Geheimformel:</strong></p>
+<p><span class="math display">\[
+\begin{align*}
+\text{Erfolg} &amp;= \text{Tonart(Major)} + \text{Key(C\#)} \\
+&amp;+ \text{ReleaseMonat(Jan|Feb)} + \text{Speechiness(3\%)} \\
+&amp;+ \text{Energy(65\%)} + \text{Language(Englisch|Spanisch)}
+\end{align*}
+\]</span></p>
 </section>
 <section id="reflexion" class="level2" data-number="10.2">
 <h2 data-number="10.2" class="anchored" data-anchor-id="reflexion"><span class="header-section-number">10.2</span> Reflexion</h2>

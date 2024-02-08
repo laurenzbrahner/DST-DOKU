@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Spotify-Analyse Dokumentation - 8&nbsp; Streamlit Dashboard</title>
+<title>Spotify-Analyse Dokumentation - 8&nbsp; Streamlit Dashboard und Report</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Spotify-Analyse Dokumentation - 8&nbsp; Streamlit Dashboard">
+<meta property="og:title" content="Spotify-Analyse Dokumentation - 8&nbsp; Streamlit Dashboard und Report">
 <meta property="og:description" content="">
 <meta property="og:image" content="https://laurenzbrahner.github.io/DST-DOKU//images/logo.png">
 <meta property="og:site_name" content="Spotify-Analyse Dokumentation">
@@ -89,7 +89,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./streamlit_dashboard.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Streamlit Dashboard</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./streamlit_dashboard.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Streamlit Dashboard und Report</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -171,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./streamlit_dashboard.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Streamlit Dashboard</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Streamlit Dashboard und Report</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -202,7 +202,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#design-aufbau-und-beschreibung-der-funktionalität" id="toc-design-aufbau-und-beschreibung-der-funktionalität" class="nav-link active" data-scroll-target="#design-aufbau-und-beschreibung-der-funktionalität"><span class="header-section-number">8.1</span> Design, Aufbau und Beschreibung der Funktionalität</a></li>
+  <li><a href="#design-aufbau-und-beschreibung-der-funktionalität-des-dashboards" id="toc-design-aufbau-und-beschreibung-der-funktionalität-des-dashboards" class="nav-link active" data-scroll-target="#design-aufbau-und-beschreibung-der-funktionalität-des-dashboards"><span class="header-section-number">8.1</span> Design, Aufbau und Beschreibung der Funktionalität des Dashboards</a></li>
+  <li><a href="#erstellung-des-reports" id="toc-erstellung-des-reports" class="nav-link" data-scroll-target="#erstellung-des-reports"><span class="header-section-number">8.2</span> Erstellung des Reports</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/laurenzbrahner/DST-DOKU/edit/main/streamlit_dashboard.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/laurenzbrahner/DST-DOKU/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -211,7 +212,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Streamlit Dashboard</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Streamlit Dashboard und Report</span></h1>
 </div>
 
 
@@ -228,9 +229,9 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Um die Ergebnisse noch einmal detaillierter zu zeigen, und Interaktivität zu ermöglichen, habe ich ein Dashboard erstellt. Dafür wurde das Streamlit Framework verwendet. Dieses ermöglicht eine schnelle und ziemlich intuitive Erstellung eines Dashboards.</p>
-<section id="design-aufbau-und-beschreibung-der-funktionalität" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="design-aufbau-und-beschreibung-der-funktionalität"><span class="header-section-number">8.1</span> Design, Aufbau und Beschreibung der Funktionalität</h2>
+<p>Um die Ergebnisse noch einmal detaillierter zu zeigen, und Interaktivität zu ermöglichen, habe ich ein Dashboard erstellt. Dafür wurde das Streamlit Framework verwendet. Dieses ermöglicht eine schnelle und ziemlich intuitive Erstellung eines Dashboards. Zusätzlich habe ich Streamlit für die Erstellung des Reports verwendet.</p>
+<section id="design-aufbau-und-beschreibung-der-funktionalität-des-dashboards" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="design-aufbau-und-beschreibung-der-funktionalität-des-dashboards"><span class="header-section-number">8.1</span> Design, Aufbau und Beschreibung der Funktionalität des Dashboards</h2>
 <p>An dem Design musste ich nicht viel ändern, da ein Streamlit Dashboard von Haus aus meiner Meinung nach ziemlich gut aussieht. Ich habe in den meisten Fällen nur das ‘layout’ auf ‘wide’ gesetzt, um mehrere Visualisierungen nebeneinander darstellen zu können. Außerdem habe ich, wenn ich Charts in einem kurzen Text erklärt habe, diesen Text mit derselben Farbe des Diagrammtitels versehen.</p>
 <p>Für den Aufbau des Dashboards habe ich eine Multipage-App gewählt, das geht in Streamlit ziemlich einfach, die verschiedenen Dateinamen müssen einfach mit der Nummer der Page anfangen.</p>
 <p>Ich habe zuerst eine Info-Page erstellt, in dem der User einen Überblick über mein Projekt und meine verwendeten Daten bekommt.</p>
@@ -244,6 +245,14 @@ ul.task-list li input[type="checkbox"] {
 <p>Falls sie sich das Dashboard nochmal anschauen wollen, finden sie hier den Link:</p>
 <ul>
 <li><a href="https://appapp-ka7buefabvnokhdfwhyptg.streamlit.app/">Dashboard</a></li>
+</ul>
+</section>
+<section id="erstellung-des-reports" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="erstellung-des-reports"><span class="header-section-number">8.2</span> Erstellung des Reports</h2>
+<p>Für die Erstellung des Reports habe ich die meiner Meinung nach wichtigsten und aussagekräftigsten Graphen meines Projekts genutzt. Da die maximale Präsentationszeit bei 10 Minuten lag, musste ich mich auch in der Präsentation kurz halten und somit auch nur die wichtigsten Charts zeigen. Ich habe lediglich die beiden Graphen mit den Top-Künstlern und den Top-Songs weggelassen. Außerdem habe ich für das Report die detaillierten (gelayerten) Charts verwendet. Diese habe ich mit Text versehen, um die wichtigsten Erkenntnisse meines Projekts nochmals klar darzustellen. Dazu habe ich über das jeweilige Diagramm ein kurzen Text, der erklärt um was es in dem Graphen geht und was die Merkmale bedeuten verfasst. Neben dem Graphen habe ich die Auffälligkeiten in ihm erwähnt und unter ihm eine Handlungsempfehlung. Diese Erkenntnisse wurden von mir am Ende nochmals als Formel zusammengefasst.</p>
+<p>Hier finden sie den Report:</p>
+<ul>
+<li><a href="">Report</a></li>
 </ul>
 
 
