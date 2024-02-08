@@ -105,34 +105,34 @@ Hierfür habe ich einen Barplot mit den verschiedenen Keys auf der X-Achse erste
 
 ## Line-Chart
 
-Ein Liniendiagramm ist ideal um die Anzahl der Song-Veröffentlichungen pro Monat darzustellen, da es die zeitliche Entwicklung und Trends klar hervorhebt. Es ermöglicht ein einfaches Erkennen von Mustern, wie z.B. saisonale Schwankungen oder Trends.
+Ein Liniendiagramm ist ideal, um die Anzahl der Song-Veröffentlichungen pro Monat darzustellen, da es die zeitliche Entwicklung und Trends klar hervorhebt. Es ermöglicht ein einfaches Erkennen von Mustern, wie z.B. saisonale Schwankungen oder Trends.
 
-Für die Erstellung dieses Diagramms, habe ich zuerst die Release-Monate, die in dem Datensatz von 1 bis 12 angegeben waren, auf die Monatsabkürzungen gemapped. Diese stellten bei mir dann die X-Achse dar, auf der Y-Achse war die Anzahl der veröffentlichten Songs in diesem Monat.
-Um die Unterschiede hervorzuheben, habe ich die Extremwerte mit Punkten und senkrechten gestrichelten Linien versehen. Dafür habe ich verschieden Plots erstellt und diese dann mit 'alt.layer()' zusammengefügt.
+Für die Erstellung dieses Diagramms habe ich zuerst die Release-Monate, die in dem Datensatz von 1 bis 12 angegeben waren, auf die Monatsabkürzungen gemapped. Diese stellen  die X-Achse dar, auf der Y-Achse war die Anzahl der veröffentlichten Songs in diesem Monat abgebildet.
+Um die Unterschiede hervorzuheben, habe ich die Extremwerte mit Punkten und senkrechten gestrichelten Linien versehen. Dafür habe ich verschieden Plots erstellt und diese dann mit `alt.layer()` zusammengefügt.
 
 ![Anzahl der Veröffentlichungen nach Monat](images/monthly_realeses.png)
 
 
 ## Scatter-Plot
 
-Ich habe mich für ein Streudiagramm entschieden, um die Beziehung zwischen Speechiness und der Anzahl der Streams darzustellen, weil es mir ermöglicht, Muster und Korrelationen zwischen diesen beiden Variablen zu erkennen. Dieser Plot veranschaulicht besonders gut, wie die Menge der gesprochenen Worte in einem Song (Speechiness), mit der Anzahl der erfolgreichen Songs, mit diesem Speechiness-Wert zusammenhängt.
+Ich habe mich für ein Streudiagramm entschieden, um die Beziehung zwischen Speechiness und der Anzahl der Streams darzustellen, weil dabei, Muster und Korrelationen zwischen diesen beiden Variablen zu erkennen sind. Dieser Plot veranschaulicht besonders gut, wie die Menge der gesprochenen Worte in einem Song (Speechiness) mit der Anzahl der erfolgreichen Songs, mit diesem Speechiness-Wert zusammenhängt.
 
-Um diesen Scatter-Plot zu erstellen, habe ich zunächst die Daten nach der Speechiness gruppiert und die Anzahl der Songs für jeden Speechniess-Wert gezählt. Danach habe ich Songs, welche über 40 % Speechiness haben aussortiert, um den Fokus auf den relevanten Bereich zu belassen.
+Um diesen Scatter-Plot zu erstellen, habe ich zunächst die Daten nach der Speechiness gruppiert und die Anzahl der Songs für jeden Speechniess-Wert gezählt. Danach habe ich Songs, die mehr als 40% Speechiness haben, aussortiert, um den Fokus auf dem relevanten Bereich zu belassen.
 Anschließend habe ich diese gefilterten Daten benutzt, um ein lineares Regressionsmodell zu trainieren (sklearn). Diese Vorhersage habe ich dann in einem DataFrame gespeichert.
 
-Daraufhin habe ich mit Altair die Regressionslinie und den Scatter-Plot erstellt und diese wieder mit 'alt.layer()' zusammengefügt. Um die Regressionslinie hervorzuheben, habe ich die opacity des Scatter-Plots angepasst.
+Daraufhin habe ich mit Altair die Regressionslinie und den Scatter-Plot erstellt und diese wieder mit `alt.layer()` zusammengefügt. Um die Regressionslinie hervorzuheben, habe ich die opacity des Scatter-Plots angepasst.
 
 ![Beziehung zwischen Anzahl der Songs und der Speechiness](images/scatter_plot.png)
 
 
 ## Distribution-Plot
 
-Ich habe mich dazu entschieden, die Anzahl der Songs pro Energie-Kategorie in einem Verteilungsdiagramm darzustellen, weil es mir ermöglicht, die Verteilung und die zentrale Tendenz der Daten auf einen Blick zu erfassen. So kann ich erkennen, in welchen Energiebereichen die meisten Songs veröffentlicht werden, und eventuelle Ausreißer oder Trends sofort identifizieren.
+Ich habe mich dazu entschieden, die Anzahl der Songs pro Energie-Kategorie in einem Verteilungsdiagramm darzustellen, weil es mir ermöglicht, die Verteilung und die zentrale Tendenz der Daten auf einen Blick zu erfassen. So kann ich erkennen, in welchen Energiebereichen die meisten Songs veröffentlicht werden und eventuelle Ausreißer oder Trends sofort identifizieren.
 
 Dafür habe ich zuerst die Energy-Werte gruppiert und von 0 bis 100 in 10 Kategorien aufgeteilt, mit der durchschnittlichen Anzahl der Songs pro Kategorie.
-Daraufhin habe ich nun 2 Charts erstellt, ein Histogramm, was das Ergebnis in 'Balkenform' angibt und ein Liniendiagramm mit dem Prop 'interpolate='monotone'' für eine glatte Linie.
+Daraufhin habe ich nun 2 Charts erstellt, ein Histogramm, welches das Ergebnis in 'Balkenform' angibt und ein Liniendiagramm mit dem Prop `interpolate='monotone'` für eine glatte Linie.
 
-Diese beiden Plots habe ich wieder mit der 'alt.layer()' Funktion zusammengefügt und dem Histogramm etwas weniger opacity gegeben, um die Linie etwas hervorzuheben.
+Diese beiden Plots habe ich wieder mit der `alt.layer()` Funktion zusammengefügt und dem Histogramm etwas weniger opacity gegeben, um die Linie etwas hervorzuheben.
 
 
 ![Ø Anzahl der Songs nach Energy](images/distribution.png)
@@ -142,9 +142,9 @@ Diese beiden Plots habe ich wieder mit der 'alt.layer()' Funktion zusammengefüg
 
 Für die Map habe ich die **Geopandas** Bibliothek verwendet, die sich sehr gut für die Verarbeitung von geografischen Daten eignet.
 Jedoch musste ich zuerst die von mir angereicherten Herkunftsländer in dem Datensatz mappen, da sie in der verwendeten Bibliothek zum Teil anders hießen.
-Danach habe ich die Anzahl der Künstler pro Land gezählt und in einem DataFrame gespeichert. Dann habe ich die Geopandas Daten und meinen DataFrame zusammengeführt, wobei ich die Anzahl der Künstler pro Land als zusätzlich Information hinzugefügt habe.
+Danach habe ich die Anzahl der Künstler pro Land gezählt und in einem DataFrame gespeichert. Dann wurden die Geopandas-Daten und mein DataFrame zusammengeführt, wobei die Anzahl der Künstler pro Land als zusätzliche Information hinzugefügt wurde.
 
-Mit Altair habe ich dann eine Map erstelt, und die Länder entsprechend ihrer Künstler-Anzahl eingefärbt. Da es einen starken Ausreißer mit den USA gab, habe ich eine logarithmische Skala verwendet, um die Unterschiede sichtbarer zu machen.
+Mit Altair habe ich dann eine Map erstelt, und die Länder entsprechend ihrer Künstler-Anzahl eingefärbt. Da es einen starken Ausreißer, die USA gab, habe ich eine logarithmische Skala verwendet, um die Unterschiede sichtbarer zu machen.
 
 ![Anzahl Top-Künstler nach Herkunftsland](images/map.png)
 
@@ -152,7 +152,7 @@ Mit Altair habe ich dann eine Map erstelt, und die Länder entsprechend ihrer K�
 <br/>
 
 
-**Nun hatte ich die grundlegenden Charts erstellt und ich konnte mit der Erstellung der Präsentation und des Dashboards anfangen.**
+**Nun hatte ich die grundlegenden Charts erstellt und ich konnte mit der Erstellung der Präsentation und des Dashboards beginnen.**
 
 
 

@@ -1,10 +1,10 @@
 # Quarto Präsentation 
 
-Mit der Fertigstellung der Visualisierungen war es nun an der Zeit, diese meiner Zielgruppe angemessen zu präsentieren, war es nun an der Zeit eine Präsentation zu erstellen. Diese habe ich mit quarto – revealjs erstellt.
+Mit der Fertigstellung der Visualisierungen war es nun an der Zeit, diese meiner Zielgruppe angemessen zu präsentieren. Die Präsentation habe ich mit quarto – revealjs erstellt.
 
 ## Desgin
 
-Ich habe mich für ein dunkles Design entschieden, dies habe ich mit dem frei verfügbaren Theme "dark" erreichen können.
+Ich habe mich für ein dunkles Design entschieden, welches ich mit dem frei verfügbaren Theme "dark" erreichen konnte.
 Außerdem habe ich eine custom scss Datei erstellt, in der ich die Größen und das Alignment der Überschriften und des Footers bestimmt habe:
 
 ***scss:***
@@ -52,13 +52,13 @@ Außerdem habe ich eine custom scss Datei erstellt, in der ich die Größen und 
 
 ```
 
-Außerdem habe ich die Breite für Slides benutzerdefiniert angepasst, da ich wollte, dass die Diagramme immer noch angemessen angezeigt werden, wenn die Slide in Columns aufgeteilt wird:
+Außerdem habe ich die Breite für Slides benutzerdefiniert angepasst, mit dem Ziel, dass die Diagramme immer noch angemessen angezeigt werden, wenn die Slide in Columns aufgeteilt wird:
  
 - Breite: **2000**
 - Höhe: **960** 
 
 
-Um eine konsistente Farbauswahl für die (Achsen-)Titel zu haben, die zu dem dunklen Hintergrund passt, habe ich Farben definiert:
+Um eine konsistente Farbauswahl für die (Achsen-)Titel zu erzeugen, die zu dem dunklen Hintergrund passt, habe ich Farben definiert:
 
 - Titelfarbe: **rgba(230, 230, 230, 0.7)**
 - Y-Achse-Titel&Label: **rgba(230, 230, 230, 0.5)**
@@ -67,6 +67,6 @@ Um eine konsistente Farbauswahl für die (Achsen-)Titel zu haben, die zu dem dun
 
 ## Vorgehen
 
-Nachdem das Design stand, habe ich meine erstellten Visualisierungen, in die jeweiligen Slides eingebaut.
-In meinem Vorgehen habe ich zunächst die Base Charts ohne layering präsentiert und dabei die einzelnen Merkmale und Bestandteile des Diagramms erläutert. Im Anschluss dann mit Layering, um auf die Ergebnisse besser einzugehen.
-Um Text neben den Diagrammen einzubauen, habe ich die Slides in Columns aufgeteilt. Um den Text nacheinander anzeigen zu lassen, wurde mit 'fragment' gearbeitet.
+Nachdem das Design stand, habe ich meine erstellten Visualisierungen in die jeweiligen Slides eingebaut.
+In meinem Vorgehen wurden zunächst die Base Charts ohne layering präsentiert und dabei die einzelnen Merkmale und Bestandteile des Diagramms erläutert. Im Anschluss dann mit Layering, um auf die Ergebnisse besser einzugehen.
+Um Text neben den Diagrammen einzubauen, wurden die Slides in Columns aufgeteilt.
