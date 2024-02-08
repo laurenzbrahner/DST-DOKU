@@ -114,7 +114,7 @@
     "href": "datenanreicherung.html#funktion-zur-ermittlung-des-künstlerlandes",
     "title": "4  Datenanreicherung",
     "section": "",
-    "text": "Setzen des User-Agent: Zuerst wird ein User-Agent für die MusicBrainz API gesetzt. Dies ist notwendig, um die Anfragen an die API zu authentifizieren (Account ist notwendig).\nSuchanfrage an MusicBrainz: Die Funktion sucht nach dem übergebenen Künstlernamen.\nRückgabe des Landes: Wenn ein Künstler gefunden wird, gibt die Funktion das Land des Künstlers zurück. Andernfalls wird \"Artist not found\" zurückgegeben.\nFehlerbehandlung: Im Falle eines Fehlers bei der Anfrage oder der Verarbeitung der Daten wird eine Fehlermeldung zurückgegeben.",
+    "text": "Setzen des User-Agent: Zuerst wird ein User-Agent für die MusicBrainz API gesetzt. Dies ist notwendig, um die Anfragen an die API zu authentifizieren (Account ist notwendig).\nSuchanfrage an MusicBrainz: Die Funktion sucht nach dem übergebenen Künstlernamen.\nRückgabe des Landes: Wenn ein Künstler gefunden wird, gibt die Funktion das Land des Künstlers zurück.\nFehlerbehandlung: Im Falle eines Fehlers bei der Anfrage oder der Verarbeitung der Daten wird eine Fehlermeldung zurückgegeben.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Datenanreicherung</span>"
     ]

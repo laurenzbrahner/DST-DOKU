@@ -220,12 +220,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Fazit und Reflexion</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
@@ -271,7 +265,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Ich hatte wenig Probleme mit den Daten. Die Spalten hatten meiner Meinung nach gut verständliche Namen und der Rest der Data-Preparation war schnell erledigt. Jedoch ist mir im Laufe des Projekts aufgefallen, dass ich geografische Daten für die Erstellung einer Map brauche. So ist mir die Idee gekommen, das Herkunftsland des Künstlers hinzuzufügen. Manuell hätte dies sehr lange gedauert. Es musste eine andere Lösung her. Ich hab mich auf die Suche nach Musik-Apis begeben und bin fündig geworden. Anhand von Musicbrainz konnte ich, wie beschrieben in Kapitel 4, das Herkunftsland des Künstlers mit wenig Aufwand hinzufügen.</p>
 <p>Das hat sehr gut funktioniert, bis zur Erstellung der Map. Leider haben die Länderbezeichnungen der Musicbrainz Datenbank nicht mit denen der geopandas Bibliothek übereingestimmt. Aber auch hierfür habe ich eine Lösung gefunden. Ich habe eine Funktion geschrieben, welche die Länderbezeichnungen vergleicht und übereinstimmende oder fehlende Länder ausgibt.</p>
 <p>Hier ist die Funktion:</p>
-<div id="46494129" class="cell" data-execution_count="1">
+<div id="58fbde76" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>

@@ -220,12 +220,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Fazit und Reflexion</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
@@ -271,10 +265,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li><p><strong>Setzen des User-Agent</strong>: Zuerst wird ein User-Agent für die MusicBrainz API gesetzt. Dies ist notwendig, um die Anfragen an die API zu authentifizieren (Account ist notwendig).</p></li>
 <li><p><strong>Suchanfrage an MusicBrainz</strong>: Die Funktion sucht nach dem übergebenen Künstlernamen.</p></li>
-<li><p><strong>Rückgabe des Landes</strong>: Wenn ein Künstler gefunden wird, gibt die Funktion das Land des Künstlers zurück. Andernfalls wird <code>"Artist not found"</code> zurückgegeben.</p></li>
+<li><p><strong>Rückgabe des Landes</strong>: Wenn ein Künstler gefunden wird, gibt die Funktion das Land des Künstlers zurück.</p></li>
 <li><p><strong>Fehlerbehandlung</strong>: Im Falle eines Fehlers bei der Anfrage oder der Verarbeitung der Daten wird eine Fehlermeldung zurückgegeben.</p></li>
 </ol>
-<div id="838f9f4b" class="cell" data-execution_count="1">
+<div id="bd9ac0bf" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">def find_artist_country(artist_name):</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">    mb.set_useragent("Artist_Country", "1.0", contact="me@example.com")</span></span>
@@ -298,7 +292,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="anreicherung-des-datensatzes-mit-den-künstlerländern" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="anreicherung-des-datensatzes-mit-den-künstlerländern"><span class="header-section-number">4.2</span> Anreicherung des Datensatzes mit den Künstlerländern</h2>
 <p>Der Datensatz wurde mit den Ländern der Künstler angereichert, indem die zuvor definierte Funktion verwendet wurde, um das Land für jeden Künstler abzufragen und dem DataFrame hinzuzufügen. Das ganze habe ich mit einer for-Schleife realisiert.</p>
-<div id="73252f1f" class="cell" data-execution_count="2">
+<div id="4637fb67" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">artist_country_list = []</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
