@@ -8,7 +8,8 @@ Dieses Projekt wurde mit der Absicht ins Leben gerufen, diese Frage zu beantwort
 
 <br/>
 
-Falls Sie meine Ergebnisse anhand einer Präsentation oder einem interaktiven Dashboard einsehen möchten, finden Sie diese unter den folgenden Links:
+Falls Sie meine Ergebnisse anhand einer Präsentation, einem interaktiven Dashboard oder meinem Report einsehen möchten, finden Sie diese unter den folgenden Links:
 
 - [Präsentation](https://laurenzbrahner.github.io/quarto_prasi/)
 - [Dashboard](https://appapp-ka7buefabvnokhdfwhyptg.streamlit.app/)
+- [Report](https://reportstream-sfj4h3det4qhn7dxoldfje.streamlit.app/Report)
