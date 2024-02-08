@@ -34,8 +34,9 @@
 7. Quarto Präsentation
    - 7.1 Design
    - 7.2 Vorgehen
-8. Streamlit Dashboard
-   - 8.1 Design, Aufbau und Beschreibung der Funktionalität
+8. Streamlit Dashboard und Report
+   - 8.1 Design, Aufbau und Beschreibung der Funktionalität des Dashboards
+   - 8.2 Erstellung des Reports
 9. Herausforderungen und Lösungen
    - 9.1 Datensatz und geografische Daten
    - 9.2 Visualisierungen

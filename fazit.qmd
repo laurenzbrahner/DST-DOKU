@@ -12,6 +12,16 @@ Eine weitere Auffälligkeit ist, dass die meisten Top-Songs einen sehr **geringe
 
 Zudem sollte der Song ein hohes Energieniveau haben und in Englisch oder in Spanisch sein.
 
+**Geheimformel:**
+
+$$
+\begin{align*}
+\text{Erfolg} &= \text{Tonart(Major)} + \text{Key(C\#)} \\
+&+ \text{ReleaseMonat(Jan|Feb)} + \text{Speechiness(3\%)} \\
+&+ \text{Energy(65\%)} + \text{Language(Englisch|Spanisch)}
+\end{align*}
+$$
+
 
 ## Reflexion
 

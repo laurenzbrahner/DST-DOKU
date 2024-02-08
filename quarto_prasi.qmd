@@ -1,4 +1,4 @@
-# Quarto Präsentation
+# Quarto Präsentation 
 
 Mit der Fertigstellung der Visualisierungen war es nun an der Zeit, diese meiner Zielgruppe angemessen zu präsentieren, war es nun an der Zeit eine Präsentation zu erstellen. Diese habe ich mit quarto – revealjs erstellt.
 

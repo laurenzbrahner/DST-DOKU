@@ -1,8 +1,9 @@
-# Streamlit Dashboard
+# Streamlit Dashboard und Report
 
 Um die Ergebnisse noch einmal detaillierter zu zeigen, und Interaktivität zu ermöglichen, habe ich ein Dashboard erstellt. Dafür wurde das Streamlit Framework verwendet. Dieses ermöglicht eine schnelle und ziemlich intuitive Erstellung eines Dashboards.
+Zusätzlich habe ich Streamlit für die Erstellung des Reports verwendet.
 
-## Design, Aufbau und Beschreibung der Funktionalität
+## Design, Aufbau und Beschreibung der Funktionalität des Dashboards
 
 An dem Design musste ich nicht viel ändern, da ein Streamlit Dashboard von Haus aus meiner Meinung nach ziemlich gut aussieht. Ich habe in den meisten Fällen nur das 'layout' auf 'wide' gesetzt, um mehrere Visualisierungen nebeneinander darstellen zu können. Außerdem habe ich, wenn ich Charts in einem kurzen Text erklärt habe, diesen Text mit derselben Farbe des Diagrammtitels versehen.
 
@@ -28,5 +29,14 @@ Als Letztes habe ich noch eine Kontaktpage erstellt, hier kann der User meine Ko
 Falls sie sich das Dashboard nochmal anschauen wollen, finden sie hier den Link:
 
 - [Dashboard](https://appapp-ka7buefabvnokhdfwhyptg.streamlit.app/)
+
+## Erstellung des Reports
+
+Für die Erstellung des Reports habe ich die meiner Meinung nach wichtigsten und aussagekräftigsten Graphen meines Projekts genutzt. Da die maximale Präsentationszeit bei 10 Minuten lag, musste ich mich auch in der Präsentation kurz halten und somit auch nur die wichtigsten Charts zeigen. Ich habe lediglich die beiden Graphen mit den Top-Künstlern und den Top-Songs weggelassen. Außerdem habe ich für das Report die detaillierten (gelayerten) Charts verwendet. Diese habe ich mit Text versehen, um die wichtigsten Erkenntnisse meines Projekts nochmals klar darzustellen. Dazu habe ich über das jeweilige Diagramm ein kurzen Text, der erklärt um was es in dem Graphen geht und was die Merkmale bedeuten verfasst. Neben dem Graphen habe ich die Auffälligkeiten in ihm erwähnt und unter ihm eine Handlungsempfehlung.
+ Diese Erkenntnisse wurden von mir am Ende nochmals als Formel zusammengefasst.
+
+Hier finden sie den Report:
+
+- [Report]()
 
 
